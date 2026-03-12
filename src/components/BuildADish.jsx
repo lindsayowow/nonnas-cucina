@@ -1,13 +1,12 @@
 import React from 'react';
 import '../styles/BuildADish.css';
+import NonnaReaction from './NonnaReaction.jsx';
+import Filters from './Filters.jsx';
 
 export default function BuildADish() {
   return (
     <div className="build-container">
-      <div className="filters">
-        <h2>Step 1: Dietary Filters</h2>
-        <p>Filter buttons go here</p>
-      </div>
+      <Filters />
       <div className="ingredient-section">
         <h2>Step 2: Choose Your Ingredients</h2>
         {/* note to self: I should be able to create a component for these buttons */}
@@ -18,8 +17,8 @@ export default function BuildADish() {
         <div className="toppings"><p>Topping buttons here</p></div>
       </div>
       <div className="nonna">
-        <p>Placeholder for changing Nonna image - remember to format pics to same size</p>
-        <p>Nonna's funny sayings here</p>
+                <h2>Step 3: Verify your Selections</h2>
+        <NonnaReaction />
       </div>
       <div className="dish">
         <h3>Your Dish</h3>
