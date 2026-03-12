@@ -13,13 +13,6 @@ function App() {
     <Header />
     <div className="App">
       <h1>Nonna's Cucina</h1>
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/buildadish">Build a Dish</Link></li>
-        <li><Link to="/about">About</Link></li>
-      </ul>
-    </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />

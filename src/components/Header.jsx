@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <div>
-      <h2>This is my header.</h2>
-    </div>
+    <>
+      <header>
+        <h2>Nonna's Cucina</h2>
+        <p>placeholder for small logo here</p>
+        <Link to="/">Home</Link>
+      <Link to="/buildadish">Build a Dish</Link>
+        <Link to="/about">About</Link>
+    </header >
+    </>
   )
 }
