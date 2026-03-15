@@ -6,7 +6,6 @@ import '../styles/Footer.css';
 
 export default function Footer() {
   return (
-    <div>
       <footer>
         <Link to="/about">Contact Us</Link>
         <div className="tagline">
@@ -14,6 +13,5 @@ export default function Footer() {
        <div className="attributes">
        <a href="http://www.freepik.com"><i>Logo designed by felicities / Freepik</i></a></div>
 </footer>
-    </div>
   )
 }
