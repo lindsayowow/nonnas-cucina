@@ -1,14 +1,17 @@
 .header {
+  color: white;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: end;
   background-color: rgb(255, 38, 0);
-  height: 20px;        /* fixed header height */
+  height: 60px;
+  /* fixed header height */
   padding: 0 1rem;
 }
 
+
 .logo {
-  height: 75px;       
+  height: 58px;
   width: auto;
 }
 
@@ -20,25 +23,8 @@
 .nav-links {
   display: flex;
   gap: 0.75rem;
-  font-size: 1rem;                   
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-header {
-  background-color: rgb(255, 38, 0);
-}
-
-.header {
-  min-height: 100px;
-  color: white;
-  display: flex;
-  align-items: flex-end;      /* everything sticks to the bottom */
-  justify-content: space-between;
-
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .middle,
@@ -47,17 +33,11 @@ header {
   flex-direction: column;
 }
 
-.nav-links {
-  display: flex;
-  gap: 0.75rem;
-  font-size: 1rem;
-}
-
 a {
   color: white;
   text-decoration: none;
 }
 
 h2 {
-    padding: 0;
+  padding: 0;
 }
