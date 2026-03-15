@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles/Home.css';
-import NonnaHome from './assets/Nonna_Home.png';
-import FourSquare from './components/FourSquare';
+import '../styles/Home.css';
+import NonnaHome from '../assets/Nonna_Home.png';
+import FourSquare from '../components/FourSquare';
 
 export default function Home() {
   return (
