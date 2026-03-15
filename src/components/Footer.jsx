@@ -6,12 +6,12 @@ import '../styles/Footer.css';
 
 export default function Footer() {
   return (
-      <footer>
-        <Link to="/about">Contact Us</Link>
-        <div className="tagline">
-       <p>&copy; 2026 Nonna's Cucina - <em>Making ordering safer for families with dietary needs</em></p></div>
-       <div className="attributes">
-       <a href="http://www.freepik.com"><i>Logo designed by felicities / Freepik</i></a></div>
-</footer>
+    <footer>
+      <Link to="/about">Contact Us</Link>
+      <div className="tagline">
+        <p>&copy; 2026 Nonna's Cucina - <em>Making ordering safer for families with dietary needs</em></p></div>
+      <div className="attributes">
+        <a href="http://www.freepik.com"><i>Logo designed by felicities / Freepik</i></a></div>
+    </footer>
   )
 }

@@ -8,7 +8,7 @@ footer {
   min-height: 70px;
 }
 
-footer > a {
+footer>a {
   justify-self: start;
   color: white;
 }
