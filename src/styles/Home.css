@@ -1,49 +1,11 @@
 .hero {
-    margin: 0 auto;
-    text-align: center;
-    background-color: rgb(250, 250, 129);
+  margin: 0 auto;
+  text-align: center;
 }
 
 .logononna {
-    height: 200px;
-    width: auto;
-    margin-top: .5rem;
+  height: 200px;
+  width: auto;
+  margin-top: .5rem;
 }
 
-.foursquare-grid {
-  display: grid;
-  grid-template-columns: 1fr; 
-  gap: 20px;
-  margin: 30px auto;
-}
-
-@media (min-width: 800px) {
-  .foursquare-grid {
-    grid-template-columns: repeat(4, auto); 
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
-
-.square {
-  padding: 10px;
-  border: 3px solid green;
-  border-radius: 8px;
-  text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer; 
-}
-
-.square:hover {
-    background-color: lightgreen;
-    box-shadow: 0 0 25px rgb(160, 235, 160);
-}
-
-.square.selected {
-  transform: scale(1.12);
-  box-shadow: 0 0 35px rgb(238, 248, 238);
-  }
-
-.icon {
-    font-size: xx-large;
-}
