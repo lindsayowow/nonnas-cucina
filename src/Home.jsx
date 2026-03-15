@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import './styles/Home.css';
 import NonnaHome from './assets/Nonna_Home.png';
 
-function IngredientBox({ name }) {
-  const [selected, setSelected] = useState(false);
-  return (
-    <div className={`box ${selected ? "selected" : ""}`}
-      onClick={() => setSelected(!selected)}
-    >
-      {name}
-    </div>
-  );
-}
+// function IngredientBox({ name }) {
+//   const [selected, setSelected] = useState(false);
+//   return (
+//     <div className={`box ${selected ? "selected" : ""}`}
+//       onClick={() => setSelected(!selected)}
+//     >
+//       {name}
+//     </div>
+//   );
+// }
 
 
 export default function Home() {
