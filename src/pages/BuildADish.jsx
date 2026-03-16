@@ -5,8 +5,6 @@ import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
 import Dish from '../components/Dish.jsx';
 import Order from '../components/Order.jsx';
-import IngredientButton from '../components/IngredientButton.jsx';
-import FilterButton from '../components/FilterButton.jsx';
 
 const DietaryFilters = ["🌾Gluten-Free", "🥛 Lactose-Free", "🥜 Nut-Free", "🦐 Shellfish Free", 
   "🥚 Egg-Free", "🫘 Soy-Free", "🧂 Low-Sodium", "🩺 Diabetic-Friendly", "❤️ Heart-Healthy",

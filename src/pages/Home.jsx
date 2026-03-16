@@ -13,11 +13,12 @@ export default function Home() {
 
       <h3>Build safe, delicious dishes that meet you and your family's dietary needs</h3>
 
-      <FourSquare />
-
       <Link to="/buildadish" className="buildbutton">
         <button className="build">Start Building Your Dish</button>
       </Link>
+
+      <FourSquare />
+
     </div>
   )
 }
