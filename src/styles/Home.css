@@ -1,11 +1,23 @@
 .hero {
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 3rem;
 }
 
 .logononna {
   height: 200px;
   width: auto;
   margin-top: .5rem;
+}
+
+.button {
+  background-color: #04AA6D; /* Green */
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
 }
 

@@ -9,7 +9,7 @@ export default function Home() {
     <div className="hero">
       <img src={NonnaHome} alt="Nonna is smiling at a countertop with hearts surrounding her head" className="logononna" />
 
-      <h2>Welcome to Nonna's Cucina!</h2>
+      <h2>Benvenuti a Nonna's Cucina!</h2>
 
       <h3>Build safe, delicious dishes that meet you and your family's dietary needs</h3>
 
