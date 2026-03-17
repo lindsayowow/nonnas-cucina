@@ -5,13 +5,7 @@ import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
 import Dish from '../components/Dish.jsx';
 import Order from '../components/Order.jsx';
-
-const DietaryFilters = ["🌾Gluten-Free", "🥛 Lactose-Free", "🥜 Nut-Free", "🦐 Shellfish Free",
-  "🥚 Egg-Free", "🫘 Soy-Free", "🧂 Low-Sodium", "🩺 Diabetic-Friendly", "❤️ Heart-Healthy",
-  "🫘 Kidney-Friendly", "🪶 Low-FODMAP", "🌱 Vegan", "✡️ Kosher", "☪️ Halal", "👶 Kid-Friendly", "🌶️ Spice Sensitivity",
-  "🫧 Texture-Based"]
-
-const Categories = ["Proteins", "Veggies", "Noodles", "Sauces", "Toppings"]
+import { DietaryFilters, Categories, categoryMap, filterMap} from '../utils/constants.js';
 
 export default function BuildADish() {
   const [selectedFilter, setSelectedFilter] = useState("");

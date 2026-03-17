@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Buttons.css';
-
+import '../data/ingredients.json';
 
 export default function IngredientButton() {
   return (

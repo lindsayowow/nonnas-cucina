@@ -1,5 +1,5 @@
 
-.filterClass {
+.filterClass, .ingredientClass {
     background-color:rgb(245, 245, 90);
     border: 5px solid green;
     border-radius: 12px;
