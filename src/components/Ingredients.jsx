@@ -1,16 +1,13 @@
 import React from 'react';
-import '../styles/Ingredients.css';
+import '../styles/Buttons.css';
+import IngredientButton from './IngredientButton';'./IngredientButton.jsx';
 
-export default function Ingredients() {
+export default function Ingredients(props) {
+
   return (
           <div className="ingredients">
             <h2>Choose Your Ingredients</h2>
-            {/* note to self: I should be able to create a component for these buttons */}
-            <div className="proteins"><p>Protein buttons here</p></div>
-            <div className="veggies"><p>Vegetable buttons here</p></div>
-            <div className="noodles"><p>Noodle buttons here</p></div>
-            <div className="sauces"><p>Sauce buttons here</p></div>
-            <div className="toppings"><p>Topping buttons here</p></div>
+            <IngredientButton Categories={props.Categories}/>
           </div>
   )
 }
