@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Buttons.css';
+import '../styles/BuildADish.css';
 import FilterButton from './FilterButton.jsx';
 
 export default function Filters(props) {

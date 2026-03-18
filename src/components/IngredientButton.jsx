@@ -1,11 +1,12 @@
 import React from 'react';
-import '../styles/Buttons.css';
-import '../data/ingredients.json';
+import '../styles/BuildADish.css';
+
 
 export default function IngredientButton() {
   return (
-    <div>
-      <p>This is a button</p>
-    </div>
-  )
-}
+    <div className="ingredientButtons">
+              <button className="IngredientButton" >buttontexthere
+              </button>
+        </div>
+      );
+    }

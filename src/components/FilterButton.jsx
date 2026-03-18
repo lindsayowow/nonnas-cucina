@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Buttons.css';
+import '../styles/BuildADish.css';
 
 export default function FilterButton(props) {
   return (
@@ -7,7 +7,7 @@ export default function FilterButton(props) {
       {props.DietaryFilters.map((filter, index) => (
         <React.Fragment key={filter}>
           <button
-            className="IngredientButton"
+            className="FilterButton"
             onClick={() => props.onSelectedFilter(filter)}
           >
             {filter}

@@ -1,6 +1,7 @@
 import React from 'react';
-import '../styles/Buttons.css';
+import '../styles/BuildADish.css';
 import IngredientButton from './IngredientButton.jsx';
+import IngredientsData from '../data/ingredients.json';
 
 export default function Ingredients(props) {
 
@@ -9,7 +10,9 @@ export default function Ingredients(props) {
       <h2>Choose Your Ingredients</h2>
 
       <h3>{props.Categories[0]}</h3>
-      <IngredientButton Categories={props.Categories}
+      <IngredientButton 
+        IngredientsData={props.IngredientsData}
+        Categories={props.Categories}
         selectedFilter={props.selectedFilter}
         selectedIngredient={props.selectedIngredient}
         onSelectedIngredient={props.onSelectedIngredient}
