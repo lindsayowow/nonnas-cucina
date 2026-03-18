@@ -14,7 +14,7 @@ export default function Ingredients(props) {
           <h3 key={Category} className="categoryHeader">{Category}</h3>
 
           {IngredientsData.filter((ingredient) =>
-              ingredient.category === Category)
+              ingredient.category === categoryMap[Category])
               .map((ingredient) => (<IngredientButton key={ingredient.name}
                 name={ingredient.name} />
               ))}
