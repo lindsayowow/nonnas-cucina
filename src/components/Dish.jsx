@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Dish.css';
+import '../styles/BuildADish.css';
 
 export default function Dish() {
     return (

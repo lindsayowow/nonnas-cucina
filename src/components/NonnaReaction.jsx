@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/NonnaReaction.css';
+import '../styles/BuildADish.css';
 
 export default function NonnaReaction() {
     return (
