@@ -78,6 +78,7 @@ h3 {
 
 .IngredientButton:disabled {
   background-color: rgb(252, 252, 118);
+  color: rgb(252, 252, 118);
 }
 
 .break {

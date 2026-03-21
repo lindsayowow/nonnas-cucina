@@ -4,10 +4,13 @@ import FilterButton from './FilterButton.jsx';
 
 export default function Filters(props) {
     return (
-        <div className="filterClass">
+        <div key={props.selectedFilters} className="filterClass">
             <h2>Dietary Filters</h2>
-            <FilterButton DietaryFilters={props.DietaryFilters} 
-            onSelectedFilters={props.onSelectedFilters} />
+            <FilterButton key={props.DietaryFilters}
+            DietaryFilters={props.DietaryFilters} 
+            onSelectedFilters={props.onSelectedFilters}
+            selectedFilters={props.selectedFilters}
+            onToggleFilter={props.onToggleFilter} />
         </div>
     )
 }

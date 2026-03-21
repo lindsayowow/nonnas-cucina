@@ -19,10 +19,15 @@ export default function Ingredients(props) {
                 key={ingredient.name}
                 name={ingredient.name}
                 emoji={ingredient.emoji}
-                disabled={(inversionList.includes(props.selectedFilters) 
-                  && ingredient[filterMap[props.selectedFilters]]) 
-                  || (!inversionList.includes(props.selectedFilters) 
-                  && !(ingredient[filterMap[props.selectedFilters]]))} />
+                disabled={props.selectedFilters.some((filter) => {
+                  const property = filterMap[filter];          // e.g. "hasGluten"
+                  const isInverted = inversionList.includes(filter);
+                  if (isInverted) {
+                    return ingredient[property] === true;
+                  } else {
+                    return ingredient[property] === false;
+                  }
+                })} />
             ))}
         </div>
       ))}

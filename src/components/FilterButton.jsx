@@ -5,14 +5,14 @@ export default function FilterButton(props) {
   return (
     <div className="filterButtons">
       {props.DietaryFilters.map((filter) => (
-        <button
+        <button key={filter}
+          onClick={() => props.onToggleFilter(filter)
+          }
           className={
             props.selectedFilters.includes(filter)
               ? "FilterButton active"
               : "FilterButton"
           }
-
-          onClick={() => props.onToggleFilter(filter)}
         >
           {filter}
         </button>

@@ -21,7 +21,7 @@ export default function BuildADish() {
 }
 
   return (
-    <div className="build-container">
+    <div key="build-container" className="build-container">
       <div className="section-1">
         <NonnaReaction />
         <Dish />
@@ -31,6 +31,7 @@ export default function BuildADish() {
           DietaryFilters={DietaryFilters}
           onSelectedFilters={setSelectedFilters}
           onToggleFilter={toggleFilter}
+          selectedFilters={selectedFilters}
         />
 
         <Ingredients
