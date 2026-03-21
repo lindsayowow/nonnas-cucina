@@ -10,7 +10,7 @@ import { DietaryFilters, Categories } from '../utils/constants.js';
 export default function BuildADish() {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedIngredient, setSelectedIngredient] = useState({});
+  const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   function toggleFilter(filter) {
   setSelectedFilters(prev =>
@@ -20,6 +20,13 @@ export default function BuildADish() {
   );
 }
 
+  function toggleIngredient(ingredient) {
+  setSelectedFilters(prev =>
+    prev.includes(ingredient)
+      ? prev.ingredient(f => f !== ingredient)
+      : [...prev, ingredient]
+  );
+}
   return (
     <div key="build-container" className="build-container">
       <div className="section-1">
@@ -36,11 +43,12 @@ export default function BuildADish() {
 
         <Ingredients
           selectedFilters={selectedFilters}
-          selectedIngredient={selectedIngredient}
-          onSelectedIngredient={setSelectedIngredient}
+          selectedIngredient={selectedIngredients}
+          onSelectedIngredient={setSelectedIngredients}
           selectedCategory={selectedCategory}
           Categories={Categories}
           onSelectedCategory={setSelectedCategory}
+          onToggleIngredient={toggleIngredient}
         />
       </div>
 

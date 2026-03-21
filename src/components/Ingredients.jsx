@@ -19,8 +19,10 @@ export default function Ingredients(props) {
                 key={ingredient.name}
                 name={ingredient.name}
                 emoji={ingredient.emoji}
+                onToggleIngredient={props.onToggleIngredient}
+                isSelected={props.selectedIngredients.includes(ingredient.name)}
                 disabled={props.selectedFilters.some((filter) => {
-                  const property = filterMap[filter];          // e.g. "hasGluten"
+                  const property = filterMap[filter];
                   const isInverted = inversionList.includes(filter);
                   if (isInverted) {
                     return ingredient[property] === true;
