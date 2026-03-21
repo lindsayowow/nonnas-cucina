@@ -5,12 +5,17 @@ export default function FilterButton(props) {
   return (
     <div className="filterButtons">
       {props.DietaryFilters.map((filter) => (
-          <button
-            className="FilterButton"
-            onClick={() => props.onSelectedFilter(filter)}
-          >
-            {filter}
-          </button>
+        <button
+          className={
+            props.selectedFilters.includes(filter)
+              ? "FilterButton active"
+              : "FilterButton"
+          }
+
+          onClick={() => props.onToggleFilter(filter)}
+        >
+          {filter}
+        </button>
       ))}
     </div>
   );

@@ -64,11 +64,16 @@ h3 {
 }
 
 .FilterButton:hover,
-.FilterButton:active,
-.IngredientButton:hover,
-.IngredientButton:active {
-  background-color: lightgreen;
+.IngredientButton:hover{
+   background-color: lightgreen;
   color: black;
+}
+
+.FilterButton.active,
+.IngredientButton.active {
+  background-color: black;
+  color: white;
+  font-weight: bolder;
 }
 
 .IngredientButton:disabled {

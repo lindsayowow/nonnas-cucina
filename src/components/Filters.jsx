@@ -7,7 +7,7 @@ export default function Filters(props) {
         <div className="filterClass">
             <h2>Dietary Filters</h2>
             <FilterButton DietaryFilters={props.DietaryFilters} 
-            onSelectedFilter={props.onSelectedFilter} />
+            onSelectedFilters={props.onSelectedFilters} />
         </div>
     )
 }

@@ -19,10 +19,10 @@ export default function Ingredients(props) {
                 key={ingredient.name}
                 name={ingredient.name}
                 emoji={ingredient.emoji}
-                disabled={(inversionList.includes(props.selectedFilter) 
-                  && ingredient[filterMap[props.selectedFilter]]) 
-                  || (!inversionList.includes(props.selectedFilter) 
-                  && !(ingredient[filterMap[props.selectedFilter]]))} />
+                disabled={(inversionList.includes(props.selectedFilters) 
+                  && ingredient[filterMap[props.selectedFilters]]) 
+                  || (!inversionList.includes(props.selectedFilters) 
+                  && !(ingredient[filterMap[props.selectedFilters]]))} />
             ))}
         </div>
       ))}

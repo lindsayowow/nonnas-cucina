@@ -8,25 +8,33 @@ import Order from '../components/Order.jsx';
 import { DietaryFilters, Categories } from '../utils/constants.js';
 
 export default function BuildADish() {
-  const [selectedFilter, setSelectedFilter] = useState("");
+  const [selectedFilters, setSelectedFilters] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedIngredient, setSelectedIngredient] = useState("");
+
+  function toggleFilter(filter) {
+  setSelectedFilters(prev =>
+    prev.includes(filter)
+      ? prev.filter(f => f !== filter)
+      : [...prev, filter]
+  );
+}
 
   return (
     <div className="build-container">
       <div className="section-1">
-        {/* <h2>Verify your Selections</h2> */}
         <NonnaReaction />
         <Dish />
       </div>
       <div className="section-2">
         <Filters
           DietaryFilters={DietaryFilters}
-          onSelectedFilter={setSelectedFilter}
+          onSelectedFilters={setSelectedFilters}
+          onToggleFilter={toggleFilter}
         />
 
         <Ingredients
-          selectedFilter={selectedFilter}
+          selectedFilters={selectedFilters}
           selectedIngredient={selectedIngredient}
           onSelectedIngredient={setSelectedIngredient}
           selectedCategory={selectedCategory}
