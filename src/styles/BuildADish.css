@@ -81,9 +81,9 @@ h3 {
   color: rgb(252, 252, 118);
 }
 
-.break {
-  flex-basis: 100%;
-  height: 0;
+IngredientButton.disabled .emoji {
+  opacity: 0.2;
+   filter: blur(1px) opacity(0.4);
 }
 
 .dish,

@@ -10,7 +10,7 @@ import { DietaryFilters, Categories } from '../utils/constants.js';
 export default function BuildADish() {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedIngredient, setSelectedIngredient] = useState("");
+  const [selectedIngredient, setSelectedIngredient] = useState({});
 
   function toggleFilter(filter) {
   setSelectedFilters(prev =>
