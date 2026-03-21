@@ -2,8 +2,9 @@ import React from 'react';
 import '../styles/BuildADish.css';
 
 
-export default function IngredientButton({ emoji, name }) {
+export default function IngredientButton({ emoji, name, disabled }) {
   return (
-    <button className="IngredientButton" >{emoji} {name}</button>
+    <button className="IngredientButton" 
+    disabled={disabled}>{emoji} {name}</button>
   );
 }

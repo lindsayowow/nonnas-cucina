@@ -12,6 +12,11 @@
   gap: 20px;
 }
 
+.section-1,
+.section-3 {
+  background-color: lightgreen;
+}
+
 h2 {
   margin-top: .5rem;
   padding: 10px;
@@ -66,6 +71,10 @@ h3 {
   color: black;
 }
 
+.IngredientButton:disabled {
+  background-color: rgb(252, 252, 118);
+}
+
 .break {
   flex-basis: 100%;
   height: 0;
@@ -81,4 +90,11 @@ h3 {
   margin: 0 auto;
   padding: 20px;
   margin-top: 2rem;
+}
+
+.nonnaNeutral {
+    display: block;
+  margin: 0 auto;
+  border-radius: 12%;
+  height: 120px;
 }

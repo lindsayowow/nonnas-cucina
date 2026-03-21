@@ -3,6 +3,9 @@ export const DietaryFilters = ["🌾Gluten-Free", "🥛 Lactose-Free", "🥜 Nut
   "🫘 Kidney-Friendly", "🪶 Low-FODMAP", "🌱 Vegan", "✡️ Kosher", "☪️ Halal", "👶 Kid-Friendly", "🌶️ Spice Sensitivity",
   "🫧 Texture-Based"]
 
+export const inversionList = ["🌾Gluten-Free", "🥛 Lactose-Free", "🥜 Nut-Free", "🦐 Shellfish Free",
+  "🥚 Egg-Free", "🫘 Soy-Free"]
+
 export const Categories = ["Proteins", "Veggies", "Noodles", "Sauces", "Toppings"];
 
 export const filterMap = {

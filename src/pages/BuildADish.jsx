@@ -15,7 +15,7 @@ export default function BuildADish() {
   return (
     <div className="build-container">
       <div className="section-1">
-        <h2>Verify your Selections</h2>
+        {/* <h2>Verify your Selections</h2> */}
         <NonnaReaction />
         <Dish />
       </div>
