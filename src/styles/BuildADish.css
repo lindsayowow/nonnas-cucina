@@ -18,6 +18,10 @@
   background-color: lightgreen;
 }
 
+.section-2 {
+  min-width: 0;
+}
+
 h2 {
   margin-top: .5rem;
   padding: 10px;
@@ -37,6 +41,10 @@ h3 {
   margin: 0 auto;
   padding: 20px;
   margin-top: 2rem;
+}
+
+.ingredientClass {
+  min-width: 0;
 }
 
 .filterButtons,
@@ -101,6 +109,10 @@ IngredientButton.disabled .emoji {
 
 .dishEmoji {
   font-size: xx-large;
+}
+
+.empty {
+  text-align: center;
 }
 
 .nonnaNeutral {
