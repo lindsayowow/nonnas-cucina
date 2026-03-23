@@ -3,7 +3,7 @@ import '../styles/FourSquare.css';
 
 export default function FourSquare() {
   return (
-      <div class="foursquare-grid">
+      <div className="foursquare-grid">
         <div className="square">
           <p className="icon">🛡️</p>
           <h4>Allergy Safe Filtering</h4>

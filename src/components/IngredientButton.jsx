@@ -2,14 +2,14 @@ import React from 'react';
 import '../styles/BuildADish.css';
 
 
-export default function IngredientButton({ emoji, name, disabled, isSelected, onToggleIngredient }) {
+export default function IngredientButton({ disabled, isSelected, onToggleIngredient, ingredient }) {
   return (
     <button className={`IngredientButton 
             ${disabled ? "disabled" : ""} 
             ${isSelected ? "selected" : ""}`}
-            onClick={() => onToggleIngredient(name)} 
-    disabled={disabled}><span className="emoji">{emoji}</span> {name}
-    
+      onClick={() => onToggleIngredient(ingredient)}
+      disabled={disabled}>
+      <span className="emoji">{ingredient.emoji}</span> {ingredient.name}
     </button>
   );
 }

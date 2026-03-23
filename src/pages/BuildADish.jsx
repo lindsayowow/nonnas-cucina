@@ -32,7 +32,8 @@ function toggleIngredient(ingredient) {
     <div key="build-container" className="build-container">
       <div className="section-1">
         <NonnaReaction />
-        <Dish selectedIngredients={selectedIngredients} />
+        <Dish selectedIngredients={selectedIngredients} 
+        />
       </div>
       <div className="section-2">
         <Filters
@@ -44,7 +45,7 @@ function toggleIngredient(ingredient) {
 
         <Ingredients
           selectedFilters={selectedFilters}
-          selectedIngredient={selectedIngredients}
+          selectedIngredients={selectedIngredients}
           onSelectedIngredient={setSelectedIngredients}
           selectedCategory={selectedCategory}
           Categories={Categories}
