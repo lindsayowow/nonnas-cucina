@@ -17,10 +17,9 @@ export default function Ingredients(props) {
             .map((ingredient) => (
               <IngredientButton
                 key={ingredient.name}
-                name={ingredient.name}
-                emoji={ingredient.emoji}
+                ingredient={ingredient}
                 onToggleIngredient={props.onToggleIngredient}
-                isSelected={props.selectedIngredients.includes(ingredient.name)}
+                isSelected= {props.selectedIngredients.some(item => item.name ===ingredient.name)}
                 disabled={props.selectedFilters.some((filter) => {
                   const property = filterMap[filter];
                   const isInverted = inversionList.includes(filter);

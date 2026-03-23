@@ -20,18 +20,19 @@ export default function BuildADish() {
   );
 }
 
-  function toggleIngredient(ingredient) {
-  setSelectedFilters(prev =>
-    prev.includes(ingredient)
-      ? prev.ingredient(f => f !== ingredient)
+function toggleIngredient(ingredient) {
+  setSelectedIngredients(prev =>
+    prev.some(item => item.name === ingredient.name)
+      ? prev.filter(item => item.name !== ingredient.name)
       : [...prev, ingredient]
   );
 }
+
   return (
     <div key="build-container" className="build-container">
       <div className="section-1">
         <NonnaReaction />
-        <Dish />
+        <Dish selectedIngredients={selectedIngredients} />
       </div>
       <div className="section-2">
         <Filters
