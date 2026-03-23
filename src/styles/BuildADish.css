@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .section-1,
@@ -96,6 +97,10 @@ IngredientButton.disabled .emoji {
   margin: 0 auto;
   padding: 20px;
   margin-top: 2rem;
+}
+
+.dishEmoji {
+  font-size: xx-large;
 }
 
 .nonnaNeutral {
