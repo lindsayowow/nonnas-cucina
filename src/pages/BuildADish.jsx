@@ -28,7 +28,7 @@ export default function BuildADish() {
         <Dish
           selectedIngredients={selectedIngredients}
           totalPrice={totalPrice}   
-          onUpdateOrder={updateOrder}
+          updateOrder={updateOrder}
         />
       </div>
 

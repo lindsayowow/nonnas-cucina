@@ -51,6 +51,7 @@ export default function useDishBuilder() {
     setSelectedFilters,
     totalPrice,
     yourOrder,
-    setYourOrder
+    setYourOrder,
+    updateOrder
   };
 }
