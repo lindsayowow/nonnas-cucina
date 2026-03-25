@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/BuildADish.css';
+import DishButton from './DishButton.jsx';
 
 export default function Dish({ selectedIngredients }) {
     return (

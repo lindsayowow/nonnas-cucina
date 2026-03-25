@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import '../styles/BuildADish.css';
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
@@ -6,33 +6,25 @@ import Ingredients from '../components/Ingredients.jsx';
 import Dish from '../components/Dish.jsx';
 import Order from '../components/Order.jsx';
 import { DietaryFilters, Categories } from '../utils/constants.js';
+import useDishBuilder from "../hooks/useDishBuilder";
 
 export default function BuildADish() {
-  const [selectedFilters, setSelectedFilters] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedIngredients, setSelectedIngredients] = useState([]);
-
-  function toggleFilter(filter) {
-  setSelectedFilters(prev =>
-    prev.includes(filter)
-      ? prev.filter(f => f !== filter)
-      : [...prev, filter]
-  );
-}
-
-function toggleIngredient(ingredient) {
-  setSelectedIngredients(prev =>
-    prev.some(item => item.name === ingredient.name)
-      ? prev.filter(item => item.name !== ingredient.name)
-      : [...prev, ingredient]
-  );
-}
+  const {
+    selectedFilters,
+    selectedCategory,
+    selectedIngredients,
+    toggleFilter,
+    toggleIngredient,
+    setSelectedCategory,
+    setSelectedIngredients,
+    setSelectedFilters
+  } = useDishBuilder();
 
   return (
     <div key="build-container" className="build-container">
       <div className="section-1">
         <NonnaReaction />
-        <Dish selectedIngredients={selectedIngredients} 
+        <Dish selectedIngredients={selectedIngredients}
         />
       </div>
       <div className="section-2">
