@@ -79,7 +79,7 @@ h3 {
 }
 
 .FilterButton.active,
-.IngredientButton.active {
+.IngredientButton.selected {
   background-color: black;
   color: white;
   font-weight: bolder;

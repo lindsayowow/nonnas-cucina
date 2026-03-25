@@ -23,7 +23,10 @@ export default function Dish({ selectedIngredients, totalPrice }) {
                         </li>
                     ))}
 
-                    <p>Order total: {totalPrice}</p>
+                    <p>Order total: {new Intl.NumberFormat("en-US", {
+                                style: "currency",
+                                currency: "USD"
+                            }).format(totalPrice)}</p>
                 </ul>
             )}
         </div>

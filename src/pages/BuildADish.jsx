@@ -17,7 +17,8 @@ export default function BuildADish() {
     setSelectedCategory,
     setSelectedIngredients,
     setSelectedFilters,
-    totalPrice
+    totalPrice,
+    updateOrder
   } = useDishBuilder();
 
   return (
@@ -27,6 +28,7 @@ export default function BuildADish() {
         <Dish
           selectedIngredients={selectedIngredients}
           totalPrice={totalPrice}   
+          onUpdateOrder={updateOrder}
         />
       </div>
 
