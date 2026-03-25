@@ -2,11 +2,11 @@ import React from 'react';
 import '../styles/BuildADish.css';
 import DishButton from './DishButton.jsx';
 
-export default function Dish({ selectedIngredients }) {
+export default function Dish({ selectedIngredients, totalPrice }) {
     return (
         <div key="dish" className="dish">
             <h2>Your Dish</h2>
-            <button>Add to Order button - give this functionality</button>
+            <DishButton>Add to Order button - give this functionality</DishButton>
 
             {selectedIngredients.length === 0 ? (
                 <div className="empty">
@@ -23,7 +23,7 @@ export default function Dish({ selectedIngredients }) {
                         </li>
                     ))}
 
-                    <p>Order total: </p>
+                    <p>Order total: {totalPrice}</p>
                 </ul>
             )}
         </div>

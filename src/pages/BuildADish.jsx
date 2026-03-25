@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/BuildADish.css';
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
@@ -17,16 +16,20 @@ export default function BuildADish() {
     toggleIngredient,
     setSelectedCategory,
     setSelectedIngredients,
-    setSelectedFilters
+    setSelectedFilters,
+    totalPrice
   } = useDishBuilder();
 
   return (
     <div key="build-container" className="build-container">
       <div className="section-1">
         <NonnaReaction />
-        <Dish selectedIngredients={selectedIngredients}
+        <Dish
+          selectedIngredients={selectedIngredients}
+          totalPrice={totalPrice}   
         />
       </div>
+
       <div className="section-2">
         <Filters
           DietaryFilters={DietaryFilters}
@@ -47,8 +50,8 @@ export default function BuildADish() {
       </div>
 
       <div className="section-3">
-        <Order />
+        <Order totalPrice={totalPrice} />  
       </div>
     </div>
-  )
+  );
 }

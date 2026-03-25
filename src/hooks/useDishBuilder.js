@@ -21,14 +21,21 @@ export default function useDishBuilder() {
     );
   }
 
+  // ⭐ NEW: computed total price
+  const totalPrice = selectedIngredients.reduce(
+    (sum, ingredient) => sum + (ingredient.price || 0),
+    0
+  );
+
   return {
     selectedFilters,
     selectedCategory,
     selectedIngredients,
-    setSelectedCategory,
     toggleFilter,
     toggleIngredient,
+    setSelectedCategory,
     setSelectedIngredients,
-    setSelectedFilters
+    setSelectedFilters,
+    totalPrice   
   };
 }
