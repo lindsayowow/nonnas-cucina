@@ -1,33 +1,27 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import BuildADish from './components/BuildADish';
-import About from './components/About';
-import Home from './Home';
+import BuildADish from './pages/BuildADish';
+import About from './pages/About';
+import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import './App.css';
 
 
 function App() {
   return (
     <>
-    <Header />
-    <div className="App">
-      <h1>Nonna's Cucina</h1>
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/buildadish">Build a Dish</Link></li>
-        <li><Link to="/about">About</Link></li>
-      </ul>
-    </nav>
+      <Header />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/buildadish" element={<BuildADish />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/buildadish" element={<BuildADish />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </div>
-    <Footer />
+      <Footer />
+
     </>
   );
 }

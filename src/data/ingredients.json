@@ -4,7 +4,7 @@
         "name": "Chicken",
         "emoji": "🍗",
         "category": "protein",
-        "price": 3.5,
+        "price": 3.50,
         "isVegan": false,
         "hasGluten": false,
         "kidFriendly": true,

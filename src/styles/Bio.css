@@ -1,0 +1,16 @@
+
+.bio {
+    background-color:rgb(245, 245, 90);
+    border: 5px solid green;
+    border-radius: 12px;
+    text-align: justify;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.proPic {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12%;
+}
