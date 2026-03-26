@@ -27,10 +27,10 @@ export default function Form() {
     return (
         <div className="container">
             <div className="left">
-                <h3>Contact Form</h3>
+
 
                 <form className="flex-container">
-
+                    <h2 className="contactTitle">Contact Form</h2>
                     <label htmlFor="name">Name:</label>
                     <input
                         type="text"
@@ -64,7 +64,7 @@ export default function Form() {
                         value={formData.feedback}
                         onChange={handleChange}
                     />
-                    
+
                     <button type="submit" disabled={isIncomplete}>
                         Submit
                     </button>

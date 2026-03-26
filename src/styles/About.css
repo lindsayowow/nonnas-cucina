@@ -1,7 +1,39 @@
 .about-container {
     text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .headingTitle {
     text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    width: fit-content;
+    align-self: center;
+    background-color: #6D9E51;
+    color: white;
+    border: 1px solid #3E4A25;
+    border-radius: 6px;
+    padding: 10px 22px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22);
+    font-size: 16px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+button:hover {
+    background-color: #7FBF63;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

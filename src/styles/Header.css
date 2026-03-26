@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  background-color: rgb(255, 38, 0);
+  background-color: #A82323;
   height: 60px;
 }
 

@@ -15,23 +15,27 @@
 
 .square {
   padding: 0px 5px;
-  border: 5px solid green;
+  border: 5px solid #40513B;
   border-radius: 8px;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
+  background-color: #E8F1DD;
 }
 
 .square:hover {
-  background-color: lightgreen;
+  transform: scale(1.08);
+  background-color: #8A8635;
   box-shadow: 0 0 25px rgb(160, 235, 160);
 }
+
 
 .square.selected {
   transform: scale(1.12);
   box-shadow: 0 0 35px rgb(238, 248, 238);
+  background-color: #8A8635;
 }
 
 .icon {
-  font-size: xx-large;
+  font-size: 2.75rem;
 }

@@ -11,6 +11,22 @@ label {
     text-align: left;
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    padding: 20px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #E8F1DD;
+    border: 5px solid #4C5C2D;
+    border-radius: 12px;
+    text-align: justify;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
 .flex-container input {
     width: 40%;
     margin-left: 10%;
@@ -25,23 +41,8 @@ label {
     text-align: left;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    padding: 20px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: rgb(245, 245, 90);
-    border: 5px solid green;
-    border-radius: 12px;
-    text-align: justify;
-    margin-bottom: 20px;
-}
-
-h1,
-h2 {
+.flex-container h2 {
+    align-self: center;
     text-align: center;
 }
 
@@ -53,4 +54,22 @@ button {
     margin-top: 20px;
     width: fit-content;
     align-self: center;
+}
+
+button {
+    margin-top: 20px;
+    width: fit-content;
+    align-self: center;
+    background-color: #6D9E51;
+    color: white !important;
+    border: 1px solid #4C5C2D;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #BCD9A2;
+    color: black !important;
 }

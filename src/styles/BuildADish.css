@@ -1,7 +1,11 @@
 .build-container {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2.5fr 1fr;
   gap: 20px;
+}
+
+.build-grid > :nth-child(3) {
+  padding: 20px;   
 }
 
 .section-1,
@@ -10,12 +14,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.section-2,
+.section-3 {
   align-items: center;
 }
 
 .section-1,
 .section-3 {
-  background-color: lightgreen;
+  background-color: #8A8635;
 }
 
 .section-2 {
@@ -34,17 +42,24 @@ h3 {
 
 .filterClass,
 .ingredientClass {
-  background-color: rgb(252, 252, 118);
-  border: 5px solid green;
+  background-color: #E8F1DD;
+  border: 5px solid #4C5C2D;
   border-radius: 12px;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   margin-top: 2rem;
 }
 
+.filterClass {
+  padding-bottom: 30px;
+}
+
 .ingredientClass {
   min-width: 0;
+  margin-bottom: 2rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .filterButtons,
@@ -57,7 +72,7 @@ h3 {
 
 .FilterButton,
 .IngredientButton {
-  background-color: rgb(17, 158, 17);
+  background-color: #4C5C2D;
   border: none;
   color: white;
   padding: 5px;
@@ -74,7 +89,7 @@ h3 {
 
 .FilterButton:hover,
 .IngredientButton:hover{
-   background-color: lightgreen;
+   background-color: #8A8635;
   color: black;
 }
 
@@ -86,20 +101,27 @@ h3 {
 }
 
 .IngredientButton:disabled {
-  background-color: rgb(252, 252, 118);
-  color: rgb(252, 252, 118);
+  background-color: #E8F1DD;
+  color: #E8F1DD;
 }
 
-IngredientButton.disabled .emoji {
-  opacity: 0.2;
-   filter: blur(1px) opacity(0.4);
+.IngredientButton.disabled .emoji {
+  opacity: 0;           
+  filter: blur(1px);      
+  transition: opacity 0.2s ease;
+}
+
+.IngredientButton:disabled:hover {
+  color: #E8F1DD !important; 
+  background-color: #E8F1DD; 
+  cursor: not-allowed;    
 }
 
 .dish,
 .nonna,
 .order {
-  background-color: white;
-  border: 5px solid green;
+  background-color: #E8F1DD;
+  border: 5px solid #4C5C2D;
   border-radius: 12px;
   max-width: 700px;
   margin: 0 auto;
@@ -107,8 +129,33 @@ IngredientButton.disabled .emoji {
   margin-top: 2rem;
 }
 
+.order {
+  max-width: 300px;     
+  margin: 0 auto;     
+  padding: 15px;       
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.orderTotal {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid #4C5C2D;
+}
+
+.dish {
+  min-width: 225px;
+}
+
+.dish button {
+  display: block;
+  margin: 0.5rem auto 0 auto; /* centers the button */
+}
+
 .dishEmoji {
-  font-size: xx-large;
+  font-size: 3rem;
 }
 
 .empty {
