@@ -12,13 +12,16 @@ export default function BuildADish() {
     selectedFilters,
     selectedCategory,
     selectedIngredients,
+        totalPrice,
+    yourOrder,
+    grandTotal,
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
     setSelectedIngredients,
     setSelectedFilters,
-    totalPrice,
-    updateOrder
+    updateOrder,
+    sendToKitchen
   } = useDishBuilder();
 
   return (
@@ -27,8 +30,9 @@ export default function BuildADish() {
         <NonnaReaction />
         <Dish
           selectedIngredients={selectedIngredients}
-          totalPrice={totalPrice}   
+          totalPrice={totalPrice}
           updateOrder={updateOrder}
+          yourOrder={yourOrder}
         />
       </div>
 
@@ -52,7 +56,11 @@ export default function BuildADish() {
       </div>
 
       <div className="section-3">
-        <Order totalPrice={totalPrice} />  
+        <Order
+          totalPrice={totalPrice}
+          yourOrder={yourOrder}
+          sendToKitchen={sendToKitchen}
+          grandTotal={grandTotal} />
       </div>
     </div>
   );

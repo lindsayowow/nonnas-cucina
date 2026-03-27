@@ -24,7 +24,7 @@ export default function Dish({ selectedIngredients, totalPrice, updateOrder }) {
                         </li>
                     ))}
                 </ul>
-                <p className="orderTotal">Order total: {new Intl.NumberFormat("en-US", {
+                <p className="dishTotal">Order total: {new Intl.NumberFormat("en-US", {
                     style: "currency",
                     currency: "USD"
                 }).format(totalPrice)}</p></div>

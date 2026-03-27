@@ -4,8 +4,8 @@
   gap: 20px;
 }
 
-.build-grid > :nth-child(3) {
-  padding: 20px;   
+.build-grid> :nth-child(3) {
+  padding: 20px;
 }
 
 .section-1,
@@ -88,8 +88,8 @@ h3 {
 }
 
 .FilterButton:hover,
-.IngredientButton:hover{
-   background-color: #8A8635;
+.IngredientButton:hover {
+  background-color: #8A8635;
   color: black;
 }
 
@@ -106,15 +106,15 @@ h3 {
 }
 
 .IngredientButton.disabled .emoji {
-  opacity: 0;           
-  filter: blur(1px);      
+  opacity: 0;
+  filter: blur(1px);
   transition: opacity 0.2s ease;
 }
 
 .IngredientButton:disabled:hover {
-  color: #E8F1DD !important; 
-  background-color: #E8F1DD; 
-  cursor: not-allowed;    
+  color: #E8F1DD !important;
+  background-color: #E8F1DD;
+  cursor: not-allowed;
 }
 
 .dish,
@@ -130,14 +130,25 @@ h3 {
 }
 
 .order {
-  max-width: 300px;     
-  margin: 0 auto;     
-  padding: 15px;       
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 15px;
   box-sizing: border-box;
   margin-top: 2rem;
 }
 
-.orderTotal {
+.costSummary {
+  font-weight: bold;
+  text-align:center;
+}
+
+.activeOrder {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+.dishTotal {
   font-weight: bold;
   text-align: center;
   margin-top: 0.5rem;
@@ -149,9 +160,10 @@ h3 {
   min-width: 225px;
 }
 
-.dish button {
+.dish button,
+.order button {
   display: block;
-  margin: 0.5rem auto 0 auto; /* centers the button */
+  margin: 0.5rem auto 0 auto;
 }
 
 .dishEmoji {
@@ -163,7 +175,7 @@ h3 {
 }
 
 .nonnaNeutral {
-    display: block;
+  display: block;
   margin: 0 auto;
   border-radius: 12%;
   height: 120px;

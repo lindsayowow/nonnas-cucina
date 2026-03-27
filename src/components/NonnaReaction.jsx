@@ -12,7 +12,7 @@ export default function NonnaReaction() {
              <p>       
               {/* {SayingsData.message} */}
             </p>
-            <p>Nonna's funny sayings here</p>
+            {/* <p>Nonna's funny sayings here</p> */}
         </div>
     )
 }

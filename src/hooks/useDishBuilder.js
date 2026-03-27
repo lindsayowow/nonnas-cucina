@@ -6,6 +6,9 @@ export default function useDishBuilder() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [yourOrder, setYourOrder] = useState([]);
 
+  //  code for future feature to store user's orders in a db
+  // const [orderHistory, setOrderHistory] = useState([]);
+
   function toggleFilter(filter) {
     setSelectedFilters(prev =>
       prev.includes(filter)
@@ -29,14 +32,34 @@ export default function useDishBuilder() {
 
   function updateOrder() {
     const yourDish = {
-      id: selectedIngredients.length + 1,
+      id: yourOrder.length + 1,
       ingredients: selectedIngredients,
-      totalcost: new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD"
-      }).format(totalPrice)
+      totalcost: totalPrice
     };
+    // Don't forget to remove the console.log here!
+    console.log("Here is yourDish:", yourDish, "Here is yourOrder:", yourOrder);
+    // Here is your second reminder to remove it later!
+
     setYourOrder(prev => [...prev, yourDish]);
+    setSelectedIngredients([]);
+  }
+
+  const total = yourOrder.reduce((sum, item) => {
+    return sum + (item.totalcost || 0);
+  }, 0);
+
+  const grandTotal = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
+  }).format(total);
+
+  function sendToKitchen() {
+
+    //  code for future feature to store user's orders in a db
+    // setOrderHistory(prev => [...prev, ...yourOrder]); 
+
+    setYourOrder([]);
+    setSelectedIngredients([]);
   }
 
 
@@ -44,14 +67,16 @@ export default function useDishBuilder() {
     selectedFilters,
     selectedCategory,
     selectedIngredients,
+    totalPrice,
+    yourOrder,
+    grandTotal,
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
     setSelectedIngredients,
     setSelectedFilters,
-    totalPrice,
-    yourOrder,
     setYourOrder,
-    updateOrder
+    updateOrder,
+    sendToKitchen
   };
 }
