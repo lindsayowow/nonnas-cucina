@@ -147,7 +147,6 @@ h3 {
     padding-left: 0;
 }
 
-
 .dishTotal {
   font-weight: bold;
   text-align: center;
@@ -166,11 +165,13 @@ h3 {
   margin: 0.5rem auto 0 auto;
 }
 
-.dishEmoji {
+.dishEmoji,
+.clipboardEmoji {
   font-size: 3rem;
 }
 
-.empty {
+.empty,
+.emptyOrder {
   text-align: center;
 }
 

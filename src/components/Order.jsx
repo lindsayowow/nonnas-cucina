@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/BuildADish.css';
+import OrderButton from './OrderButton';
 
-export default function Order({ yourOrder, grandTotal }) {
+export default function Order({ yourOrder, grandTotal, sendToKitchen }) {
   return (
     <div className="order">
       <h2>Your Order</h2>
@@ -29,7 +30,7 @@ export default function Order({ yourOrder, grandTotal }) {
           <p className="costSummary">Total Order cost: {grandTotal} </p>
         </div>
       )}
-      <button>Send to Kitchen</button>
+      <OrderButton sendToKitchen={sendToKitchen}/>
     </div>
   )
 }
