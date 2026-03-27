@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
-import nonnasLogo from '../assets/Nonnas_logo.png';
+import nonnasLogo from '../assets/Nonnas_Logo.png';
 
 export default function Header() {
   return (
