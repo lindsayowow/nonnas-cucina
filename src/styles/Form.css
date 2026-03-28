@@ -69,7 +69,21 @@ button {
     font-size: 16px;
 }
 
-button:hover {
+.flex-container button:not(:disabled):hover {
+    background-color: #8A8635;
+    color: black !important;
+}
+
+.flex-container button:disabled {
     background-color: #BCD9A2;
     color: black !important;
+    border: none;
+    cursor: not-allowed;
+}
+
+.inputError {
+    font-size: xx-small;
+    color: #8b0000;
+    margin-left: 10%;
+    width: 40%;
 }
