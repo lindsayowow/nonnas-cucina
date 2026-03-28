@@ -14,6 +14,43 @@
   height: 200px;
   width: auto;
   margin-top: .5rem;
+  position: relative;
+  display: inline-block;
+
+  /* FOUR LAYERS: wide olive, medium basil, warm inner, micro pink */
+  filter:
+    drop-shadow(0 0 40px rgba(170, 190, 140, 0.25))   /* outer olive, very wide, low opacity */
+    drop-shadow(0 0 24px rgba(185, 215, 165, 0.35))   /* medium basil glow */
+    drop-shadow(0 0 14px rgba(210, 235, 190, 0.55))   /* inner warm green */
+    drop-shadow(0 0 6px rgba(255, 180, 200, 0.45));   /* micro pink love glow */
+
+  animation: nonnaGlow 8s ease-in-out infinite;
+}
+
+@keyframes nonnaGlow {
+  0% {
+    filter:
+      drop-shadow(0 0 32px rgba(170, 190, 140, 0.20))
+      drop-shadow(0 0 20px rgba(185, 215, 165, 0.30))
+      drop-shadow(0 0 12px rgba(210, 235, 190, 0.45))
+      drop-shadow(0 0 5px rgba(255, 180, 200, 0.40));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 60px rgba(170, 190, 140, 0.35))   /* olive expands */
+      drop-shadow(0 0 34px rgba(185, 215, 165, 0.50))   /* basil brightens */
+      drop-shadow(0 0 20px rgba(210, 235, 190, 0.70))   /* warm inner glow strengthens */
+      drop-shadow(0 0 10px rgba(255, 160, 190, 0.55));  /* pink warms + shifts slightly */
+  }
+
+  100% {
+    filter:
+      drop-shadow(0 0 32px rgba(170, 190, 140, 0.20))
+      drop-shadow(0 0 20px rgba(185, 215, 165, 0.30))
+      drop-shadow(0 0 12px rgba(210, 235, 190, 0.45))
+      drop-shadow(0 0 5px rgba(255, 180, 200, 0.40));
+  }
 }
 
 button {

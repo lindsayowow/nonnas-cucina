@@ -10,7 +10,7 @@ export default function Header() {
 
         <img src={nonnasLogo} alt="Nonna's Kitchen logo showing a drawing of a white-haired grandmother cooking in a kitchen" className="logo" />
 
-        <div className="middle">
+        <div className="nonna-font middle">
           <h1 className="title">Nonna's Cucina</h1>
         </div>
 
