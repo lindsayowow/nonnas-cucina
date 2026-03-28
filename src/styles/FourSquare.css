@@ -19,21 +19,38 @@
   border-radius: 8px;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
   background-color: #E8F1DD;
+  opacity: 0;
+  transform: scale(0.95);
 }
 
 .square:hover {
-  transform: scale(1.08);
-  background-color: #8A8635;
+  background-color: #f5f8ef;
   box-shadow: 0 0 25px rgb(160, 235, 160);
 }
 
+.square.animate {
+  animation: animationOne 3s ease forwards;
+    animation-iteration-count: 4;
+}
 
-.square.selected {
-  transform: scale(1.12);
-  box-shadow: 0 0 35px rgb(238, 248, 238);
-  background-color: #8A8635;
+@keyframes animationOne {
+  0% {
+    opacity: .5;
+    background-color: #8A8635;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    background-color: #E8F1DD;
+    transform: scale(1);
+  }
+}
+
+@keyframes cycle {
+  0% { opacity: 1; }
+  99% { opacity: 1; }
+  100% { opacity: 1; } 
 }
 
 .icon {

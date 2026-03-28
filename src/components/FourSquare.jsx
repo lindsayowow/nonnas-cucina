@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/FourSquare.css';
 import squareData from "../data/squareData.json";
+import useInView from "../hooks/useInView";
 
 export default function FourSquare() {
-  const [selectedSquare] = useState(null);
-
+const [gridRef, inView] = useInView({ threshold: 0.75 });
   return (
-    <div className="foursquare-grid">
+    <div ref={gridRef} className="foursquare-grid">
       {squareData.map((item, index) => (
         <div
           key={index}
-          className={`square ${selectedSquare === index ? "selected" : ""}`}
+          className={`square ${inView ? "animate" : ""}`}
+          style={{ animationDelay: `${index * 3}s` }}
         >
           <p className="icon">{item.icon}</p>
           <h4>{item.title}</h4>
