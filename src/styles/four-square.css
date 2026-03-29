@@ -62,5 +62,15 @@
 }
 
 .icon {
-  font-size: 3rem;
+  font-size: 4rem;
+}
+
+.foursquare-grid.readable-font .square h4 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.foursquare-grid.readable-font .square p:not(.icon) {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }

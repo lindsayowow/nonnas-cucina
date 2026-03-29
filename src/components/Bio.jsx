@@ -13,7 +13,7 @@ export default function Bio() {
           className="proPic"
         />
 
-        <p>
+        <p className="text-readable">
           Hi! I'm Lindsay, a software development student building tools that make
           ordering safer for families with complex dietary needs. Nonna's Cucina
           was inspired by the challenges families face when trying to order food

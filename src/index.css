@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:wght@400;500;600&display=swap');
 
 :root {
   --brand-maroon: #7A1E1E;
@@ -18,14 +18,18 @@
   --neutral-500: #7A7A7A;
   --neutral-300: #D9D9D9;
   --neutral-100: #F3F3F3;
+
   --color-header-bg: var(--brand-maroon);
   --color-footer-bg: var(--olive-dark);
   --color-body-bg: var(--surface-yellow);
+
   --color-button-bg: var(--olive-dark);
   --color-button-hover: var(--olive-mid);
   --color-button-text: var(--surface-white);
+
   --color-card-bg: var(--sage-light);
   --color-card-border: var(--olive-dark);
+
   --color-text-primary: var(--neutral-900);
   --color-text-secondary: var(--neutral-700);
   --color-text-inverse: var(--surface-white);
@@ -40,6 +44,9 @@ body,
 
 body {
   background-color: var(--color-body-bg);
+  font-family: "Cormorant Garamond", Garamond, "Apple Garamond", "Palatino Linotype", Palatino, serif;
+  font-weight: 500;
+  color: var(--color-text-primary);
 }
 
 .nonna-font {
@@ -62,20 +69,22 @@ h2 {
   border-radius: 6px;
   padding: 10px 20px;
   font-size: 16px;
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn:hover {
   background-color: var(--color-button-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 }
 
 .btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card {
@@ -97,4 +106,49 @@ h2 {
 
 .text-bold {
   font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Palatino Linotype", Palatino, serif;
+  color: var(--neutral-500);
+  opacity: 1;
+}
+
+label {
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 1.1rem;
+  color: var(--neutral-900);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.error-message {
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 0.95rem;
+  color: var(--brand-maroon-dark);
+  font-weight: 600;
+}
+
+.text-readable {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: var(--neutral-900);
+  font-family: "Cormorant Garamond", Garamond, "Apple Garamond", "Palatino Linotype", Palatino, serif;
+  font-weight: 500;
+}
+
+h2,
+h4 {
+  font-weight: 600;
+  color: var(--neutral-900);
 }

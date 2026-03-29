@@ -9,7 +9,7 @@ export default function FourSquare() {
   return (
     <div
       ref={gridRef}
-      className={`foursquare-grid ${inView ? "animate-sequence" : ""}`}
+      className={`foursquare-grid readable-font ${inView ? "animate-sequence" : ""}`}
     >
       {squareData.map((item, index) => (
         <div

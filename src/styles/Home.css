@@ -22,6 +22,10 @@
   padding: 2rem;
 }
 
+.hero .nonna-font {
+  font-size: 4rem;
+}
+
 .logononna {
   height: 200px;
   width: auto;

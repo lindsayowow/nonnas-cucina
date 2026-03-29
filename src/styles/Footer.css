@@ -44,3 +44,10 @@ footer a {
     justify-self: center;
   }
 }
+
+footer {
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 1rem;
+  color: var(--surface-white);
+  font-weight: 500;
+}
