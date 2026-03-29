@@ -17,47 +17,98 @@
   position: relative;
   display: inline-block;
 
-  /* FOUR LAYERS: wide olive, medium basil, warm inner, micro pink */
   filter:
-    drop-shadow(0 0 40px rgba(170, 190, 140, 0.25))   /* outer olive, very wide, low opacity */
-    drop-shadow(0 0 24px rgba(185, 215, 165, 0.35))   /* medium basil glow */
-    drop-shadow(0 0 14px rgba(210, 235, 190, 0.55))   /* inner warm green */
-    drop-shadow(0 0 6px rgba(255, 180, 200, 0.45));   /* micro pink love glow */
-
-  animation: nonnaGlow 8s ease-in-out infinite;
+    drop-shadow(0 0 26px rgba(122, 30, 30, 0.40)) drop-shadow(0 0 16px rgba(150, 40, 40, 0.50)) drop-shadow(0 0 10px rgba(180, 60, 60, 0.60)) drop-shadow(0 0 4px rgba(220, 120, 120, 0.70));
+  animation: nonnaGlow 9s ease-in-out infinite;
 }
 
 @keyframes nonnaGlow {
   0% {
     filter:
-      drop-shadow(0 0 32px rgba(170, 190, 140, 0.20))
-      drop-shadow(0 0 20px rgba(185, 215, 165, 0.30))
-      drop-shadow(0 0 12px rgba(210, 235, 190, 0.45))
-      drop-shadow(0 0 5px rgba(255, 180, 200, 0.40));
+      drop-shadow(0 0 22px rgba(122, 30, 30, 0.32)) drop-shadow(0 0 14px rgba(150, 40, 40, 0.42)) drop-shadow(0 0 9px rgba(180, 60, 60, 0.52)) drop-shadow(0 0 3px rgba(220, 120, 120, 0.60));
   }
 
   50% {
     filter:
-      drop-shadow(0 0 60px rgba(170, 190, 140, 0.35))   /* olive expands */
-      drop-shadow(0 0 34px rgba(185, 215, 165, 0.50))   /* basil brightens */
-      drop-shadow(0 0 20px rgba(210, 235, 190, 0.70))   /* warm inner glow strengthens */
-      drop-shadow(0 0 10px rgba(255, 160, 190, 0.55));  /* pink warms + shifts slightly */
+      drop-shadow(0 0 36px rgba(122, 30, 30, 0.50)) drop-shadow(0 0 20px rgba(150, 40, 40, 0.60)) drop-shadow(0 0 12px rgba(180, 60, 60, 0.75)) drop-shadow(0 0 6px rgba(220, 120, 120, 0.80));
   }
 
   100% {
     filter:
-      drop-shadow(0 0 32px rgba(170, 190, 140, 0.20))
-      drop-shadow(0 0 20px rgba(185, 215, 165, 0.30))
-      drop-shadow(0 0 12px rgba(210, 235, 190, 0.45))
-      drop-shadow(0 0 5px rgba(255, 180, 200, 0.40));
+      drop-shadow(0 0 22px rgba(122, 30, 30, 0.32)) drop-shadow(0 0 14px rgba(150, 40, 40, 0.42)) drop-shadow(0 0 9px rgba(180, 60, 60, 0.52)) drop-shadow(0 0 3px rgba(220, 120, 120, 0.60));
+  }
+}
+
+.nonna-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+}
+
+.nonna-wrapper::after {
+  content: "❤   ❤   ❤";
+  position: absolute;
+  left: 50%;
+  top: 20%; 
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  color: rgba(180, 40, 55, 0.85); 
+  animation: floatHearts 5.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 6; 
+}
+
+@keyframes floatHearts {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.9);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(calc(-50% + -8px), -20px) scale(1);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translate(calc(-50% + 10px), -45px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + -5px), -70px) scale(1.15);
+  }
+}
+
+.nonna-wrapper::before {
+  content: "✦ ✧ ✦";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  color: rgba(255, 230, 240, 0.9); 
+  animation: sparkleTwinkle 3.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 5; 
+}
+
+@keyframes sparkleTwinkle {
+  0% {
+    opacity: 0.25;
+    transform: translate(-50%, 0) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -4px) scale(1.1);
+  }
+  100% {
+    opacity: 0.25;
+    transform: translate(-50%, 0) scale(0.9);
   }
 }
 
 button {
-  background-color: #4C5C2D;
-  border: 8;
-  border-width: 5px;
-  color: black;
+  background-color: var(--color-button-bg);
+  border: 5px solid var(--olive-dark);
+  color: var(--color-text-primary);
   font-weight: bold;
   padding: 15px 32px;
   text-align: center;
@@ -66,8 +117,16 @@ button {
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
+
+  box-shadow: var(--shadow-button);
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 button:hover {
-  background-color: #8A8635;
+  background-color: var(--color-button-hover);
+  box-shadow: var(--shadow-button-hover);
+  transform: translateY(-2px);
 }

@@ -1,13 +1,13 @@
 .bio {
-  background-color: #E8F1DD;
-  border: 5px solid #4C5C2D;
+  background-color: var(--color-square-bg);
+  border: 5px solid var(--olive-dark);
   border-radius: 12px;
   text-align: justify;
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
-  margin-top: 2 rem;
-  margin-bottom: 2 rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .proPic {
@@ -25,8 +25,5 @@
 
 .bioButtons a button {
   padding: 0.5rem 1rem;
-}
-
-.bioButtons a button {
-  color: white;
+  color: var(--color-button-text);
 }

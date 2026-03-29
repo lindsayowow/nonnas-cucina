@@ -1,17 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
+:root {
+  /* Reds */
+  --brand-maroon: #7A1E1E;
+  --brand-maroon-dark: #5C1616;
+  --brand-maroon-light: #A33A3A;
+
+  /* Olives */
+  --olive-dark: #40513B;    
+  --olive-mid: #8A8635;    
+  --olive-light: #C7C58A;
+
+  /* Greens */
+  --sage-light: #E8F1DD;        
+  --sage-lighter: #F4F8EE;
+  --sage-dark: #AFC9A1;
+
+  /* Neutrals */
+  --surface-yellow: #FEFFD3;  
+  --surface-cream: #FFFDF4;
+  --surface-white: #FFFFFF;
+  --neutral-900: #1A1A1A;
+  --neutral-700: #3D3D3D;
+  --neutral-500: #7A7A7A;
+  --neutral-300: #D9D9D9;
+  --neutral-100: #F3F3F3;
+
+  --color-header-bg: var(--brand-maroon);
+  --color-footer-bg: var(--olive-dark);
+  --color-body-bg: var(--surface-yellow);
+
+  --color-button-bg: var(--olive-dark);
+  --color-button-hover: var(--olive-mid);
+  --color-button-text: var(--surface-white);
+
+  --color-card-bg: var(--surface-cream);
+  --color-card-border: var(--neutral-300);
+
+  --color-square-bg: var(--sage-light);
+  --color-square-hover: var(--sage-dark);
+
+  --color-text-primary: var(--neutral-900);
+  --color-text-secondary: var(--neutral-700);
+  --color-text-inverse: var(--surface-white);
+}
+
 html,
 body,
 #root {
-        height: 100%;
-        margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-        background-color: #FEFFD3;
+  background-color: var(--color-body-bg);
 }
 
 .nonna-font {
   font-family: "Parisienne", "Brush Script MT", cursive;
   letter-spacing: 1px;
 }
+

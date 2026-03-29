@@ -7,8 +7,9 @@ import FourSquare from '../components/FourSquare';
 export default function Home() {
   return (
     <div className="hero">
-      <img src={NonnaHome} alt="Nonna is smiling at a countertop with hearts surrounding her head" className="logononna" />
-
+      <div className="nonna-wrapper">
+        <img src={NonnaHome} alt="Nonna is smiling at a countertop with hearts surrounding her head" className="logononna" />
+      </div>
       <h2>Benvenuti a Nonna's Cucina!</h2>
 
       <h3>Build safe, delicious dishes that meet you and your family's dietary needs</h3>

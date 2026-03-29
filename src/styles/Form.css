@@ -19,10 +19,12 @@ label {
     margin: 0 auto;
     justify-content: center;
     align-items: flex-start;
-    background-color: #E8F1DD;
-    border: 5px solid #4C5C2D;
+
+    background-color: var(--color-square-bg);
+    border: 5px solid var(--olive-dark);
     border-radius: 12px;
     text-align: justify;
+
     margin-bottom: 3rem;
     margin-top: 2rem;
 }
@@ -54,36 +56,40 @@ button {
     margin-top: 20px;
     width: fit-content;
     align-self: center;
-}
 
-button {
-    margin-top: 20px;
-    width: fit-content;
-    align-self: center;
-    background-color: #6D9E51;
-    color: white !important;
-    border: 1px solid #4C5C2D;
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text) !important;
+    border: 1px solid var(--olive-dark);
     border-radius: 8px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
+
+    box-shadow: var(--shadow-button);
+    transition:
+        background-color 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
 }
 
 .flex-container button:not(:disabled):hover {
-    background-color: #8A8635;
-    color: black !important;
+    background-color: var(--color-button-hover);
+    color: var(--color-text-primary) !important;
+    box-shadow: var(--shadow-button-hover);
+    transform: translateY(-2px);
 }
 
 .flex-container button:disabled {
-    background-color: #BCD9A2;
-    color: black !important;
+    background-color: var(--sage-dark);
+    color: var(--color-text-primary) !important;
     border: none;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 .inputError {
     font-size: xx-small;
-    color: #8b0000;
+    color: var(--brand-maroon-dark);
     margin-left: 10%;
     width: 40%;
 }
