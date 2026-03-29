@@ -14,19 +14,8 @@ label {
 .flex-container {
     display: flex;
     flex-direction: column;
-    max-width: 700px;
-    padding: 20px;
-    margin: 0 auto;
     justify-content: center;
     align-items: flex-start;
-
-    background-color: var(--color-square-bg);
-    border: 5px solid var(--olive-dark);
-    border-radius: 12px;
-    text-align: justify;
-
-    margin-bottom: 3rem;
-    margin-top: 2rem;
 }
 
 .flex-container input {
@@ -50,41 +39,6 @@ label {
 
 .feedback {
     height: 70px;
-}
-
-button {
-    margin-top: 20px;
-    width: fit-content;
-    align-self: center;
-
-    background-color: var(--color-button-bg);
-    color: var(--color-button-text) !important;
-    border: 1px solid var(--olive-dark);
-    border-radius: 8px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-
-    box-shadow: var(--shadow-button);
-    transition:
-        background-color 0.15s ease,
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-.flex-container button:not(:disabled):hover {
-    background-color: var(--color-button-hover);
-    color: var(--color-text-primary) !important;
-    box-shadow: var(--shadow-button-hover);
-    transform: translateY(-2px);
-}
-
-.flex-container button:disabled {
-    background-color: var(--sage-dark);
-    color: var(--color-text-primary) !important;
-    border: none;
-    cursor: not-allowed;
-    box-shadow: none;
 }
 
 .inputError {

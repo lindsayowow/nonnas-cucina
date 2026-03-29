@@ -1,11 +1,4 @@
 .bio {
-  background-color: var(--color-square-bg);
-  border: 5px solid var(--olive-dark);
-  border-radius: 12px;
-  text-align: justify;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

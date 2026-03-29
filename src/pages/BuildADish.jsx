@@ -1,4 +1,4 @@
-import '../styles/BuildADish.css';
+import '../styles/build-a-dish.css';
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
