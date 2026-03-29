@@ -1,0 +1,24 @@
+.dish {
+    min-width: 225px;
+}
+
+.dishTotal {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid var(--olive-dark);
+}
+
+.dishEmoji {
+    font-size: 3rem;
+}
+
+.activeIngredientsSelected {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.empty {
+    text-align: center;
+}

@@ -1,0 +1,25 @@
+.order {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+.costSummary {
+    font-weight: bold;
+    text-align: center;
+}
+
+.activeOrder {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.clipboardEmoji {
+    font-size: 3rem;
+}
+
+.emptyOrder {
+    text-align: center;
+}

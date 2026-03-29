@@ -1,0 +1,29 @@
+.ingredientClass {
+    min-width: 0;
+    margin-bottom: 2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.IngredientButton.selected {
+    background-color: var(--neutral-900);
+    color: var(--color-text-inverse);
+    font-weight: bolder;
+}
+
+.IngredientButton:disabled {
+    background-color: var(--sage-light);
+    color: transparent;
+}
+
+.IngredientButton.disabled .emoji {
+    opacity: 0;
+    filter: blur(1px);
+    transition: opacity 0.2s ease;
+}
+
+.IngredientButton:disabled:hover {
+    color: var(--sage-light) !important;
+    background-color: var(--sage-light);
+    cursor: not-allowed;
+}
