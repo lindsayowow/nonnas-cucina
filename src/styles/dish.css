@@ -22,3 +22,8 @@
 .empty {
     text-align: center;
 }
+
+.dish button {
+  display: block;
+  margin: 0.75rem auto 0 auto;
+}

@@ -9,7 +9,7 @@ export default function Bio() {
 
         <img
           src={profilePic}
-          alt="Developer profile"
+          alt="A middle-aged woman wearing glasses and a white suit with long brown hair"
           className="proPic"
         />
 

@@ -7,12 +7,11 @@ export default function Dish({ selectedIngredients, totalPrice, updateOrder }) {
         <div className="card dish">
             <h2 className="text-center">Your Dish</h2>
 
-            <DishButton onClick={updateOrder}>Add to Order</DishButton>
-
             {selectedIngredients.length === 0 ? (
                 <div className="empty text-center">
                     <p className="dishEmoji">🍽️</p>
                     <p>Your dish is empty.</p>
+                    <DishButton onClick={updateOrder}>Add to Order</DishButton>
                 </div>
             ) : (
                 <div>
@@ -35,6 +34,8 @@ export default function Dish({ selectedIngredients, totalPrice, updateOrder }) {
                             currency: "USD"
                         }).format(totalPrice)}
                     </p>
+
+                    <DishButton onClick={updateOrder}>Add to Order</DishButton>
                 </div>
             )}
         </div>

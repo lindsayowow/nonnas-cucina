@@ -13,13 +13,12 @@
 
 .IngredientButton:disabled {
     background-color: var(--sage-light);
-    color: transparent;
+    color: var(--neutral-600);
 }
 
-.IngredientButton.disabled .emoji {
-    opacity: 0;
-    filter: blur(1px);
-    transition: opacity 0.2s ease;
+.IngredientButton:disabled .emoji {
+    opacity: 0.5;
+    filter: none;
 }
 
 .IngredientButton:disabled:hover {

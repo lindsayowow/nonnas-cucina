@@ -3,7 +3,6 @@
     margin: 0 auto;
     padding: 15px;
     box-sizing: border-box;
-    margin-top: 2rem;
 }
 
 .costSummary {
@@ -22,4 +21,13 @@
 
 .emptyOrder {
     text-align: center;
+}
+
+.order {
+  min-width: 350px;
+}
+
+.order button {
+  display: block;
+  margin: 0.75rem auto 0 auto;
 }
