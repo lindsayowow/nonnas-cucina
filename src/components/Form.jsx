@@ -1,72 +1,102 @@
-import { useState } from "react";
-import "../styles/form.css";
+import React, { useState } from 'react';
+import '../styles/form.css';
 
 export default function Form() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        message: ""
+        feedback: "",
     });
 
-    const [errors, setErrors] = useState({});
+    const [submitted, setSubmitted] = useState(false);
 
-    function handleChange(e) {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
+        setSubmitted(true);
+        setFormData({ name: "", email: "", feedback: "" });
+    };
 
-        const newErrors = {};
-        if (!formData.name.trim()) newErrors.name = "Please enter your full name.";
-        if (!formData.email.trim()) newErrors.email = "Please enter your email.";
-        if (!formData.message.trim()) newErrors.message = "What's on your mind?";
+    const email = formData.email.trim();
+    const validEmail = /\S+@\S+\.\S+/.test(email);
 
-        setErrors(newErrors);
-
-        if (Object.keys(newErrors).length === 0) {
-            console.log("Form submitted:", formData);
-        }
-    }
+    const isIncomplete =
+        formData.name.trim().length < 3 ||
+        !validEmail ||
+        formData.feedback.trim().length < 50;
 
     return (
-        <form className="flex-container card" onSubmit={handleSubmit}>
-            <label>
-                Name:*
-                <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
-                {errors.name && <div className="inputError">{errors.name}</div>}
-            </label>
+        <div className="container">
+            <div className="left">
+                <form className="flex-container" onSubmit={handleSubmit}>
+                    <h2 className="contactTitle">Contact Form</h2>
 
-            <label>
-                Email:*
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                {errors.email && <div className="inputError">{errors.email}</div>}
-            </label>
+                    <label htmlFor="name">Name:*</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Please enter your full name."
+                        minLength={3}
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                    {(formData.name.trim().length < 3 &&
+                        formData.name.trim().length > 0) && (
+                            <p className="inputError">Please enter at least 3 characters</p>
+                        )}
 
-            <label>
-                Message:*
-                <textarea
-                    name="message"
-                    className="feedback"
-                    value={formData.message}
-                    onChange={handleChange}
-                />
-                {errors.message && <div className="inputError">{errors.message}</div>}
-            </label>
+                    <br />
 
-            <button className="btn" type="submit">
-                Submit
-            </button>
-        </form>
+                    <label htmlFor="email">Email:*</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Please enter your email."
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                    {(!validEmail && formData.email.trim().length > 0) && (
+                        <p className="inputError">Please enter a valid email.</p>
+                    )}
+
+                    <br />
+
+                    <label htmlFor="message">Message:*</label>
+                    <textarea
+                        className="feedback"
+                        id="feedback"
+                        name="feedback"
+                        wrap="soft"
+                        maxLength="200"
+                        placeholder="What's on your mind?"
+                        value={formData.feedback}
+                        onChange={handleChange}
+                    />
+                    {(formData.feedback.trim().length < 50 &&
+                        formData.feedback.trim().length > 0) && (
+                            <p className="inputError">
+                                Minimum characters: {formData.feedback.length}/50
+                            </p>
+                        )}
+
+                    <button type="submit" disabled={isIncomplete}>
+                        Submit
+                    </button>
+
+                    {submitted && (
+                        <p className="successMessage">Your message has been submitted.</p>
+                    )}
+                </form>
+            </div>
+        </div>
     );
 }

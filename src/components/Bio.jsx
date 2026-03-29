@@ -1,10 +1,13 @@
+import profilePic from "../assets/profilepic.jpg";
 import "../styles/bio.css";
 
 export default function Bio() {
   return (
     <div className="bio card">
+      <h2 className="text-center">About the Developer</h2>
+
       <img
-        src="/images/profile.jpg"
+        src={profilePic}
         alt="Developer profile"
         className="proPic"
       />
@@ -19,11 +22,19 @@ export default function Bio() {
       </p>
 
       <div className="bioButtons">
-        <a href="https://github.com/lindsayowow" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/lindsayowow"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className="btn">GitHub</button>
         </a>
 
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           <button className="btn">LinkedIn</button>
         </a>
       </div>
