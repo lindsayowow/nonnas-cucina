@@ -23,7 +23,7 @@
 
 .section-1,
 .section-3 {
-  background-color: #8A8635;
+  background-color: var(--olive-mid);
 }
 
 .section-2 {
@@ -42,8 +42,8 @@ h3 {
 
 .filterClass,
 .ingredientClass {
-  background-color: #E8F1DD;
-  border: 5px solid #4C5C2D;
+  background-color: var(--sage-light);
+  border: 5px solid var(--olive-dark);
   border-radius: 12px;
   max-width: 600px;
   margin: 0 auto;
@@ -72,12 +72,10 @@ h3 {
 
 .FilterButton,
 .IngredientButton {
-  background-color: #4C5C2D;
+  background-color: var(--olive-dark);
   border: none;
-  color: white;
-  padding: 5px;
-  padding-left: 6px;
-  padding-right: 6px;
+  color: var(--color-text-inverse);
+  padding: 5px 6px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -89,20 +87,20 @@ h3 {
 
 .FilterButton:hover,
 .IngredientButton:hover {
-  background-color: #8A8635;
-  color: black;
+  background-color: var(--olive-mid);
+  color: var(--neutral-900);
 }
 
 .FilterButton.active,
 .IngredientButton.selected {
-  background-color: black;
-  color: white;
+  background-color: var(--neutral-900);
+  color: var(--color-text-inverse);
   font-weight: bolder;
 }
 
 .IngredientButton:disabled {
-  background-color: #E8F1DD;
-  color: #E8F1DD;
+  background-color: var(--sage-light);
+  color: transparent;
 }
 
 .IngredientButton.disabled .emoji {
@@ -112,16 +110,16 @@ h3 {
 }
 
 .IngredientButton:disabled:hover {
-  color: #E8F1DD !important;
-  background-color: #E8F1DD;
+  color: var(--sage-light) !important;
+  background-color: var(--sage-light);
   cursor: not-allowed;
 }
 
 .dish,
 .nonna,
 .order {
-  background-color: #E8F1DD;
-  border: 5px solid #4C5C2D;
+  background-color: var(--sage-light);
+  border: 5px solid var(--olive-dark);
   border-radius: 12px;
   max-width: 700px;
   margin: 0 auto;
@@ -139,12 +137,12 @@ h3 {
 
 .costSummary {
   font-weight: bold;
-  text-align:center;
+  text-align: center;
 }
 
 .activeOrder {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .dishTotal {
@@ -152,7 +150,7 @@ h3 {
   text-align: center;
   margin-top: 0.5rem;
   padding-top: 0.5rem;
-  border-top: 2px solid #4C5C2D;
+  border-top: 2px solid var(--olive-dark);
 }
 
 .dish {

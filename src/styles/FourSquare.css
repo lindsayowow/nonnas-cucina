@@ -18,29 +18,24 @@
 }
 
 @keyframes sequenceRepeat {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 1; }
+  to { opacity: 1; }
 }
 
 .square {
   padding: 0px 5px;
-  border: 5px solid #40513B;
+  border: 5px solid var(--olive-dark);
   border-radius: 8px;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background-color: #E8F1DD;
+  background-color: var(--color-square-bg);
   opacity: 1;
   transform: scale(1);
 }
 
 .square:hover {
-  background-color: #f5f8ef;
-  box-shadow: 0 0 25px rgb(160, 235, 160);
+  background-color: var(--surface-light);
+  box-shadow: 0 0 25px var(--glow-green);
 }
 
 .square.animate {
@@ -50,31 +45,35 @@
 @keyframes animationOne {
   0% {
     opacity: .5;
-    background-color: #8A8635;
+    background-color: var(--olive-mid);
     transform: scale(1.08);
   }
-
   100% {
     opacity: 1;
-    background-color: #E8F1DD;
+    background-color: var(--color-square-bg);
     transform: scale(1);
   }
 }
 
 @keyframes cycle {
-  0% {
-    opacity: 1;
-  }
-
-  99% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 1; }
+  99% { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 .icon {
-  font-size: 2.75rem;
+  font-size: 3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foursquare-grid.animate-sequence {
+    animation: none !important;
+  }
+  .square.animate {
+    animation: none !important;
+  }
+  .square {
+    transition: none !important;
+    transform: none !important;
+  }
 }
