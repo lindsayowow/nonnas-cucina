@@ -44,7 +44,7 @@
 
 @keyframes animationOne {
   0% {
-    opacity: .5;
+    opacity: 0.5;
     background-color: var(--olive-mid);
     transform: scale(1.08);
   }
@@ -63,17 +63,4 @@
 
 .icon {
   font-size: 3rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .foursquare-grid.animate-sequence {
-    animation: none !important;
-  }
-  .square.animate {
-    animation: none !important;
-  }
-  .square {
-    transition: none !important;
-    transform: none !important;
-  }
 }

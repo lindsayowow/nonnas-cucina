@@ -1,69 +1,73 @@
 label {
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  text-align: left;
 }
 
 .left {
-    width: 100%;
+  width: 100%;
 }
 
 .flex-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.flex-container h2 {
+  font-size: 2rem;
 }
 
 .flex-container br {
-    line-height: 0;
-    margin: 0;
-    padding: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .flex-container input {
-    width: 90%;
-    margin: 0 auto;
-    box-sizing: border-box;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .flex-container textarea {
-    width: 90%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    height: 120px;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 120px;
 }
 
 .feedback {
-    height: 120px;
+  height: 120px;
 }
 
 button.btn {
-    width: fit-content;
-    align-self: center;
+  width: fit-content;
+  align-self: center;
 }
 
 button.btn:disabled {
-    background-color: var(--sage-dark);
-    color: var(--color-text-primary);
-    border: none;
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
+  background-color: var(--sage-dark);
+  color: var(--color-text-primary);
+  border: none;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 .inputError {
-    font-size: xx-small;
-    color: var(--brand-maroon-dark);
-    width: 90%;
-    margin: 0 auto;
+  font-size: xx-small;
+  color: var(--brand-maroon-dark);
+  width: 90%;
+  margin: 0 auto;
 }
 
 .successMessage {
-    text-align: center;
-    font-weight: bold;
-    color: var(--olive-dark);
-    font-size: 2rem;
-    margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--olive-dark);
+  font-size: 2rem;
+  margin-top: 1rem;
 }

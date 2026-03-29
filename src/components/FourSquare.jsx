@@ -5,8 +5,12 @@ import useInView from "../hooks/useInView";
 
 export default function FourSquare() {
   const [gridRef, inView] = useInView({ threshold: 0.75 });
+
   return (
-    <div ref={gridRef} className={`foursquare-grid ${inView ? "animate-sequence" : ""}`}>
+    <div
+      ref={gridRef}
+      className={`foursquare-grid ${inView ? "animate-sequence" : ""}`}
+    >
       {squareData.map((item, index) => (
         <div
           key={index}

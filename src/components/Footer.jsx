@@ -11,11 +11,23 @@ export default function Footer() {
   return (
     <footer>
       <Link to="/about#contact">Contact Us</Link>
+
       <div className="tagline">
-        <p>&copy; 2026 Nonna's Cucina <br></br> <em>Making ordering safer for families with dietary needs</em></p></div>
+        <p>
+          &copy; 2026 Nonna's Cucina <br />
+          <em>Making ordering safer for families with dietary needs</em>
+        </p>
+      </div>
+
       <div className="attributes">
-        <a href="http://www.freepik.com"><i>Header logo and Nonna reactions designed by felicities / Freepik</i></a><br></br>
-        <a href="http://www.vecteezy.com"><i>Home image designed by Muhammed Adnan / Vecteezy</i></a></div>
+        <a href="http://www.freepik.com">
+          <i>Header logo and Nonna reactions designed by felicities / Freepik</i>
+        </a>
+        <br />
+        <a href="http://www.vecteezy.com">
+          <i>Home image designed by Muhammed Adnan / Vecteezy</i>
+        </a>
+      </div>
     </footer>
-  )
+  );
 }
