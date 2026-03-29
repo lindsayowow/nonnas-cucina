@@ -1,28 +1,13 @@
-import React, { useEffect } from 'react';
-import '../styles/About.css';
-import Bio from '../components/Bio.jsx';
-import Form from '../components/Form.jsx';
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import Bio from "../components/Bio";
+import Form from "../components/Form";
+import "../styles/about.css";
 
 export default function About() {
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [hash]);
-
   return (
     <div className="about-container">
       <Bio />
-
-      <div className="contact" id="contact">
-        <Form />
-      </div>
+      <Form />
     </div>
   );
 }

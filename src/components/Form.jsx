@@ -33,10 +33,10 @@ export default function Form() {
         formData.feedback.trim().length < 50;
 
     return (
-        <div className="container">
+        <div className="about-section card">
             <div className="left">
                 <form className="flex-container" onSubmit={handleSubmit}>
-                    <h2 className="contactTitle">Contact Form</h2>
+                    <h2 className="text-center">Contact Form</h2>
 
                     <label htmlFor="name">Name:*</label>
                     <input
@@ -88,7 +88,7 @@ export default function Form() {
                             </p>
                         )}
 
-                    <button type="submit" disabled={isIncomplete}>
+                    <button type="submit" className="btn" disabled={isIncomplete}>
                         Submit
                     </button>
 
