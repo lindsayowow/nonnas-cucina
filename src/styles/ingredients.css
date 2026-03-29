@@ -12,8 +12,10 @@
 }
 
 .IngredientButton:disabled {
-    background-color: var(--sage-light);
-    color: var(--neutral-600);
+    background-color: var(--sage-lighter);
+    color: var(--neutral-500);
+    pointer-events: auto;
+    cursor: not-allowed;
 }
 
 .IngredientButton:disabled .emoji {
@@ -22,7 +24,6 @@
 }
 
 .IngredientButton:disabled:hover {
-    color: var(--sage-light) !important;
-    background-color: var(--sage-light);
-    cursor: not-allowed;
+    background-color: var(--sage-lighter);
+    color: var(--neutral-500) !important;
 }
