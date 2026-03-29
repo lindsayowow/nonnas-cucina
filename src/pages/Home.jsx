@@ -10,9 +10,9 @@ export default function Home() {
       <div className="nonna-wrapper">
         <img src={NonnaHome} alt="Nonna is smiling at a countertop with hearts surrounding her head" className="logononna" />
       </div>
-      <h2>Benvenuti a Nonna's Cucina!</h2>
+      <h1 className="nonna-font">Benvenuti a Nonna's Cucina!</h1>
 
-      <h3>Build safe, delicious dishes that meet you and your family's dietary needs</h3>
+      <h2>Build safe, delicious dishes that meet you and your family's dietary needs</h2>
 
       <Link to="/buildadish" className="buildbutton">
         <button className="build">Start Building Your Dish</button>

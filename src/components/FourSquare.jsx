@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/FourSquare.css';
+import '../styles/four-square.css';
 import squareData from "../data/squareData.json";
 import useInView from "../hooks/useInView";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Bio.css';
+import '../styles/bio.css';
 import profilePic from '../assets/profilepic.jpg';
 
 export default function Bio() {

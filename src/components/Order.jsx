@@ -1,14 +1,14 @@
 import React from 'react';
-import '../styles/BuildADish.css';
+import '../styles/order.css';
 import OrderButton from './OrderButton';
 
 export default function Order({ yourOrder, grandTotal, sendToKitchen }) {
   return (
-    <div className="order">
-      <h2>Your Order</h2>
+    <div className="card order">
+      <h2 className="text-center">Your Order</h2>
 
       {yourOrder.length === 0 ? (
-        <div className="emptyOrder">
+        <div className="emptyOrder text-center">
           <p className="clipboardEmoji">📋</p>
           <p>Your order is empty.</p>
         </div>
@@ -27,10 +27,14 @@ export default function Order({ yourOrder, grandTotal, sendToKitchen }) {
               </li>
             ))}
           </ul>
-          <p className="costSummary">Total Order cost: {grandTotal} </p>
+
+          <p className="costSummary text-bold text-center">
+            Total Order cost: {grandTotal}
+          </p>
         </div>
       )}
-      <OrderButton sendToKitchen={sendToKitchen}/>
+
+      <OrderButton sendToKitchen={sendToKitchen} />
     </div>
-  )
+  );
 }
