@@ -7,6 +7,10 @@ import FourSquare from '../components/FourSquare';
 export default function Home() {
   return (
     <div className="hero">
+
+      <p className="mangia left top">Mangia</p>
+      <p className="mangia left bottom">Mangia</p>
+
       <div className="nonna-wrapper">
         <img
           src={NonnaHome}
@@ -14,6 +18,9 @@ export default function Home() {
           className="logononna"
         />
       </div>
+
+      <p className="mangia right top">Mangia</p>
+      <p className="mangia right bottom">Mangia</p>
 
       <h1 className="nonna-font">Benvenuti a Nonna's Cucina!</h1>
 

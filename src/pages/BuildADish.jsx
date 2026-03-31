@@ -26,13 +26,13 @@ export default function BuildADish() {
   return (
     <div className="build-container">
       <div className="section-1">
-        <NonnaReaction />
-
-        <Dish
-          selectedIngredients={selectedIngredients}
-          totalPrice={totalPrice}
-          updateOrder={updateOrder}
-        />
+        <div className="dish-container">
+          <Dish
+            selectedIngredients={selectedIngredients}
+            totalPrice={totalPrice}
+            updateOrder={updateOrder}
+          />
+        </div>
       </div>
 
       <div className="section-2">
@@ -59,6 +59,9 @@ export default function BuildADish() {
           sendToKitchen={sendToKitchen}
           grandTotal={grandTotal}
         />
+        <div className="dish-container">
+          <NonnaReaction />
+        </div>
       </div>
     </div>
   );

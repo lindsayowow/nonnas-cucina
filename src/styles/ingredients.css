@@ -1,16 +1,3 @@
-.ingredientClass {
-    min-width: 0;
-    margin-bottom: 2rem;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.IngredientButton.selected {
-    background-color: var(--neutral-900);
-    color: var(--color-text-inverse);
-    font-weight: bolder;
-}
-
 .IngredientButton:disabled {
     background-color: var(--sage-lighter);
     color: var(--neutral-500);

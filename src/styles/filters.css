@@ -1,9 +1,4 @@
 .filterClass {
-    padding-bottom: 30px;
+  padding: 14px 18px; 
 }
 
-.FilterButton.active {
-    background-color: var(--neutral-900);
-    color: var(--color-text-inverse);
-    font-weight: bolder;
-}
