@@ -20,7 +20,29 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  position: relative;
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-left,
+.hero-right {
+  flex: 0 0 140px;
+}
+
+.hero-center {
+  flex: 0 0 auto;
 }
 
 .hero .nonna-font {
@@ -99,12 +121,13 @@
 h1 {
   font-size: 3rem;
   font-weight: bolder;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 h2 {
   font-size: large;
+  margin-bottom: 8px;
 }
 
 button {
@@ -112,7 +135,7 @@ button {
   border: 5px solid var(--olive-dark);
   color: var(--color-text-primary);
   font-weight: bold;
-  padding: 15px 32px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -142,7 +165,6 @@ button:hover {
   text-shadow:
     0.4px 0 0 currentColor,
     -0.4px 0 0 currentColor;
-  position: absolute;
   transform-origin: center;
   animation: reveal 5.2s ease-out forwards;
   -webkit-user-select: none;
@@ -150,22 +172,7 @@ button:hover {
   -ms-user-select: none;
   user-select: none;
   pointer-events: none;
-}
-
-.mangia.left {
-  left: 3%;
-}
-
-.mangia.right {
-  right: 3%;
-}
-
-.mangia.top {
-  top: 38%;
-}
-
-.mangia.bottom {
-  top: 58%;
+  margin: 0.8rem 0;
 }
 
 .mangia.left.top {
@@ -184,12 +191,27 @@ button:hover {
   transform: rotate(-10deg);
 }
 
+.mangia.left.top {
+  animation-delay: 0.2s;
+}
+
+.mangia.left.bottom {
+  animation-delay: 0.9s;
+}
+
+.mangia.right.top {
+  animation-delay: 1.6s;
+}
+
+.mangia.right.bottom {
+  animation-delay: 2.3s;
+}
+
 @keyframes reveal {
   0% {
     opacity: 0;
     clip-path: inset(0 100% 0 0);
   }
-
   100% {
     opacity: 0.9;
     clip-path: inset(0 0 0 0);
