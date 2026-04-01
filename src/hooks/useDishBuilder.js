@@ -6,9 +6,6 @@ export default function useDishBuilder() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [yourOrder, setYourOrder] = useState([]);
 
-  //  code for future feature to store user's orders in a db
-  // const [orderHistory, setOrderHistory] = useState([]);
-
   function toggleFilter(filter) {
     setSelectedFilters(prev =>
       prev.includes(filter)
@@ -30,15 +27,17 @@ export default function useDishBuilder() {
     0
   );
 
+  function getNextDishId() {
+    if (yourOrder.length === 0) return 1;
+    return yourOrder[yourOrder.length - 1].id + 1;
+  }
+
   function updateOrder() {
     const yourDish = {
-      id: yourOrder.length + 1,
+      id: getNextDishId(),
       ingredients: selectedIngredients,
       totalcost: totalPrice
     };
-    // Don't forget to remove the console.log here!
-    console.log("Here is yourDish:", yourDish, "Here is yourOrder:", yourOrder);
-    // Here is your second reminder to remove it later!
 
     setYourOrder(prev => [...prev, yourDish]);
     setSelectedIngredients([]);
@@ -54,14 +53,29 @@ export default function useDishBuilder() {
   }).format(total);
 
   function sendToKitchen() {
-
-    //  code for future feature to store user's orders in a db
-    // setOrderHistory(prev => [...prev, ...yourOrder]); 
-
     setYourOrder([]);
     setSelectedIngredients([]);
   }
 
+  function clearFilter() {
+    setSelectedFilters([]);
+  }
+
+  function clearIngredients() {
+    setSelectedIngredients([]);
+  }
+
+  function removeIngredient(ingredient) {
+    setSelectedIngredients(prev =>
+      prev.filter(item => item.name !== ingredient.name)
+    );
+  }
+
+  function removeDish(dish) {
+    setYourOrder(prev =>
+      prev.filter(item => item.id !== dish.id)
+    );
+  }
 
   return {
     selectedFilters,
@@ -77,6 +91,10 @@ export default function useDishBuilder() {
     setSelectedFilters,
     setYourOrder,
     updateOrder,
-    sendToKitchen
+    sendToKitchen,
+    clearFilter,
+    clearIngredients,
+    removeIngredient,
+    removeDish
   };
 }

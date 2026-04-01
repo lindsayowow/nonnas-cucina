@@ -1,8 +1,9 @@
 import React from 'react';
 import '../styles/dish.css';
 import DishButton from './DishButton.jsx';
+import RemoveIngredientButton from './RemoveIngredientButton.jsx';
 
-export default function Dish({ selectedIngredients, totalPrice, updateOrder }) {
+export default function Dish({ selectedIngredients, totalPrice, updateOrder, removeIngredient }) {
     return (
         <div className="card dish">
             <h2 className="text-center">Your Dish</h2>
@@ -18,11 +19,15 @@ export default function Dish({ selectedIngredients, totalPrice, updateOrder }) {
                     <ul className="activeIngredientsSelected">
                         {selectedIngredients.map(ingredient => (
                             <li key={ingredient.name}>
-                                {ingredient.emoji} {ingredient.name} –{" "}
-                                {new Intl.NumberFormat("en-US", {
-                                    style: "currency",
-                                    currency: "USD"
-                                }).format(ingredient.price)}
+                                <span>
+                                    {ingredient.emoji} {ingredient.name} –{" "}
+                                    {new Intl.NumberFormat("en-US", {
+                                        style: "currency",
+                                        currency: "USD"
+                                    }).format(ingredient.price)}
+                                </span>
+                                <RemoveIngredientButton
+                                    onRemove={() => removeIngredient(ingredient)} />
                             </li>
                         ))}
                     </ul>

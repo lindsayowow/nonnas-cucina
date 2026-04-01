@@ -20,18 +20,18 @@ export default function BuildADish() {
     setSelectedCategory,
     setSelectedIngredients,
     updateOrder,
-    sendToKitchen
+    sendToKitchen,
+    clearFilter,
+    clearIngredients,
+    removeIngredient,
+    removeDish
   } = useDishBuilder();
 
   return (
     <div className="build-container">
       <div className="section-1">
-        <div className="dish-container">
-          <Dish
-            selectedIngredients={selectedIngredients}
-            totalPrice={totalPrice}
-            updateOrder={updateOrder}
-          />
+        <div className="nonna-container">
+          <NonnaReaction />
         </div>
       </div>
 
@@ -40,6 +40,7 @@ export default function BuildADish() {
           DietaryFilters={DietaryFilters}
           selectedFilters={selectedFilters}
           onToggleFilter={toggleFilter}
+          clearFilter={clearFilter}
         />
 
         <Ingredients
@@ -50,18 +51,25 @@ export default function BuildADish() {
           Categories={Categories}
           onSelectedCategory={setSelectedCategory}
           onToggleIngredient={toggleIngredient}
+          clearIngredients={clearIngredients}
         />
       </div>
 
       <div className="section-3">
+        <div className="dish-container">
+          <Dish
+            selectedIngredients={selectedIngredients}
+            totalPrice={totalPrice}
+            updateOrder={updateOrder}
+            removeIngredient={removeIngredient}
+          />
+        </div>
         <Order
           yourOrder={yourOrder}
           sendToKitchen={sendToKitchen}
           grandTotal={grandTotal}
+          removeDish={removeDish}
         />
-        <div className="dish-container">
-          <NonnaReaction />
-        </div>
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import React from 'react';
 import '../styles/order.css';
 import OrderButton from './OrderButton';
+import RemoveDishButton from './RemoveDishButton';
 
-export default function Order({ yourOrder, grandTotal, sendToKitchen }) {
+export default function Order({ yourOrder, grandTotal, sendToKitchen, removeDish }) {
   return (
     <div className="card order">
       <h2 className="text-center">Your Order</h2>
@@ -17,13 +18,17 @@ export default function Order({ yourOrder, grandTotal, sendToKitchen }) {
           <ul className="activeOrder">
             {yourOrder.map(dish => (
               <li key={dish.id}>
-                Dish {dish.id}:{" "}
-                {dish.ingredients.map(ing => ing.emoji).join(" ")}
-                {" — "}
-                {new Intl.NumberFormat("en-US", {
-                  style: "currency",
-                  currency: "USD"
-                }).format(dish.totalcost)}
+                <span>
+                  Dish {dish.id}:{" "}
+                  {dish.ingredients.map(ing => ing.emoji).join(" ")}
+                  {" — "}
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD"
+                  }).format(dish.totalcost)}
+                </span>
+                <RemoveDishButton 
+                onRemoveDish={() => removeDish(dish)} />
               </li>
             ))}
           </ul>

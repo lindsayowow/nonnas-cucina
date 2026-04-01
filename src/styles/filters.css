@@ -1,5 +1,35 @@
+.filterClass {
+  padding: 4px 4px;
+  min-width: 0;
+}
+
+.filterClass h2 {
+  margin-bottom: 0.5rem;
+  padding: 6px 0;
+}
+
 .filterButtons button {
   padding: 0.25rem 0.45rem;
 }
 
+.FilterButton.active {
+  background-color: black;
+  color: var(--color-text-inverse);
+  font-weight: bolder;
+}
 
+.clearButton {
+  background-color: var(--color-button-hover);
+  border: var(--color-button-hover);
+  padding: 10px;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.clearButton:disabled {
+  background-color: var(--olive-light);
+  border: var(--olive-light);
+  padding: 10px;
+  align-items: center;
+  margin-top: 1rem;
+}

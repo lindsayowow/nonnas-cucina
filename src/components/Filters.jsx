@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/filters.css';
 import FilterButton from './FilterButton.jsx';
+import ClearFilterButton from './ClearFilterButton.jsx';
 
 export default function Filters(props) {
     return (
@@ -12,6 +13,10 @@ export default function Filters(props) {
                 selectedFilters={props.selectedFilters}
                 onToggleFilter={props.onToggleFilter}
             />
+            <ClearFilterButton
+                clearFilter={props.clearFilter}
+                selectedFilters={props.selectedFilters}
+                />
         </div>
     );
 }

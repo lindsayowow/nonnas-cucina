@@ -15,6 +15,12 @@
     padding-left: 0;
 }
 
+.activeOrder li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
 .clipboardEmoji {
     font-size: 3rem;
 }
@@ -30,4 +36,25 @@
 .order button {
   display: block;
   margin: 0.75rem auto 0 auto;
+}
+
+.removeDishButton {
+  all: unset; 
+  background-color: black;
+  color: white;
+  width: 10px;
+  height: 10px;
+  font-size: 7px;
+  line-height: 10px;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.removeDishButton:hover {
+  background-color: var(--neutral-700);
 }

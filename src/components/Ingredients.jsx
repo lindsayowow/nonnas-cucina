@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/ingredients.css';
 import IngredientButton from './IngredientButton.jsx';
 import IngredientsData from '../data/ingredients.json';
+import ClearIngredientsButton from './ClearIngredientsButton.jsx';
 import { categoryMap, inversionList, filterMap } from '../utils/constants.js';
 
 export default function Ingredients(props) {
@@ -42,6 +43,9 @@ export default function Ingredients(props) {
           </div>
         </div>
       ))}
+      <ClearIngredientsButton 
+      clearIngredients={props.clearIngredients}
+      selectedIngredients={props.selectedIngredients}/>
     </div>
   );
 }

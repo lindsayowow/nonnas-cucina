@@ -39,22 +39,6 @@ h3 {
   text-align: center;
 }
 
-.filterClass {
-  padding: 4px 4px;
-  min-width: 0;
-}
-
-.ingredientClass {
-  min-width: 0;
-  margin-bottom: 1.5rem;
-}
-
-.filterClass h2,
-.ingredientClass h2 {
-  margin-bottom: 0.5rem;
-  padding: 6px 0;
-}
-
 .build-container button,
 .build-a-dish button {
   font-size: 1rem;
@@ -75,7 +59,9 @@ h3 {
 .build-container .filterButtons,
 .build-container .ingredientButtons,
 .build-container .dishButtons,
-.build-container .orderButtons {
+.build-container .orderButtons,
+.build-container .clearButtons,
+.build-container .clearAllIngredients {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem 1rem;
@@ -105,15 +91,9 @@ h3 {
   line-height: 1.5;
 }
 
-.dish-container {
+.dish-container,
+.nonna-container {
   position: sticky;
   top: 20px;
   z-index: 5;
-}
-
-.IngredientButton.selected,
-.FilterButton.active {
-  background-color: black;
-  color: var(--color-text-inverse);
-  font-weight: bolder;
 }
