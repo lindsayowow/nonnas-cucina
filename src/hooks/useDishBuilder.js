@@ -27,31 +27,74 @@ export default function useDishBuilder() {
     0
   );
 
-  function updateOrder() {
-    const yourDish = {
-      id: selectedIngredients.length + 1,
-      ingredients: selectedIngredients,
-      totalcost: new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD"
-      }).format(totalPrice)
-    };
-    setYourOrder(prev => [...prev, yourDish]);
+  function getNextDishId() {
+    if (yourOrder.length === 0) return 1;
+    return yourOrder[yourOrder.length - 1].id + 1;
   }
 
+  function updateOrder() {
+    const yourDish = {
+      id: getNextDishId(),
+      ingredients: selectedIngredients,
+      totalcost: totalPrice
+    };
+
+    setYourOrder(prev => [...prev, yourDish]);
+    setSelectedIngredients([]);
+  }
+
+  const total = yourOrder.reduce((sum, item) => {
+    return sum + (item.totalcost || 0);
+  }, 0);
+
+  const grandTotal = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD"
+  }).format(total);
+
+  function sendToKitchen() {
+    setYourOrder([]);
+    setSelectedIngredients([]);
+  }
+
+  function clearFilter() {
+    setSelectedFilters([]);
+  }
+
+  function clearIngredients() {
+    setSelectedIngredients([]);
+  }
+
+  function removeIngredient(ingredient) {
+    setSelectedIngredients(prev =>
+      prev.filter(item => item.name !== ingredient.name)
+    );
+  }
+
+  function removeDish(dish) {
+    setYourOrder(prev =>
+      prev.filter(item => item.id !== dish.id)
+    );
+  }
 
   return {
     selectedFilters,
     selectedCategory,
     selectedIngredients,
+    totalPrice,
+    yourOrder,
+    grandTotal,
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
     setSelectedIngredients,
     setSelectedFilters,
-    totalPrice,
-    yourOrder,
     setYourOrder,
-    updateOrder
+    updateOrder,
+    sendToKitchen,
+    clearFilter,
+    clearIngredients,
+    removeIngredient,
+    removeDish
   };
 }

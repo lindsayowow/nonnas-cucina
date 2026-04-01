@@ -1,16 +1,22 @@
 import React from 'react';
-import '../styles/BuildADish.css';
+import '../styles/filters.css';
 import FilterButton from './FilterButton.jsx';
+import ClearFilterButton from './ClearFilterButton.jsx';
 
 export default function Filters(props) {
     return (
-        <div key={props.selectedFilters} className="filterClass">
-            <h2>Dietary Filters</h2>
-            <FilterButton key={props.DietaryFilters}
-            DietaryFilters={props.DietaryFilters} 
-            onSelectedFilters={props.onSelectedFilters}
-            selectedFilters={props.selectedFilters}
-            onToggleFilter={props.onToggleFilter} />
+        <div className="card filterClass">
+            <h2 className="text-center">Dietary Filters</h2>
+
+            <FilterButton
+                DietaryFilters={props.DietaryFilters}
+                selectedFilters={props.selectedFilters}
+                onToggleFilter={props.onToggleFilter}
+            />
+            <ClearFilterButton
+                clearFilter={props.clearFilter}
+                selectedFilters={props.selectedFilters}
+                />
         </div>
-    )
+    );
 }

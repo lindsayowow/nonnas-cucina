@@ -1,4 +1,4 @@
-import '../styles/BuildADish.css';
+import '../styles/build-a-dish.css';
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
@@ -12,32 +12,35 @@ export default function BuildADish() {
     selectedFilters,
     selectedCategory,
     selectedIngredients,
+    totalPrice,
+    yourOrder,
+    grandTotal,
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
     setSelectedIngredients,
-    setSelectedFilters,
-    totalPrice,
-    updateOrder
+    updateOrder,
+    sendToKitchen,
+    clearFilter,
+    clearIngredients,
+    removeIngredient,
+    removeDish
   } = useDishBuilder();
 
   return (
-    <div key="build-container" className="build-container">
+    <div className="build-container">
       <div className="section-1">
-        <NonnaReaction />
-        <Dish
-          selectedIngredients={selectedIngredients}
-          totalPrice={totalPrice}   
-          updateOrder={updateOrder}
-        />
+        <div className="nonna-container">
+          <NonnaReaction />
+        </div>
       </div>
 
       <div className="section-2">
         <Filters
           DietaryFilters={DietaryFilters}
-          onSelectedFilters={setSelectedFilters}
-          onToggleFilter={toggleFilter}
           selectedFilters={selectedFilters}
+          onToggleFilter={toggleFilter}
+          clearFilter={clearFilter}
         />
 
         <Ingredients
@@ -48,11 +51,25 @@ export default function BuildADish() {
           Categories={Categories}
           onSelectedCategory={setSelectedCategory}
           onToggleIngredient={toggleIngredient}
+          clearIngredients={clearIngredients}
         />
       </div>
 
       <div className="section-3">
-        <Order totalPrice={totalPrice} />  
+        <div className="dish-container">
+          <Dish
+            selectedIngredients={selectedIngredients}
+            totalPrice={totalPrice}
+            updateOrder={updateOrder}
+            removeIngredient={removeIngredient}
+          />
+        </div>
+        <Order
+          yourOrder={yourOrder}
+          sendToKitchen={sendToKitchen}
+          grandTotal={grandTotal}
+          removeDish={removeDish}
+        />
       </div>
     </div>
   );

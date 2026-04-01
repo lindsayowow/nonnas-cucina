@@ -1,0 +1,54 @@
+.ingredientClass {
+  min-width: 0;
+  margin-bottom: 1.5rem;
+}
+
+.ingredientClass h2 {
+  margin-bottom: 0.5rem;
+  padding: 6px 0;
+}
+
+.IngredientButton.selected {
+  background-color: black;
+  color: var(--color-text-inverse);
+  font-weight: bolder;
+}
+
+.IngredientButton:disabled {
+    background-color: var(--sage-lighter);
+    color: var(--neutral-500);
+    pointer-events: auto;
+    cursor: not-allowed;
+}
+
+.IngredientButton:disabled .emoji {
+    opacity: 0.5;
+    filter: none;
+}
+
+.IngredientButton:disabled:hover {
+    background-color: var(--sage-lighter);
+    color: var(--neutral-500) !important;
+}
+
+.clearAllIngredients {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.clearAllIngredientButton {
+  background-color: var(--color-button-hover);
+  border: 2px solid var(--color-button-hover);
+  padding: 10px;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.clearAllIngredientButton:disabled {
+  background-color: var(--olive-light);
+  border: var(--olive-light);
+  padding: 10px;
+  align-items: center;
+  margin-top: 1rem;
+}

@@ -1,0 +1,77 @@
+.foursquare-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin: 20px auto 0 auto;
+}
+
+.foursquare-grid.animate-sequence {
+  animation: sequenceRepeat 8s linear 4;
+}
+
+@media (min-width: 800px) {
+  .foursquare-grid {
+    grid-template-columns: repeat(4, auto);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@keyframes sequenceRepeat {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
+.square {
+  padding: 8px 10px 10px 10px;
+  border: 5px solid var(--olive-dark);
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-color: var(--color-square-bg);
+  opacity: 1;
+  transform: scale(1);
+  box-sizing: border-box;
+}
+
+.square:hover {
+  background-color: var(--surface-light);
+  box-shadow: 0 0 25px var(--glow-green);
+}
+
+.square.animate {
+  animation: animationOne 2s ease forwards;
+}
+
+@keyframes animationOne {
+  0% {
+    opacity: 0.5;
+    background-color: var(--olive-mid);
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    background-color: var(--color-square-bg);
+    transform: scale(1);
+  }
+}
+
+.icon {
+  font-size: 3.4rem;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.foursquare-grid.readable-font .square h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.foursquare-grid.readable-font .square p:not(.icon) {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

@@ -1,56 +1,73 @@
-input,
-textarea,
-button {
-    font-family: inherit;
-}
-
 label {
-    width: 80%;
-    margin: 0 auto;
-    display: block;
-    text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  text-align: left;
 }
 
-.flex-container input {
-    width: 40%;
-    margin-left: 10%;
-    box-sizing: border-box;
-    text-align: left;
-}
-
-.flex-container textarea {
-    width: 80%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    text-align: left;
+.left {
+  width: 100%;
 }
 
 .flex-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    padding: 20px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: rgb(245, 245, 90);
-    border: 5px solid green;
-    border-radius: 12px;
-    text-align: justify;
-    margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-h1,
-h2 {
-    text-align: center;
+.flex-container h2 {
+  font-size: 2rem;
+}
+
+.flex-container br {
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container input {
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.flex-container textarea {
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 120px;
 }
 
 .feedback {
-    height: 70px;
+  height: 120px;
 }
 
-button {
-    margin-top: 20px;
-    width: fit-content;
-    align-self: center;
+button.btn {
+  width: fit-content;
+  align-self: center;
+}
+
+button.btn:disabled {
+  background-color: var(--sage-dark);
+  color: var(--color-text-primary);
+  border: none;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.inputError {
+  font-size: xx-small;
+  color: var(--brand-maroon-dark);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.successMessage {
+  text-align: center;
+  font-weight: bold;
+  color: var(--olive-dark);
+  font-size: 2rem;
+  margin-top: 1rem;
 }
