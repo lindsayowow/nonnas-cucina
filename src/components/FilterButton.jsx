@@ -3,17 +3,21 @@ import React from 'react';
 export default function FilterButton(props) {
   return (
     <div className="filterButtons">
-      {props.DietaryFilters.map((filter) => {
+      {props.DietaryFilters.map((filter, index) => {
         const isActive = props.selectedFilters.includes(filter);
 
         return (
-          <button
-            key={filter}
-            onClick={() => props.onToggleFilter(filter)}
-            className={`btn FilterButton ${isActive ? "active" : ""}`}
-          >
-            {filter}
-          </button>
+          <React.Fragment key={filter}>
+            <button
+              onClick={() => props.onToggleFilter(filter)}
+              className={`btn FilterButton ${isActive ? "active" : ""}`}
+            >
+              {filter}
+            </button>
+
+            {index === 5 && <div className="break"></div>}
+            {index === 10 && <div className="break"></div>}
+          </React.Fragment>
         );
       })}
     </div>
