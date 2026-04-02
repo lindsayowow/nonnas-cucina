@@ -3,7 +3,6 @@ import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
 import Dish from '../components/Dish.jsx';
-import Order from '../components/Order.jsx';
 import { DietaryFilters, Categories } from '../utils/constants.js';
 import useDishBuilder from "../hooks/useDishBuilder";
 
@@ -13,29 +12,19 @@ export default function BuildADish() {
     selectedCategory,
     selectedIngredients,
     totalPrice,
-    yourOrder,
-    grandTotal,
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
     setSelectedIngredients,
     updateOrder,
-    sendToKitchen,
     clearFilter,
     clearIngredients,
-    removeIngredient,
-    removeDish
+    removeIngredient
   } = useDishBuilder();
 
   return (
     <div className="build-container">
       <div className="section-1">
-        <div className="nonna-container">
-          <NonnaReaction />
-        </div>
-      </div>
-
-      <div className="section-2">
         <Filters
           DietaryFilters={DietaryFilters}
           selectedFilters={selectedFilters}
@@ -55,7 +44,7 @@ export default function BuildADish() {
         />
       </div>
 
-      <div className="section-3">
+      <div className="section-2">
         <div className="dish-container">
           <Dish
             selectedIngredients={selectedIngredients}
@@ -64,12 +53,9 @@ export default function BuildADish() {
             removeIngredient={removeIngredient}
           />
         </div>
-        <Order
-          yourOrder={yourOrder}
-          sendToKitchen={sendToKitchen}
-          grandTotal={grandTotal}
-          removeDish={removeDish}
-        />
+        <div className="nonna-container">
+          <NonnaReaction />
+        </div>
       </div>
     </div>
   );

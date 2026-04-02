@@ -33,6 +33,15 @@
   --color-text-primary: var(--neutral-900);
   --color-text-secondary: var(--neutral-700);
   --color-text-inverse: var(--surface-white);
+
+  --fs-body: clamp(1rem, 2.5vw, 1.25rem);
+  --fs-h2: clamp(1.25rem, 3vw, 1.75rem);
+
+  --space-s: clamp(0.5rem, 1vw, 1rem);
+  --space-m: clamp(1rem, 2vw, 2rem);
+  --space-l: clamp(1.5rem, 3vw, 3rem);
+
+  --container-width: clamp(300px, 90vw, 700px);
 }
 
 html,

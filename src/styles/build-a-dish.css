@@ -1,32 +1,30 @@
 .build-container {
   display: grid;
-  grid-template-columns: 0.6fr 3.8fr 0.6fr;
+  grid-template-columns: 3.8fr 1fr;
   gap: 16px;
 }
 
-.build-grid > :nth-child(3) {
+.build-grid > :nth-child(2) {
   padding: 20px;
 }
 
 .section-1,
-.section-2,
-.section-3 {
+.section-2 {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding-top: 1.5rem;
 }
 
-.section-1,
-.section-3 {
+.section-2 {
   padding-inline: 0.75rem;
   background-color: var(--olive-mid);
 }
 
-.section-2 {
+.section-1 {
   align-items: stretch;
   min-width: 0;
-  padding-inline: 0;
+  padding-inline: 0.75rem;
 }
 
 h2 {
@@ -76,7 +74,7 @@ h3 {
   padding-top: 1.25rem;
 }
 
-.build-container .section-2 .card {
+.build-container .section-1 .card {
   padding: 12px 8px !important;
 }
 
@@ -93,7 +91,33 @@ h3 {
 
 .dish-container,
 .nonna-container {
-  position: sticky;
-  top: 20px;
-  z-index: 5;
+  position: static;
+  top: auto;
+  z-index: auto;
+}
+
+.desktop-layout {
+  display: block;
+}
+
+.mobile-layout {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .desktop-layout {
+    display: none;
+  }
+
+  .mobile-layout {
+    display: block;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .build-container {
+    display: block;
+  }
 }
