@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Order from './pages/Order';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 
@@ -13,11 +14,12 @@ function App() {
   return (
     <div className="app-shell">
       <Header />
+      <ScrollToTop />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/buildadish" element={<BuildADish />} />
-          <Route path="/cart" element={<Order />}/>
+          <Route path="/cart" element={<Order />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
