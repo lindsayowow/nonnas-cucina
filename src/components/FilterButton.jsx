@@ -3,7 +3,7 @@ import React from 'react';
 export default function FilterButton(props) {
   return (
     <div className="filterButtons">
-      {props.DietaryFilters.map((filter, index) => {
+      {props.DietaryFilters.map((filter) => {
         const isActive = props.selectedFilters.includes(filter);
 
         return (
@@ -15,8 +15,9 @@ export default function FilterButton(props) {
               {filter}
             </button>
 
-            {index === 5 && <div className="break"></div>}
-            {index === 10 && <div className="break"></div>}
+            {/* This section is to add the line breaks if I change my mind again, don't forget to add "index" back to props */}
+            {/* {index === 5 && <div className="break"></div>} */}
+            {/* {index === 10 && <div className="break"></div>} */}
           </React.Fragment>
         );
       })}

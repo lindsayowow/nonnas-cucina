@@ -19,7 +19,8 @@ export default function BuildADish() {
     updateOrder,
     clearFilter,
     clearIngredients,
-    removeIngredient
+    removeIngredient,
+    yourOrder
   } = useDishBuilderContext();
 
   return (
@@ -50,6 +51,7 @@ export default function BuildADish() {
           onSelectedCategory={setSelectedCategory}
           onToggleIngredient={toggleIngredient}
           clearIngredients={clearIngredients}
+          updateOrder={updateOrder}
         />
       </div>
 
@@ -61,6 +63,7 @@ export default function BuildADish() {
             totalPrice={totalPrice}
             updateOrder={updateOrder}
             removeIngredient={removeIngredient}
+            yourOrder={yourOrder}
           />
         </div>
 

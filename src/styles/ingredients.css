@@ -37,7 +37,9 @@
   margin-top: 1rem;
 }
 
-.clearAllIngredientButton {
+/* Shared styling for BOTH buttons */
+.clearAllIngredientButton,
+.DishButton {
   background-color: var(--color-button-hover);
   border: 2px solid var(--color-button-hover);
   padding: 10px;
@@ -45,10 +47,14 @@
   margin-top: 1rem;
 }
 
-.clearAllIngredientButton:disabled {
+/* Disabled state for BOTH buttons */
+.clearAllIngredientButton:disabled,
+.DishButton:disabled {
   background-color: var(--olive-light);
-  border: var(--olive-light);
+  border: 2px solid var(--olive-light);
   padding: 10px;
   align-items: center;
   margin-top: 1rem;
+  color: var(--neutral-500);
+  cursor: not-allowed;
 }
