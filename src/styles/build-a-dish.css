@@ -1,21 +1,23 @@
+/* -------------------------------------------------- */
+/* BUILD-A-DISH LAYOUT — DESKTOP                      */
+/* -------------------------------------------------- */
+
 .build-container {
   display: grid;
-  grid-template-columns: 3.8fr 1fr;
+  grid-template-columns: 1fr 3.8fr 1fr;
   gap: 16px;
 }
 
-.build-grid > :nth-child(2) {
-  padding: 20px;
-}
-
+.section-0,
 .section-1,
 .section-2 {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
 }
 
+.section-0,
 .section-2 {
   padding-inline: 0.75rem;
   background-color: var(--olive-mid);
@@ -27,6 +29,7 @@
   padding-inline: 0.75rem;
 }
 
+/* Typography */
 h2 {
   margin-top: 0.5rem;
   padding: 10px;
@@ -37,6 +40,7 @@ h3 {
   text-align: center;
 }
 
+/* Buttons */
 .build-container button,
 .build-a-dish button {
   font-size: 1rem;
@@ -54,6 +58,7 @@ h3 {
   line-height: 1;
 }
 
+/* Button groups */
 .build-container .filterButtons,
 .build-container .ingredientButtons,
 .build-container .dishButtons,
@@ -70,14 +75,16 @@ h3 {
   font-size: 13px;
 }
 
+/* Cards */
 .build-container .card {
-  padding-top: 1.25rem;
+  padding-top: 1.1rem;
 }
 
 .build-container .section-1 .card {
   padding: 12px 8px !important;
 }
 
+/* Dish + Order text */
 .dish ul,
 .dish li,
 .dish .empty,
@@ -89,35 +96,67 @@ h3 {
   line-height: 1.5;
 }
 
+/* -------------------------------------------------- */
+/* DESKTOP STICKY BEHAVIOR                            */
+/* -------------------------------------------------- */
+
 .dish-container,
 .nonna-container {
-  position: static;
-  top: auto;
-  z-index: auto;
+  position: sticky;
+  top: 0.75rem;
+  z-index: 1;
 }
 
-.desktop-layout {
+.section-2 .dish-container,
+.section-2 .nonna-container {
+  margin-bottom: 0.75rem;
+}
+
+/* Utility classes */
+.desktop-only {
   display: block;
 }
 
-.mobile-layout {
+.mobile-only {
   display: none;
 }
 
-@media (max-width: 600px) {
-  .desktop-layout {
-    display: none;
-  }
+/* -------------------------------------------------- */
+/* MOBILE LAYOUT                                      */
+/* -------------------------------------------------- */
 
-  .mobile-layout {
-    display: block;
-    padding: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+@media (max-width: 600px) {
 
   .build-container {
     display: block;
+  }
+
+  /* Hide desktop-only elements */
+  .desktop-only {
+    display: none !important;
+  }
+
+  /* Show mobile-only elements */
+  .mobile-only {
+    display: block !important;
+  }
+
+  /* Remove sticky behavior on mobile */
+  .dish-container,
+  .nonna-container {
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+  }
+
+  .section-1,
+  .section-2 {
+    height: auto;
+    min-height: 0;
+  }
+
+  /* Mobile Nonna spacing */
+  .mobile-nonna {
+    margin-top: 1rem;
   }
 }

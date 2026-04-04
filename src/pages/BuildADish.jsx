@@ -24,6 +24,15 @@ export default function BuildADish() {
 
   return (
     <div className="build-container">
+
+      {/* DESKTOP NONNA (top-left column) */}
+      <div className="section-0 desktop-only">
+        <div className="nonna-container">
+          <NonnaReaction />
+        </div>
+      </div>
+
+      {/* FILTERS + INGREDIENTS */}
       <div className="section-1">
         <Filters
           DietaryFilters={DietaryFilters}
@@ -44,6 +53,7 @@ export default function BuildADish() {
         />
       </div>
 
+      {/* DISH (desktop + mobile) */}
       <div className="section-2">
         <div className="dish-container">
           <Dish
@@ -53,10 +63,13 @@ export default function BuildADish() {
             removeIngredient={removeIngredient}
           />
         </div>
-        <div className="nonna-container">
+
+        {/* MOBILE NONNA (below dish) */}
+        <div className="mobile-only mobile-nonna">
           <NonnaReaction />
         </div>
       </div>
+
     </div>
   );
 }
