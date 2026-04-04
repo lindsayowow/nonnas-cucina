@@ -4,7 +4,7 @@ import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
 import Dish from '../components/Dish.jsx';
 import { DietaryFilters, Categories } from '../utils/constants.js';
-import useDishBuilder from "../hooks/useDishBuilder";
+import { useDishBuilderContext } from "../context/DishBuilderContext";
 
 export default function BuildADish() {
   const {
@@ -20,7 +20,7 @@ export default function BuildADish() {
     clearFilter,
     clearIngredients,
     removeIngredient
-  } = useDishBuilder();
+  } = useDishBuilderContext();
 
   return (
     <div className="build-container">

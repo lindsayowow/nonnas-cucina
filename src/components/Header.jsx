@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/header.css';
 import nonnasLogo from '../assets/Nonnas_Logo.png';
+import { useDishBuilderContext } from "../context/DishBuilderContext";
 
 export default function Header() {
+  const {yourOrder} = useDishBuilderContext();
+
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,7 +35,7 @@ export default function Header() {
             <Link to="/" onClick={() => setOpen(false)}>Home</Link>
             <Link to="/buildadish" onClick={() => setOpen(false)}>Build a Dish</Link>
             <Link to="/about" onClick={() => setOpen(false)}>About</Link>
-            <Link to="/cart" onClick={() => setOpen(false)}>🛒</Link>
+            <Link to="/cart" onClick={() => setOpen(false)}>🛒 ({yourOrder.length})</Link>
           </nav>
         </div>
       </header>

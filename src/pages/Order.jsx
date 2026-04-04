@@ -3,7 +3,7 @@ import '../styles/order.css';
 import '../styles/build-a-dish.css';
 import OrderButton from '../components/OrderButton';
 import RemoveDishButton from '../components/RemoveDishButton';
-import useDishBuilder from "../hooks/useDishBuilder";
+import { useDishBuilderContext } from "../context/DishBuilderContext";
 
 export default function Order() {
   const {
@@ -11,7 +11,8 @@ export default function Order() {
     removeDish,
     yourOrder,
     grandTotal
-  } = useDishBuilder();
+  } = useDishBuilderContext();
+
   return (
     <div className="order-page">
       <div className="card order">
@@ -36,8 +37,10 @@ export default function Order() {
                       currency: "USD"
                     }).format(dish.totalcost)}
                   </span>
+
                   <RemoveDishButton
-                    onRemoveDish={() => removeDish(dish)} />
+                    onRemoveDish={() => removeDish(dish)}
+                  />
                 </li>
               ))}
             </ul>
