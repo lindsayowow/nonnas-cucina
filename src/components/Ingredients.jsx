@@ -1,3 +1,4 @@
+// Ingredients.jsx
 import React from 'react';
 import '../styles/ingredients.css';
 import IngredientButton from './IngredientButton.jsx';
@@ -44,16 +45,23 @@ export default function Ingredients(props) {
           </div>
         </div>
       ))}
+
       <div className="ingredient-actions">
+
         <DishButton
-          // className="actionButton"
+          className="build-action-button"
           onClick={props.updateOrder}
-          disabled={props.selectedIngredients.length === 0}>
-          Add to Order</DishButton>
+          disabled={props.selectedIngredients.length === 0}
+        >
+          Add to Order
+        </DishButton>
+
         <ClearIngredientsButton
-          // className="actionButton"
+          className="btn build-action-button"
           clearIngredients={props.clearIngredients}
-          selectedIngredients={props.selectedIngredients} />
+          selectedIngredients={props.selectedIngredients}
+        />
+
       </div>
     </div>
   );

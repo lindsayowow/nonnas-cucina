@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/build-a-dish.css';
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';

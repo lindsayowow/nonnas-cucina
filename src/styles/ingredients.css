@@ -8,6 +8,7 @@
   padding: 6px 0;
 }
 
+/* Ingredient button states */
 .IngredientButton.selected {
   background-color: black;
   color: var(--color-text-inverse);
@@ -15,46 +16,66 @@
 }
 
 .IngredientButton:disabled {
-    background-color: var(--sage-lighter);
-    color: var(--neutral-500);
-    pointer-events: auto;
-    cursor: not-allowed;
+  background-color: var(--sage-lighter);
+  color: var(--neutral-500);
+  pointer-events: auto;
+  cursor: not-allowed;
 }
 
 .IngredientButton:disabled .emoji {
-    opacity: 0.5;
-    filter: none;
+  opacity: 0.5;
+  filter: none;
 }
 
 .IngredientButton:disabled:hover {
-    background-color: var(--sage-lighter);
-    color: var(--neutral-500) !important;
+  background-color: var(--sage-lighter);
+  color: var(--neutral-500) !important;
 }
 
-.clearAllIngredients {
+/* Container for the action buttons under ingredients */
+.ingredient-actions {
   display: flex;
   justify-content: center;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
-/* Shared styling for BOTH buttons */
-.clearAllIngredientButton,
-.DishButton {
+/* ACTIVE STATE — stronger selector to override .btn */
+button.build-action-button {
   background-color: var(--color-button-hover);
   border: 2px solid var(--color-button-hover);
   padding: 10px;
   align-items: center;
   margin-top: 1rem;
+  color: var(--color-button-text);
 }
 
-/* Disabled state for BOTH buttons */
-.clearAllIngredientButton:disabled,
-.DishButton:disabled {
+/* Override .btn:hover */
+button.build-action-button:hover {
+  background-color: var(--color-button-hover);
+  border-color: var(--color-button-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+/* DISABLED STATE — stronger selector to override .btn and parent containers */
+button.build-action-button:disabled {
   background-color: var(--olive-light);
-  border: 2px solid var(--olive-light);
+  border: 2px solid var(--neutral-900);
   padding: 10px;
   align-items: center;
   margin-top: 1rem;
-  color: var(--neutral-500);
+  color: var(--neutral-500) !important;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Prevent hover effects on disabled buttons */
+button.build-action-button:disabled:hover {
+  background-color: var(--olive-light);
+  border-color: var(--olive-light);
+  color: var(--neutral-500) !important;
+  box-shadow: none;
+  transform: none;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/order.css';
-import '../styles/build-a-dish.css';
 import OrderButton from '../components/OrderButton';
 import RemoveDishButton from '../components/RemoveDishButton';
+import DishButton from '../components/DishButton';
 import { useDishBuilderContext } from "../context/DishBuilderContext";
 
 export default function Order() {
@@ -30,7 +31,9 @@ export default function Order() {
                 <li key={dish.id}>
                   <span>
                     Dish {dish.id}:{" "}
-                    {dish.ingredients.map(ing => ing.emoji).join(" ")}
+                    {dish.ingredients
+                      .map(ing => `${ing.emoji} ${ing.name}`)
+                      .join(", ")}
                     {" — "}
                     {new Intl.NumberFormat("en-US", {
                       style: "currency",
@@ -38,19 +41,18 @@ export default function Order() {
                     }).format(dish.totalcost)}
                   </span>
 
-                  <RemoveDishButton
-                    onRemoveDish={() => removeDish(dish)}
-                  />
+                  <RemoveDishButton onRemoveDish={() => removeDish(dish)} />
                 </li>
               ))}
             </ul>
-
-            <p className="costSummary text-bold text-center">
-              Total Order cost: {grandTotal}
-            </p>
           </div>
         )}
-
+        <Link to="/buildadish">
+          <DishButton>
+            Add Another Dish
+          </DishButton>
+        </Link>
+        <br></br>
         <OrderButton sendToKitchen={sendToKitchen} />
       </div>
     </div>
