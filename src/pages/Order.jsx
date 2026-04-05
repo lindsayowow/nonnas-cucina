@@ -45,6 +45,9 @@ export default function Order() {
                 </li>
               ))}
             </ul>
+            <p className="costSummary text-bold text-center">
+              Total Order cost: {grandTotal}
+            </p>
           </div>
         )}
         <Link to="/buildadish">
