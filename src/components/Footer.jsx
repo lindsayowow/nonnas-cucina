@@ -20,11 +20,19 @@ export default function Footer() {
       </div>
 
       <div className="attributes">
-        <a href="http://www.freepik.com">
+        <a
+          href="http://www.freepik.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i>Header logo and Nonna reactions designed by felicities / Freepik</i>
         </a>
         <br />
-        <a href="http://www.vecteezy.com">
+        <a
+          href="http://www.vecteezy.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i>Home image designed by Muhammed Adnan / Vecteezy</i>
         </a>
       </div>
