@@ -1,10 +1,16 @@
 import React from 'react';
 
-export default function DishButton({ onClick, children }) {
+export default function DishButton({
+  onClick,
+  children,
+  className = '',
+  disabled = false
+}) {
   return (
     <button
-      className="btn DishButton"
+      className={`btn ${className}`.trim()}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

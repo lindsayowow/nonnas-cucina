@@ -32,7 +32,7 @@ export default function Bio() {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/lindsay-webb/"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-export default function ClearIngredientsButton(props) {
+export default function ClearIngredientsButton({
+  clearIngredients,
+  selectedIngredients,
+  className = ''
+}) {
   return (
-        <div className="clearAllIngredients">
-            <button
-                className="clearAllIngredientButton"
-                onClick={props.clearIngredients}
-                disabled={props.selectedIngredients.length === 0}>
-                Clear All Ingredients
-            </button>
-        </div>
-  )
+    <button
+      className={className}
+      onClick={clearIngredients}
+      disabled={selectedIngredients.length === 0}
+    >
+      Clear All Ingredients
+    </button>
+  );
 }

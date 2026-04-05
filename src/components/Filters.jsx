@@ -4,19 +4,20 @@ import FilterButton from './FilterButton.jsx';
 import ClearFilterButton from './ClearFilterButton.jsx';
 
 export default function Filters(props) {
-    return (
-        <div className="card filterClass">
-            <h2 className="text-center">Dietary Filters</h2>
+  return (
+    <div className="card filterClass">
+      <h2 className="text-center">Dietary Filters</h2>
 
-            <FilterButton
-                DietaryFilters={props.DietaryFilters}
-                selectedFilters={props.selectedFilters}
-                onToggleFilter={props.onToggleFilter}
-            />
-            <ClearFilterButton
-                clearFilter={props.clearFilter}
-                selectedFilters={props.selectedFilters}
-                />
-        </div>
-    );
+      <FilterButton
+        DietaryFilters={props.DietaryFilters}
+        selectedFilters={props.selectedFilters}
+        onToggleFilter={props.onToggleFilter}
+      />
+
+      <ClearFilterButton
+        clearFilter={props.clearFilter}
+        selectedFilters={props.selectedFilters}
+      />
+    </div>
+  );
 }

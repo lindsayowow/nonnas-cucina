@@ -1,36 +1,57 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.order-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
 .order {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 15px;
-    box-sizing: border-box;
+  /* max-width: 350px; */
+  min-width: 350px;
+  min-height: 350px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: x-large;
+}
+
+.order h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .costSummary {
-    font-weight: bold;
-    text-align: center;
+  font-weight: bold;
+  text-align: center;
 }
 
 .activeOrder {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .activeOrder li {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
+  font-size: 1.25rem;
 }
 
 .clipboardEmoji {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .emptyOrder {
-    text-align: center;
-}
-
-.order {
-  min-width: 350px;
+  text-align: center;
 }
 
 .order button {
@@ -39,7 +60,7 @@
 }
 
 .removeDishButton {
-  all: unset; 
+  all: unset;
   background-color: black;
   color: white;
   width: 10px;

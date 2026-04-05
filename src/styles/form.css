@@ -58,7 +58,7 @@ button.btn:disabled {
 }
 
 .inputError {
-  font-size: xx-small;
+  font-size: small;
   color: var(--brand-maroon-dark);
   width: 90%;
   margin: 0 auto;

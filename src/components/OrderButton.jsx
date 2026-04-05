@@ -6,7 +6,7 @@ export default function OrderButton({ sendToKitchen }) {
             className="btn OrderButton"
             onClick={sendToKitchen}
         >
-            Send to Kitchen
+            Send Order to Kitchen 
         </button>
     );
 }

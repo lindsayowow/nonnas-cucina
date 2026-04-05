@@ -1,8 +1,10 @@
+// Ingredients.jsx
 import React from 'react';
 import '../styles/ingredients.css';
 import IngredientButton from './IngredientButton.jsx';
 import IngredientsData from '../data/ingredients.json';
 import ClearIngredientsButton from './ClearIngredientsButton.jsx';
+import DishButton from "./DishButton.jsx";
 import { categoryMap, inversionList, filterMap } from '../utils/constants.js';
 
 export default function Ingredients(props) {
@@ -43,9 +45,24 @@ export default function Ingredients(props) {
           </div>
         </div>
       ))}
-      <ClearIngredientsButton 
-      clearIngredients={props.clearIngredients}
-      selectedIngredients={props.selectedIngredients}/>
+
+      <div className="ingredient-actions">
+
+        <DishButton
+          className="build-action-button"
+          onClick={props.updateOrder}
+          disabled={props.selectedIngredients.length === 0}
+        >
+          Add to Order
+        </DishButton>
+
+        <ClearIngredientsButton
+          className="btn build-action-button"
+          clearIngredients={props.clearIngredients}
+          selectedIngredients={props.selectedIngredients}
+        />
+
+      </div>
     </div>
   );
 }
