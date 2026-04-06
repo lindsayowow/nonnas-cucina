@@ -2,7 +2,7 @@
   {
     "id": "burrata",
     "name": "Burrata",
-    "emoji": "🥚",
+    "emoji": "🤍",
     "category": "protein",
     "price": 3.25,
     "isVegan": false,
@@ -602,7 +602,7 @@
     {
     "id": "angel-hair",
     "name": "Angel Hair",
-    "emoji": "🍽️",
+    "emoji": "🌟",
     "category": "noodle",
     "price": 2.75,
     "isVegan": true,
@@ -626,7 +626,7 @@
   {
     "id": "fettuccini",
     "name": "Fettuccini",
-    "emoji": "🍽️",
+    "emoji": "🍥",
     "category": "noodle",
     "price": 2.75,
     "isVegan": true,
@@ -674,7 +674,7 @@
   {
     "id": "linguini",
     "name": "Linguini",
-    "emoji": "🍜",
+    "emoji": "➰",
     "category": "noodle",
     "price": 2.50,
     "isVegan": true,
@@ -842,7 +842,7 @@
     {
     "id": "alfredo-sauce",
     "name": "Alfredo Sauce",
-    "emoji": "🥛",
+    "emoji": "🍶",
     "category": "sauce",
     "price": 1.75,
     "isVegan": false,
