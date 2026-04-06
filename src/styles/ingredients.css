@@ -18,12 +18,11 @@ button.IngredientButton.selected {
 button.IngredientButton.is-disabled {
   background-color: var(--sage-lighter);
   color: var(--neutral-300) !important;
-  pointer-events: auto;
   cursor: not-allowed;
   text-decoration: line-through;
 }
 
-.IngredientButton.is-disabled .emoji {
+button.IngredientButton.is-disabled .emoji {
   opacity: 0.5;
   filter: none;
 }

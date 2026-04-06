@@ -8,24 +8,25 @@ export default function IngredientButton({
   triggerNonnaWarning
 }) {
   const handleClick = () => {
+    console.log('IngredientButton clicked. disabled =', disabled);
+
     if (disabled) {
-      // Fire Nonna’s temporary warning
+      console.log('Triggering Nonna warning');
       triggerNonnaWarning && triggerNonnaWarning();
       return;
     }
 
-    // Normal behavior
+    console.log('Toggling ingredient');
     onToggleIngredient(ingredient);
   };
 
   return (
-<button
-  className={`btn IngredientButton 
-    ${disabled ? "disabled" : ""} 
-    ${isSelected ? "selected" : ""}`}
-  onClick={handleClick}
-  disabled={disabled}
->
+    <button
+      className={`btn IngredientButton 
+        ${disabled ? "is-disabled" : ""} 
+        ${isSelected ? "selected" : ""}`}
+      onClick={handleClick}
+    >
       <span className="emoji">{ingredient.emoji}</span> {ingredient.name}
     </button>
   );
