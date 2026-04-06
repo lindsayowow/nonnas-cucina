@@ -57,6 +57,6 @@
         "state": "warning",
         "emoji": "👵😱",
         "image": "/assets/nonna-warning.png",
-        "message": "Warning message will be dynamically provided."
+        "message": "Oh no!  That ingredient is not compatible with your diet!"
     }
 ]
