@@ -1,3 +1,6 @@
+/* -------------------------------------------------------
+   FOOTER BASE LAYOUT
+------------------------------------------------------- */
 footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -8,19 +11,61 @@ footer {
   min-height: 90px;
   column-gap: 1.5rem;
   margin-top: auto;
+
+  /* Typography */
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-footer>a {
+/* -------------------------------------------------------
+   LEFT COLUMN — CONTACT LINK
+------------------------------------------------------- */
+footer > a {
   justify-self: start;
+  margin-left: 2.5rem;
   color: var(--color-text-inverse);
+  font-size: 1.25rem;
 }
 
+/* -------------------------------------------------------
+   CENTER COLUMN — TAGLINE
+------------------------------------------------------- */
 .tagline {
   grid-column: 2;
   text-align: center;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* no extra spacing */
 }
 
+/* Remove default paragraph spacing */
+.tagline p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Line 1 — safety message */
+.tagline-safety em {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Line 2 — year + site name */
+.tagline-year {
+  font-weight: 500;
+}
+
+/* Line 3 — designer credit */
+.tagline-credit {
+  font-size: smaller;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------
+   RIGHT COLUMN — ATTRIBUTIONS
+------------------------------------------------------- */
 .attributes {
   grid-column: 3;
   justify-self: end;
@@ -31,6 +76,9 @@ footer a {
   color: var(--color-text-inverse);
 }
 
+/* -------------------------------------------------------
+   RESPONSIVE LAYOUT
+------------------------------------------------------- */
 @media (max-width: 650px) {
   footer {
     grid-template-columns: 1fr;
@@ -38,16 +86,9 @@ footer a {
     row-gap: 0.5rem;
   }
 
-  footer>a,
+  footer > a,
   .tagline,
   .attributes {
     justify-self: center;
   }
-}
-
-footer {
-  font-family: "Palatino Linotype", Palatino, serif;
-  font-size: 1rem;
-  color: var(--surface-white);
-  font-weight: 500;
 }

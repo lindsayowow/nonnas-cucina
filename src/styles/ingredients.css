@@ -1,3 +1,6 @@
+/********************************************
+ * INGREDIENTS CONTAINER
+ ********************************************/
 .ingredientClass {
   min-width: 0;
   margin-bottom: 1.5rem;
@@ -8,6 +11,10 @@
   padding: 6px 0;
 }
 
+
+/********************************************
+ * INGREDIENT BUTTON STATES
+ ********************************************/
 button.IngredientButton.selected {
   background-color: black;
   color: var(--color-text-inverse);
@@ -27,7 +34,10 @@ button.IngredientButton.is-disabled .emoji {
   filter: none;
 }
 
-/* Container for the action buttons under ingredients */
+
+/********************************************
+ * ACTION BUTTONS (Add to Order / Clear)
+ ********************************************/
 .ingredient-actions {
   display: flex;
   justify-content: center;
@@ -35,7 +45,7 @@ button.IngredientButton.is-disabled .emoji {
   margin-top: 1rem;
 }
 
-/* ACTIVE STATE — stronger selector to override .btn */
+/* Active state — overrides .btn */
 button.build-action-button {
   background-color: var(--color-button-hover);
   border: 2px solid var(--color-button-hover);
@@ -53,7 +63,7 @@ button.build-action-button:hover {
   box-shadow: none;
 }
 
-/* DISABLED STATE — stronger selector to override .btn and parent containers */
+/* Disabled state — strong override */
 button.build-action-button:disabled {
   background-color: var(--olive-light);
   border: 2px solid var(--neutral-900);
@@ -73,4 +83,27 @@ button.build-action-button:disabled:hover {
   color: var(--neutral-500) !important;
   box-shadow: none;
   transform: none;
+}
+
+
+/********************************************
+ * CONFIRMATION MESSAGE (with fade-out)
+ ********************************************/
+.confirmation-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--olive-mid);     /* updated */
+  color: var(--neutral-900);              /* updated */
+  border-left: 4px solid var(--olive-dark);
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Fade-out class toggled by React */
+.confirmation-message.fade-out {
+  opacity: 0;
 }

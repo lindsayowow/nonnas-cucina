@@ -1,5 +1,4 @@
-// Ingredients.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/ingredients.css';
 import IngredientButton from './IngredientButton.jsx';
 import IngredientsData from '../data/ingredients.json';
@@ -8,6 +7,34 @@ import DishButton from "./DishButton.jsx";
 import { categoryMap, inversionList, filterMap } from '../utils/constants.js';
 
 export default function Ingredients(props) {
+  const [confirmationMessage, setConfirmationMessage] = useState("");
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const handleAddToOrder = () => {
+    const newDish = props.updateOrder();
+
+    if (newDish) {
+      setFadeOut(false);
+      setConfirmationMessage(
+        `Dish #${newDish.id} has been added to your order. You now have ${props.yourOrder.length} items in your cart.`
+      );
+
+      setTimeout(() => setFadeOut(true), 2500);
+      setTimeout(() => setConfirmationMessage(""), 3500);
+    }
+
+    props.clearIngredients();
+    props.resetFilters && props.resetFilters();
+
+    // ⭐ Scroll to Filters component
+    if (props.scrollToRef?.current) {
+      props.scrollToRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
+
   return (
     <div className="card ingredientClass">
       <h2 className="text-center">Choose Your Ingredients</h2>
@@ -48,10 +75,9 @@ export default function Ingredients(props) {
       ))}
 
       <div className="ingredient-actions">
-
         <DishButton
           className="build-action-button"
-          onClick={props.updateOrder}
+          onClick={handleAddToOrder}
           disabled={props.selectedIngredients.length === 0}
         >
           Add to Order
@@ -62,8 +88,13 @@ export default function Ingredients(props) {
           clearIngredients={props.clearIngredients}
           selectedIngredients={props.selectedIngredients}
         />
-
       </div>
+
+      {confirmationMessage && (
+        <div className={`confirmation-message ${fadeOut ? "fade-out" : ""}`}>
+          {confirmationMessage}
+        </div>
+      )}
     </div>
   );
 }

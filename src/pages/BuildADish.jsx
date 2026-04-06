@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/build-a-dish.css';
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
@@ -25,10 +25,14 @@ export default function BuildADish() {
     triggerNonnaWarning
   } = useDishBuilderContext();
 
+  // ⭐ These MUST be inside the component
+  const filtersRef = useRef(null);
+  const ingredientsScrollRef = useRef(null);
+
   return (
     <div className="build-container">
 
-      {/* DESKTOP NONNA (top-left column) */}
+      {/* DESKTOP NONNA */}
       <div className="section-0 desktop-only">
         <div className="nonna-container">
           <NonnaReaction />
@@ -36,13 +40,17 @@ export default function BuildADish() {
       </div>
 
       {/* FILTERS + INGREDIENTS */}
-      <div className="section-1">
-        <Filters
-          DietaryFilters={DietaryFilters}
-          selectedFilters={selectedFilters}
-          onToggleFilter={toggleFilter}
-          clearFilter={clearFilter}
-        />
+      <div className="section-1" ref={ingredientsScrollRef}>
+
+        {/* ⭐ Filters get the scroll target ref */}
+        <div ref={filtersRef}>
+          <Filters
+            DietaryFilters={DietaryFilters}
+            selectedFilters={selectedFilters}
+            onToggleFilter={toggleFilter}
+            clearFilter={clearFilter}
+          />
+        </div>
 
         <Ingredients
           selectedFilters={selectedFilters}
@@ -55,10 +63,15 @@ export default function BuildADish() {
           clearIngredients={clearIngredients}
           updateOrder={updateOrder}
           triggerNonnaWarning={triggerNonnaWarning}
+          resetFilters={clearFilter}
+          yourOrder={yourOrder}
+
+          // ⭐ Scroll to Filters
+          scrollToRef={filtersRef}
         />
       </div>
 
-      {/* DISH (desktop + mobile) */}
+      {/* DISH */}
       <div className="section-2">
         <div className="dish-container">
           <Dish
@@ -70,7 +83,7 @@ export default function BuildADish() {
           />
         </div>
 
-        {/* MOBILE NONNA (below dish) */}
+        {/* MOBILE NONNA */}
         <div className="mobile-only mobile-nonna">
           <NonnaReaction />
         </div>
