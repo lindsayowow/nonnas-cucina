@@ -624,8 +624,8 @@
         "textureFriendly": true
     },
     {
-        "id": "tomato-sauce",
-        "name": "Tomato",
+        "id": "Marinara",
+        "name": "Marinara",
         "emoji": "🥫",
         "category": "sauce",
         "price": 1.5,

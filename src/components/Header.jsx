@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../styles/header.css';
 import nonnasLogo from '../assets/Nonnas_Logo.png';
 import { useDishBuilderContext } from "../context/DishBuilderContext";
 
 export default function Header() {
-  const {yourOrder} = useDishBuilderContext();
-
+  const { yourOrder } = useDishBuilderContext();
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,10 +31,12 @@ export default function Header() {
 
         <div className="right">
           <nav className={`nav-links ${open ? "open" : ""}`}>
-            <Link to="/" onClick={() => setOpen(false)}>Home</Link>
-            <Link to="/buildadish" onClick={() => setOpen(false)}>Build a Dish</Link>
-            <Link to="/about" onClick={() => setOpen(false)}>About</Link>
-            <Link to="/cart" onClick={() => setOpen(false)}>🛒 ({yourOrder.length})</Link>
+            <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
+            <NavLink to="/buildadish" onClick={() => setOpen(false)}>Build a Dish</NavLink>
+            <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+            <NavLink to="/cart" onClick={() => setOpen(false)}>
+              🛒 ({yourOrder.length})
+            </NavLink>
           </nav>
         </div>
       </header>

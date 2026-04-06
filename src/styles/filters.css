@@ -25,6 +25,7 @@
   background-color: black;
   color: var(--color-text-inverse);
   font-weight: bolder;
+  outline: 2px solid rgba(220, 120, 120, 0.70);
 }
 
 .clearButton {

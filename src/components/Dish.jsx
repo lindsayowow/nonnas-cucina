@@ -27,17 +27,16 @@ export default function Dish({ selectedIngredients, totalPrice, updateOrder, rem
                     <ul className="activeIngredientsSelected">
                         {selectedIngredients.map(ingredient => (
                             <li key={ingredient.name}>
-                                <span>
+                                <RemoveIngredientButton
+                                    onRemove={() => removeIngredient(ingredient)}
+                                />
+                                <span className="ingredientText">
                                     {ingredient.emoji} {ingredient.name} –{" "}
                                     {new Intl.NumberFormat("en-US", {
                                         style: "currency",
                                         currency: "USD"
                                     }).format(ingredient.price)}
                                 </span>
-
-                                <RemoveIngredientButton
-                                    onRemove={() => removeIngredient(ingredient)}
-                                />
                             </li>
                         ))}
                     </ul>
