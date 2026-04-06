@@ -5,6 +5,7 @@ export default function useDishBuilder() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [yourOrder, setYourOrder] = useState([]);
+  const [showNonnaWarning, setShowNonnaWarning] = useState(false);
 
   function toggleFilter(filter) {
     setSelectedFilters(prev =>
@@ -77,6 +78,16 @@ export default function useDishBuilder() {
     );
   }
 
+  function triggerNonnaWarning() {
+  setShowNonnaWarning(true);
+
+  // Auto-clear after 1.2 seconds
+  setTimeout(() => {
+    setShowNonnaWarning(false);
+  }, 1200);
+}
+
+
   return {
     selectedFilters,
     selectedCategory,
@@ -84,6 +95,7 @@ export default function useDishBuilder() {
     totalPrice,
     yourOrder,
     grandTotal,
+    showNonnaWarning,
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
@@ -95,6 +107,8 @@ export default function useDishBuilder() {
     clearFilter,
     clearIngredients,
     removeIngredient,
-    removeDish
+    removeDish,
+    setShowNonnaWarning,
+    triggerNonnaWarning
   };
 }

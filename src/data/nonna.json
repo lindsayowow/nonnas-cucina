@@ -27,6 +27,13 @@
         "message": "Bene, bene! Keep going, you're doing wonderful!",
         "ingredientCount": 3
     },
+        {
+        "state": "almostThere",
+        "emoji": "👵✨",
+        "image": "/assets/nonna-almostThere.png",
+        "message": "Ah, I see where you're going with this! Add some more, tesoro!",
+        "ingredientCount": 4
+    },
     {
         "state": "happy",
         "emoji": "👵✨",

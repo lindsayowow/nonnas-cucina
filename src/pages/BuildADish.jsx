@@ -21,7 +21,8 @@ export default function BuildADish() {
     clearFilter,
     clearIngredients,
     removeIngredient,
-    yourOrder
+    yourOrder,
+    triggerNonnaWarning
   } = useDishBuilderContext();
 
   return (
@@ -53,6 +54,7 @@ export default function BuildADish() {
           onToggleIngredient={toggleIngredient}
           clearIngredients={clearIngredients}
           updateOrder={updateOrder}
+          triggerNonnaWarning={triggerNonnaWarning}
         />
       </div>
 

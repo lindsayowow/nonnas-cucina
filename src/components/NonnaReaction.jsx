@@ -1,8 +1,14 @@
 import React from 'react';
 import '../styles/nonna.css';
 import NonnaNeutral from '../assets/nonna-neutral.png';
+import { useDishBuilderContext } from '../context/DishBuilderContext';
 
 export default function NonnaReaction() {
+    const {
+        selectedIngredients,
+        showNonnaWarning
+    } = useDishBuilderContext();
+
     return (
         <div className="card nonna">
             <h2 className="text-center">Verify Your Selections</h2>
@@ -14,7 +20,8 @@ export default function NonnaReaction() {
             />
 
             <p className="text-center">
-                {/* Placeholder for Nonna’s sayings */}
+                You have {selectedIngredients.length} ingredients in your dish.
+                {showNonnaWarning && " (⚠️ Warning active)"}
             </p>
         </div>
     );

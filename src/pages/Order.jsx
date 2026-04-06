@@ -29,7 +29,8 @@ export default function Order() {
             <ul className="activeOrder">
               {yourOrder.map(dish => (
                 <li key={dish.id}>
-                  <span>
+                  <RemoveDishButton onRemoveDish={() => removeDish(dish)} />
+                  <span className="ingredientText">
                     Dish {dish.id}:{" "}
                     {dish.ingredients
                       .map(ing => `${ing.emoji} ${ing.name}`)
@@ -40,8 +41,6 @@ export default function Order() {
                       currency: "USD"
                     }).format(dish.totalcost)}
                   </span>
-
-                  <RemoveDishButton onRemoveDish={() => removeDish(dish)} />
                 </li>
               ))}
             </ul>

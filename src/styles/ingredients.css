@@ -8,28 +8,24 @@
   padding: 6px 0;
 }
 
-/* Ingredient button states */
-.IngredientButton.selected {
+button.IngredientButton.selected {
   background-color: black;
   color: var(--color-text-inverse);
   font-weight: bolder;
+  outline: 2px solid rgba(220, 120, 120, 0.70);
 }
 
-.IngredientButton:disabled {
+button.IngredientButton.is-disabled {
   background-color: var(--sage-lighter);
-  color: var(--neutral-500);
+  color: var(--neutral-300) !important;
   pointer-events: auto;
   cursor: not-allowed;
+  text-decoration: line-through;
 }
 
-.IngredientButton:disabled .emoji {
+.IngredientButton.is-disabled .emoji {
   opacity: 0.5;
   filter: none;
-}
-
-.IngredientButton:disabled:hover {
-  background-color: var(--sage-lighter);
-  color: var(--neutral-500) !important;
 }
 
 /* Container for the action buttons under ingredients */
@@ -65,7 +61,7 @@ button.build-action-button:disabled {
   padding: 10px;
   align-items: center;
   margin-top: 1rem;
-  color: var(--neutral-500) !important;
+  color: var(--neutral-300) !important;
   cursor: not-allowed;
   box-shadow: none;
   transform: none;

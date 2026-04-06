@@ -39,6 +39,7 @@ export default function Ingredients(props) {
                     onToggleIngredient={props.onToggleIngredient}
                     isSelected={isSelected}
                     disabled={disabled}
+                    triggerNonnaWarning={props.triggerNonnaWarning}
                   />
                 );
               })}

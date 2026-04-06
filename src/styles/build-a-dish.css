@@ -84,15 +84,6 @@ h3 {
   padding: 12px 8px !important;
 }
 
-/* Dish text */
-.dish ul,
-.dish li,
-.dish .empty {
-  font-family: var(--readable-font);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
 /* -------------------------------------------------- */
 /* DESKTOP STICKY BEHAVIOR                            */
 /* -------------------------------------------------- */
