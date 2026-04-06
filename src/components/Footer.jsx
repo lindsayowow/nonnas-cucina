@@ -13,9 +13,16 @@ export default function Footer() {
       <Link to="/about#contact">Contact Us</Link>
 
       <div className="tagline">
-        <p>
-          &copy; 2026 Nonna's Cucina <br />
+        <p className="tagline-safety">
           <em>Making ordering safer for families with dietary needs</em>
+        </p>
+
+        <p className="tagline-year">
+          &copy; 2026 Nonna's Cucina
+        </p>
+
+        <p className="tagline-credit">
+          site designed by Lindsay Webb
         </p>
       </div>
 

@@ -34,18 +34,20 @@ export default function useDishBuilder() {
   }
 
   function updateOrder() {
-    const yourDish = {
+    const newDish = {
       id: getNextDishId(),
       ingredients: selectedIngredients,
-      totalcost: totalPrice
+      totalCost: totalPrice
     };
 
-    setYourOrder(prev => [...prev, yourDish]);
+    setYourOrder(prev => [...prev, newDish]);
     setSelectedIngredients([]);
+    return newDish;
   }
 
+  // ⭐ FIXED: totalCost is now consistent everywhere
   const total = yourOrder.reduce((sum, item) => {
-    return sum + (item.totalcost || 0);
+    return sum + (item.totalCost || 0);
   }, 0);
 
   const grandTotal = new Intl.NumberFormat("en-US", {
@@ -56,6 +58,7 @@ export default function useDishBuilder() {
   function sendToKitchen() {
     setYourOrder([]);
     setSelectedIngredients([]);
+    setSelectedFilters([]);
   }
 
   function clearFilter() {
@@ -79,14 +82,13 @@ export default function useDishBuilder() {
   }
 
   function triggerNonnaWarning() {
-  setShowNonnaWarning(true);
+    setShowNonnaWarning(true);
 
-  // Auto-clear after 1.2 seconds
-  setTimeout(() => {
-    setShowNonnaWarning(false);
-  }, 1200);
-}
-
+    // Auto-clear after 1.2 seconds
+    setTimeout(() => {
+      setShowNonnaWarning(false);
+    }, 1200);
+  }
 
   return {
     selectedFilters,

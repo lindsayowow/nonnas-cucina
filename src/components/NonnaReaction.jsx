@@ -105,7 +105,9 @@ export default function NonnaReaction() {
                     className={`nonnaNeutral ${showNonnaWarning ? "nonnaNeutral--shake" : ""}`}
                 />
             </div>
-
+            <div className="nonna-cart-message">
+                You now have {yourOrder.length} items in your cart.
+            </div>
         </div>
     );
 }

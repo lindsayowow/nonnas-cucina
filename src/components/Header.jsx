@@ -11,15 +11,20 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <img
-          src={nonnasLogo}
-          alt="Nonna's Kitchen logo showing a drawing of a white-haired grandmother cooking in a kitchen"
-          className="logo"
-        />
+        <NavLink to="/" onClick={() => setOpen(false)}>
+          <img
+            src={nonnasLogo}
+            alt="Nonna's Kitchen logo showing a drawing of a white-haired grandmother cooking in a kitchen"
+            className="logo"
+          />
+        </NavLink>
 
         <div className="nonna-font middle">
-          <h1 className="title">Nonna's Cucina</h1>
+          <NavLink to="/" onClick={() => setOpen(false)}>
+            <h1 className="title">Nonna's Cucina</h1>
+          </NavLink>
         </div>
+
 
         <button
           className="hamburger"

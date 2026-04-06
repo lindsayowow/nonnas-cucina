@@ -14,49 +14,66 @@ export default function Order() {
     grandTotal
   } = useDishBuilderContext();
 
-  return (
-    <div className="order-page">
-      <div className="card order">
-        <h2 className="text-center">Your Order</h2>
+  const [kitchenMessage, setKitchenMessage] = React.useState("");
 
-        {yourOrder.length === 0 ? (
-          <div className="emptyOrder text-center">
-            <p className="clipboardEmoji">📋</p>
-            <p>Your order is empty.</p>
-          </div>
-        ) : (
-          <div>
-            <ul className="activeOrder">
-              {yourOrder.map(dish => (
-                <li key={dish.id}>
-                  <RemoveDishButton onRemoveDish={() => removeDish(dish)} />
-                  <span className="ingredientText">
-                    Dish {dish.id}:{" "}
-                    {dish.ingredients
-                      .map(ing => `${ing.emoji} ${ing.name}`)
-                      .join(", ")}
-                    {" — "}
-                    {new Intl.NumberFormat("en-US", {
-                      style: "currency",
-                      currency: "USD"
-                    }).format(dish.totalcost)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="costSummary text-bold text-center">
-              Total Order cost: {grandTotal}
-            </p>
-          </div>
-        )}
-        <Link to="/buildadish">
-          <DishButton>
-            Add Another Dish
-          </DishButton>
-        </Link>
-        <br></br>
-        <OrderButton sendToKitchen={sendToKitchen} />
-      </div>
+  const handleSendToKitchen = () => {
+    sendToKitchen();
+    setKitchenMessage("Your order has been sent to Nonna's Kitchen!");
+  };
+
+return (
+  <div className="order-page">
+    <div className="card order">
+      <h2 className="text-center">Your Order</h2>
+
+      {/* ⭐ Move confirmation message here */}
+      {kitchenMessage && (
+        <div className="kitchen-confirmation">
+          {kitchenMessage}
+        </div>
+      )}
+
+      {yourOrder.length === 0 ? (
+        <div className="emptyOrder text-center">
+          <p className="clipboardEmoji">📋</p>
+          <p>Your order is empty.</p>
+        </div>
+      ) : (
+        <div>
+          <ul className="activeOrder">
+            {yourOrder.map(dish => (
+              <li key={dish.id}>
+                <RemoveDishButton onRemoveDish={() => removeDish(dish)} />
+                <span className="ingredientText">
+                  Dish {dish.id}:{" "}
+                  {dish.ingredients
+                    .map(ing => `${ing.emoji} ${ing.name}`)
+                    .join(", ")}
+                  {" — "}
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD"
+                  }).format(dish.totalCost)}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="costSummary text-bold text-center">
+            Total Order cost: {grandTotal}
+          </p>
+        </div>
+      )}
+
+      <Link to="/buildadish">
+        <DishButton>
+          Add Another Dish
+        </DishButton>
+      </Link>
+
+      <br />
+
+      <OrderButton sendToKitchen={handleSendToKitchen} />
     </div>
-  );
+  </div>
+);
 }
