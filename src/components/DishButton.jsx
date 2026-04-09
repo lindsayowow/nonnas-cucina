@@ -11,6 +11,7 @@ export default function DishButton({
       className={`btn ${className}`.trim()}
       onClick={onClick}
       disabled={disabled}
+      aria-disabled={disabled} 
     >
       {children}
     </button>

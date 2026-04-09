@@ -1,53 +1,84 @@
+/********************************************
+ * DISH CONTAINER
+ ********************************************/
 .dish {
-    min-width: 225px;
+  min-width: 225px;
+  padding-left: 0.35rem;  /* tighter */
+  padding-right: 0.35rem;
 }
 
-.dishTotal {
-    font-weight: bold;
-    text-align: center;
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 2px solid var(--olive-dark);
+.empty {
+  text-align: center;
 }
 
 .dishEmoji {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
+
+/********************************************
+ * INGREDIENT LIST
+ ********************************************/
+.activeIngredientsSelected {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.activeIngredientsSelected li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+  gap: 0.5rem; /* ensures spacing between text + trash */
+}
+
+/* Ingredient text block */
+.ingredientText {
+  flex: 1;
+  text-align: left;
+  padding-right: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Smaller emoji */
+.ingredientEmoji {
+  font-size: 1.1rem; /* was ~1.3–1.4 visually */
+  line-height: 1;
+}
+
+/* Reduce left padding even more */
 .dish ul {
   margin-left: 0;
-  padding-left: 1rem; /* optional, for bullet spacing */
+  padding-left: 0.1rem; /* almost flush */
   width: 100%;
-  display: block;
+}
+
+@media (min-width: 900px) {
+  .dish ul {
+    padding-left: 0.2rem; /* still minimal */
+  }
 }
 
 .dish ul,
 .dish li {
   font-family: var(--readable-font);
   font-size: 1rem;
-  line-height: 1.5;
-  text-align: left;
-  /* width: 100%; */
+  line-height: 1.45; /* slightly tighter */
 }
 
-.ingredientText {
-  text-align: left;
-  flex: 1; 
-}
 
-.activeIngredientsSelected {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.activeIngredientsSelected li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-}
-
-.empty {
-    text-align: center;
+/********************************************
+ * TOTAL + BUTTONS
+ ********************************************/
+.dishTotal {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--olive-dark);
 }
 
 .dish button {
@@ -55,24 +86,21 @@
   margin: 0.75rem auto 0 auto;
 }
 
+
+/********************************************
+ * REMOVE INGREDIENT BUTTON (now on the right)
+ ********************************************/
 .removeIngredientButton {
-  all: unset; 
-  background-color: black;
-  color: white;
-  width: 10px;
-  height: 10px;
-  font-size: 7px;
-  line-height: 10px;
-  text-align: center;
-  border-radius: 2px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 8px;
+  padding: 2px;
+  opacity: 0.55;        /* subtle */
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-
 .removeIngredientButton:hover {
-  background-color: var(--neutral-700);
+  transform: scale(1.15);
+  opacity: 0.9;
 }
