@@ -1,6 +1,4 @@
-/********************************************
- * DISH LAYOUT (desktop/tablet min-height)
- ********************************************/
+/* TABLET AND DESKTOP MIN HEIGHT */
 @media (min-width: 700px) {
   .card.dish {
     min-height: 70vh;
@@ -9,30 +7,21 @@
   }
 }
 
-/********************************************
- * DISH CONTAINER
- ********************************************/
 .dish {
   min-width: 225px;
   padding-left: 0.35rem;
   padding-right: 0.35rem;
 }
 
-/********************************************
- * CONTENT AREA
- ********************************************/
 .dish-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* empty state or UL starts under header */
+  justify-content: flex-start; 
   align-items: center;
   padding-top: 0.5rem;
 }
 
-/********************************************
- * EMPTY STATE
- ********************************************/
 .empty {
   text-align: center;
   margin-top: 1rem;
@@ -42,9 +31,6 @@
   font-size: 3rem;
 }
 
-/********************************************
- * INGREDIENT LIST
- ********************************************/
 .activeIngredientsSelected {
   list-style-type: none;
   padding-left: 0;
@@ -93,9 +79,6 @@
   line-height: 1.45;
 }
 
-/********************************************
- * TOTAL + BUTTONS
- ********************************************/
 .dishTotal {
   font-weight: bold;
   text-align: center;
@@ -109,9 +92,6 @@
   margin: 0.75rem auto 0 auto;
 }
 
-/********************************************
- * REMOVE INGREDIENT BUTTON
- ********************************************/
 .removeIngredientButton {
   background: none;
   border: none;
@@ -127,9 +107,6 @@
   opacity: 0.9;
 }
 
-/********************************************
- * DISH BUTTONS — OVERRIDE .btn INSIDE DISH CARD
- ********************************************/
 .card.dish .btn:not(:disabled) {
   background-color: var(--olive-dark) !important;
   color: white !important;
@@ -152,26 +129,20 @@
   box-shadow: none !important;
 }
 
-/********************************************
- * MOBILE FIX — SHRINK DISH CARD NATURALLY
- ********************************************/
+/* MOBILE STYLING */
 @media (max-width: 699px) {
-
-  /* Remove forced height + flex layout */
   .card.dish {
-    min-height: 0 !important;     /* Firefox-safe reset */
+    min-height: 0 !important;    
     height: auto !important;
     display: block !important;
   }
 
-  /* Stop content from stretching the card */
   .dish-content {
     flex: none !important;
     display: block !important;
     padding-top: 0.25rem;
   }
 
-  /* Bring emoji right under header */
   .empty {
     margin-top: 0.25rem !important;
   }

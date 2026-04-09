@@ -1,6 +1,3 @@
-/********************************************
- * DESKTOP GRID LAYOUT
- ********************************************/
 .build-container {
   display: grid;
   grid-template-columns: 1fr 3.8fr 1fr;
@@ -27,10 +24,6 @@
   padding-inline: 0.75rem;
 }
 
-
-/********************************************
- * TYPOGRAPHY
- ********************************************/
 h2 {
   margin-top: 0.5rem;
   padding: 10px;
@@ -41,10 +34,6 @@ h3 {
   text-align: center;
 }
 
-
-/********************************************
- * BUTTONS (shared sizing only)
- ********************************************/
 .build-container button {
   font-size: 1rem;
   padding: 0.3rem 0.6rem;
@@ -60,10 +49,6 @@ h3 {
   line-height: 1;
 }
 
-
-/********************************************
- * CARD SPACING
- ********************************************/
 .build-container .card {
   padding-top: 1.1rem;
 }
@@ -72,10 +57,6 @@ h3 {
   padding: 12px 8px !important;
 }
 
-
-/********************************************
- * STICKY PANELS (desktop/tablet)
- ********************************************/
 .dish-container,
 .nonna-container {
   position: sticky;
@@ -88,10 +69,6 @@ h3 {
   margin-bottom: 0.75rem;
 }
 
-
-/********************************************
- * VISIBILITY HELPERS
- ********************************************/
 .desktop-only {
   display: block;
 }
@@ -100,10 +77,6 @@ h3 {
   display: none;
 }
 
-
-/********************************************
- * MOBILE LAYOUT
- ********************************************/
 @media (max-width: 600px) {
 
   .build-container {
@@ -133,5 +106,26 @@ h3 {
 
   .mobile-nonna {
     margin-top: 1rem;
+    transition: transform 0.4s ease;
   }
-}
+
+  /* SLIDE-UP ANIMATION WHEN WARNING TRIGGERS, left code in for future use */
+  /* .mobile-nonna--warning {
+    animation: nonnaSlideUp 1s ease forwards;
+  } */
+
+  /* @keyframes nonnaSlideUp {
+    0% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-40px);
+    }
+    80% {
+      transform: translateY(-40px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  } */
+} 

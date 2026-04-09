@@ -3,13 +3,14 @@ import "../styles/bio.css";
 
 export default function Bio() {
   return (
-    <div className="about-section card bio">
+    <section className="about-section card bio">
       <div className="bio-inner">
+
         <h2 className="text-center">About the Developer</h2>
 
         <img
           src={profilePic}
-          alt="A middle-aged woman wearing glasses and a white suit with long brown hair"
+          alt="Portrait of Lindsay Webb, software development student"
           className="proPic"
         />
 
@@ -27,19 +28,22 @@ export default function Bio() {
             href="https://github.com/lindsayowow"
             target="_blank"
             rel="noreferrer"
+            className="btn"
           >
-            <button className="btn">GitHub</button>
+            GitHub
           </a>
 
           <a
             href="https://www.linkedin.com/in/lindsay-webb/"
             target="_blank"
             rel="noreferrer"
+            className="btn"
           >
-            <button className="btn">LinkedIn</button>
+            LinkedIn
           </a>
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }

@@ -24,7 +24,8 @@ export default function BuildADish() {
     clearIngredients,
     removeIngredient,
     yourOrder,
-    triggerNonnaWarning
+    triggerNonnaWarning,
+    addDishAAndReset
   } = useDishBuilderContext();
 
   const filtersRef = useRef(null);
@@ -76,6 +77,7 @@ export default function BuildADish() {
             updateOrder={updateOrder}
             removeIngredient={removeIngredient}
             yourOrder={yourOrder}
+            addDishAAndReset={addDishAAndReset}
           />
         </div>
 
