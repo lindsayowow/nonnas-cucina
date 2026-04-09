@@ -1,20 +1,46 @@
 /********************************************
+ * DISH LAYOUT (desktop/tablet min-height)
+ ********************************************/
+@media (min-width: 700px) {
+  .card.dish {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/********************************************
  * DISH CONTAINER
  ********************************************/
 .dish {
   min-width: 225px;
-  padding-left: 0.35rem;  /* tighter */
+  padding-left: 0.35rem;
   padding-right: 0.35rem;
 }
 
+/********************************************
+ * CONTENT AREA
+ ********************************************/
+.dish-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* empty state or UL starts under header */
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+/********************************************
+ * EMPTY STATE
+ ********************************************/
 .empty {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .dishEmoji {
   font-size: 3rem;
 }
-
 
 /********************************************
  * INGREDIENT LIST
@@ -23,6 +49,7 @@
   list-style-type: none;
   padding-left: 0;
   margin: 0;
+  width: 100%;
 }
 
 .activeIngredientsSelected li {
@@ -30,10 +57,9 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.45rem;
-  gap: 0.5rem; /* ensures spacing between text + trash */
+  gap: 0.5rem;
 }
 
-/* Ingredient text block */
 .ingredientText {
   flex: 1;
   text-align: left;
@@ -43,22 +69,20 @@
   gap: 0.35rem;
 }
 
-/* Smaller emoji */
 .ingredientEmoji {
-  font-size: 1.1rem; /* was ~1.3–1.4 visually */
+  font-size: 1rem;
   line-height: 1;
 }
 
-/* Reduce left padding even more */
 .dish ul {
   margin-left: 0;
-  padding-left: 0.1rem; /* almost flush */
+  padding-left: 0.1rem;
   width: 100%;
 }
 
 @media (min-width: 900px) {
   .dish ul {
-    padding-left: 0.2rem; /* still minimal */
+    padding-left: 0.2rem;
   }
 }
 
@@ -66,9 +90,8 @@
 .dish li {
   font-family: var(--readable-font);
   font-size: 1rem;
-  line-height: 1.45; /* slightly tighter */
+  line-height: 1.45;
 }
-
 
 /********************************************
  * TOTAL + BUTTONS
@@ -86,9 +109,8 @@
   margin: 0.75rem auto 0 auto;
 }
 
-
 /********************************************
- * REMOVE INGREDIENT BUTTON (now on the right)
+ * REMOVE INGREDIENT BUTTON
  ********************************************/
 .removeIngredientButton {
   background: none;
@@ -96,7 +118,7 @@
   font-size: 1.1rem;
   cursor: pointer;
   padding: 2px;
-  opacity: 0.55;        /* subtle */
+  opacity: 0.55;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 

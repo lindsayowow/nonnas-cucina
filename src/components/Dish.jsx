@@ -17,19 +17,13 @@ export default function Dish({
     <div className="card dish">
       <h2 className="text-center">Your Dish</h2>
 
-      {selectedIngredients.length === 0 ? (
-        <div className="empty text-center">
-          <p className="dishEmoji">🍽️</p>
-          <p>Your current dish is empty.</p>
-
-          <Link to="/cart">
-            <DishButton>
-              Go to Cart 🛒 ({cartCount})
-            </DishButton>
-          </Link>
-        </div>
-      ) : (
-        <div>
+      <div className="dish-content">
+        {selectedIngredients.length === 0 ? (
+          <div className="empty">
+            <p className="dishEmoji">🍽️</p>
+            <p>Your current dish is empty.</p>
+          </div>
+        ) : (
           <ul className="activeIngredientsSelected">
             {selectedIngredients.map((ingredient) => (
               <li key={ingredient.name}>
@@ -47,32 +41,33 @@ export default function Dish({
                   onRemove={removeIngredient}
                 />
               </li>
-
             ))}
           </ul>
+        )}
+      </div>
 
-          <p className="dishTotal text-bold text-center">
-            Order total:{" "}
-            {new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD"
-            }).format(totalPrice)}
-          </p>
-
-          <DishButton
-            onClick={updateOrder}
-            disabled={selectedIngredients.length === 0}
-          >
-            Add to Order
-          </DishButton>
-
-          <Link to="/cart">
-            <DishButton>
-              Go to Cart 🛒 ({cartCount})
-            </DishButton>
-          </Link>
-        </div>
+      {selectedIngredients.length > 0 && (
+        <p className="dishTotal text-bold text-center">
+          Order total:{" "}
+          {new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+          }).format(totalPrice)}
+        </p>
       )}
+
+      <DishButton
+        onClick={updateOrder}
+        disabled={selectedIngredients.length === 0}
+      >
+        Add to Order
+      </DishButton>
+
+      <Link to="/cart">
+        <DishButton>
+          Go to Cart 🛒 ({cartCount})
+        </DishButton>
+      </Link>
     </div>
   );
 }
