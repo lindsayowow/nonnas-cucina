@@ -9,42 +9,37 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <header className="header">
+    <header className="header">
+      <NavLink to="/" onClick={() => setOpen(false)}>
+        <img
+          src={nonnasLogo}
+          alt="Nonna's Kitchen logo showing a drawing of a white-haired grandmother cooking in a kitchen"
+          className="logo"
+        />
+      </NavLink>
+
+      <div className="nonna-font middle">
         <NavLink to="/" onClick={() => setOpen(false)}>
-          <img
-            src={nonnasLogo}
-            alt="Nonna's Kitchen logo showing a drawing of a white-haired grandmother cooking in a kitchen"
-            className="logo"
-          />
+          <h1 className="title">Nonna's Cucina</h1>
         </NavLink>
+      </div>
 
-        <div className="nonna-font middle">
-          <NavLink to="/" onClick={() => setOpen(false)}>
-            <h1 className="title">Nonna's Cucina</h1>
-          </NavLink>
-        </div>
+      <button
+        className="hamburger"
+        aria-label="Toggle menu"
+        onClick={() => setOpen(!open)}
+      >
+        ☰
+      </button>
 
-
-        <button
-          className="hamburger"
-          aria-label="Toggle menu"
-          onClick={() => setOpen(!open)}
-        >
-          ☰
-        </button>
-
-        <div className="right">
-          <nav className={`nav-links ${open ? "open" : ""}`}>
-            <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-            <NavLink to="/buildadish" onClick={() => setOpen(false)}>Build a Dish</NavLink>
-            <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-            <NavLink to="/cart" onClick={() => setOpen(false)}>
-              🛒 ({yourOrder.length})
-            </NavLink>
-          </nav>
-        </div>
-      </header>
-    </>
+      <nav className={`nav-links ${open ? "open" : ""}`}>
+        <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
+        <NavLink to="/buildadish" onClick={() => setOpen(false)}>Build a Dish</NavLink>
+        <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
+        <NavLink to="/cart" onClick={() => setOpen(false)}>
+          🛒 ({yourOrder.length})
+        </NavLink>
+      </nav>
+    </header>
   );
 }

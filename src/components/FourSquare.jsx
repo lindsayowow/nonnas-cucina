@@ -1,22 +1,12 @@
 import React from 'react';
 import '../styles/four-square.css';
 import squareData from "../data/squareData.json";
-import useInView from "../hooks/useInView";
 
 export default function FourSquare() {
-  const [gridRef, inView] = useInView({ threshold: 0.75 });
-
   return (
-    <div
-      ref={gridRef}
-      className={`foursquare-grid readable-font ${inView ? "animate-sequence" : ""}`}
-    >
+    <div className="foursquare-grid readable-font">
       {squareData.map((item, index) => (
-        <div
-          key={index}
-          className={`square ${inView ? "animate" : ""}`}
-          style={{ animationDelay: `${index * 2}s` }}
-        >
+        <div key={index} className="square">
           <p className="icon">{item.icon}</p>
           <h4>{item.title}</h4>
           <p>{item.text}</p>
