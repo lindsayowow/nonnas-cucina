@@ -1,6 +1,3 @@
-/* ------------------------------------------------------
-   FILTER CONTAINER
------------------------------------------------------- */
 .filterClass {
   padding: 4px;
   min-width: 0;
@@ -12,9 +9,6 @@
   text-align: center;
 }
 
-/* ------------------------------------------------------
-   FILTER BUTTON GROUP
------------------------------------------------------- */
 .filterButtons {
   display: flex;
   flex-wrap: wrap;
@@ -23,15 +17,6 @@
   padding: 0;
 }
 
-/* (Optional) Line break element — keep only if you plan to use it later */
-.break {
-  flex-basis: 100%;
-  height: 0;
-}
-
-/* ------------------------------------------------------
-   INDIVIDUAL FILTER BUTTONS
------------------------------------------------------- */
 .FilterButton.active {
   background-color: black;
   color: var(--color-text-inverse);
@@ -39,9 +24,6 @@
   outline: 2px solid rgba(220, 120, 120, 0.70);
 }
 
-/* ------------------------------------------------------
-   CLEAR FILTER BUTTON
------------------------------------------------------- */
 .clearButtons {
   display: flex;
   justify-content: center;
@@ -58,6 +40,6 @@
 .clearButton:disabled {
   background-color: var(--olive-light);
   border: var(--olive-light);
-  color: var(--neutral-500);
+  color: white;
   cursor: not-allowed;
 }

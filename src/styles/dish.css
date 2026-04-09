@@ -126,3 +126,53 @@
   transform: scale(1.15);
   opacity: 0.9;
 }
+
+/********************************************
+ * DISH BUTTONS — OVERRIDE .btn INSIDE DISH CARD
+ ********************************************/
+.card.dish .btn:not(:disabled) {
+  background-color: var(--olive-dark) !important;
+  color: white !important;
+  border: 2px solid var(--olive-dark) !important;
+}
+
+.card.dish .btn:disabled {
+  background-color: var(--olive-light) !important;
+  color: white !important;
+  border: 2px solid var(--olive-light) !important;
+  cursor: not-allowed;
+  opacity: 0.95;
+}
+
+.card.dish .btn:disabled:hover {
+  background-color: var(--olive-light) !important;
+  color: white !important;
+  border-color: var(--olive-light) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/********************************************
+ * MOBILE FIX — SHRINK DISH CARD NATURALLY
+ ********************************************/
+@media (max-width: 699px) {
+
+  /* Remove forced height + flex layout */
+  .card.dish {
+    min-height: 0 !important;     /* Firefox-safe reset */
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* Stop content from stretching the card */
+  .dish-content {
+    flex: none !important;
+    display: block !important;
+    padding-top: 0.25rem;
+  }
+
+  /* Bring emoji right under header */
+  .empty {
+    margin-top: 0.25rem !important;
+  }
+}

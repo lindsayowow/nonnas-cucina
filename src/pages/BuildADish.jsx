@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import '../styles/build-a-dish.css';
+
 import NonnaReaction from '../components/NonnaReaction.jsx';
 import Filters from '../components/Filters.jsx';
 import Ingredients from '../components/Ingredients.jsx';
 import Dish from '../components/Dish.jsx';
+
 import { DietaryFilters, Categories } from '../utils/constants.js';
 import { useDishBuilderContext } from "../context/DishBuilderContext";
 
@@ -25,9 +27,7 @@ export default function BuildADish() {
     triggerNonnaWarning
   } = useDishBuilderContext();
 
-  // ⭐ These MUST be inside the component
   const filtersRef = useRef(null);
-  const ingredientsScrollRef = useRef(null);
 
   return (
     <div className="build-container">
@@ -40,9 +40,7 @@ export default function BuildADish() {
       </div>
 
       {/* FILTERS + INGREDIENTS */}
-      <div className="section-1" ref={ingredientsScrollRef}>
-
-        {/* ⭐ Filters get the scroll target ref */}
+      <div className="section-1">
         <div ref={filtersRef}>
           <Filters
             DietaryFilters={DietaryFilters}
@@ -65,8 +63,6 @@ export default function BuildADish() {
           triggerNonnaWarning={triggerNonnaWarning}
           resetFilters={clearFilter}
           yourOrder={yourOrder}
-
-          // ⭐ Scroll to Filters
           scrollToRef={filtersRef}
         />
       </div>

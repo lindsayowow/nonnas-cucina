@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/order.css';
+
 import OrderButton from '../components/OrderButton';
 import RemoveDishButton from '../components/RemoveDishButton';
 import DishButton from '../components/DishButton';
+
 import { useDishBuilderContext } from "../context/DishBuilderContext";
 
 export default function Order() {
@@ -21,59 +23,74 @@ export default function Order() {
     setKitchenMessage("Your order has been sent to Nonna's Kitchen!");
   };
 
-return (
-  <div className="order-page">
-    <div className="card order">
-      <h2 className="text-center">Your Order</h2>
+  return (
+    <div className="order-page">
+      <div className="card order">
+        <h2 className="text-center">Your Order</h2>
 
-      {/* ⭐ Move confirmation message here */}
-      {kitchenMessage && (
-        <div className="kitchen-confirmation">
-          {kitchenMessage}
-        </div>
-      )}
+        {kitchenMessage && (
+          <div className="kitchen-confirmation">
+            {kitchenMessage}
+          </div>
+        )}
 
-      {yourOrder.length === 0 ? (
-        <div className="emptyOrder text-center">
-          <p className="clipboardEmoji">📋</p>
-          <p>Your order is empty.</p>
-        </div>
-      ) : (
-        <div>
-          <ul className="activeOrder">
-            {yourOrder.map(dish => (
-              <li key={dish.id}>
-                <RemoveDishButton onRemoveDish={() => removeDish(dish)} />
-                <span className="ingredientText">
-                  Dish {dish.id}:{" "}
-                  {dish.ingredients
-                    .map(ing => `${ing.emoji} ${ing.name}`)
-                    .join(", ")}
-                  {" — "}
-                  {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD"
-                  }).format(dish.totalCost)}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <p className="costSummary text-bold text-center">
-            Total Order cost: {grandTotal}
-          </p>
-        </div>
-      )}
+        {yourOrder.length === 0 ? (
+          <div className="emptyOrder text-center">
+            <p className="clipboardEmoji">📋</p>
+            <p>Your current order is empty.</p>
+          </div>
+        ) : (
+          <div>
+            <ul className="activeOrder">
+              {yourOrder.map(dish => {
+                const emojis = dish.ingredients.map(ing => ing.emoji).join(" ");
+                const names = dish.ingredients.map(ing => ing.name).join(", ");
 
-      <Link to="/buildadish">
-        <DishButton>
-          Add Another Dish
-        </DishButton>
-      </Link>
+                return (
+                  <li key={dish.id}>
+                    <div className="dishInfo">
+                      <div className="dishLine">
+                        <strong>Dish {dish.id}</strong>
+                      </div>
 
-      <br />
+                      <div className="dishLine">
+                        {emojis}
+                      </div>
 
-      <OrderButton sendToKitchen={handleSendToKitchen} />
+                      <div className="dishLine">
+                        {names}
+                      </div>
+
+                      <div className="dishLine">
+                        {new Intl.NumberFormat("en-US", {
+                          style: "currency",
+                          currency: "USD"
+                        }).format(dish.totalCost)}
+                      </div>
+                    </div>
+
+                    <RemoveDishButton
+                      onRemoveDish={() => removeDish(dish)}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+
+            <p className="costSummary text-bold text-center">
+              Total Order cost: {grandTotal}
+            </p>
+          </div>
+        )}
+
+        <Link to="/buildadish">
+          <DishButton>
+            Add Another Dish
+          </DishButton>
+        </Link>
+
+        <OrderButton sendToKitchen={handleSendToKitchen} />
+      </div>
     </div>
-  </div>
-);
+  );
 }
