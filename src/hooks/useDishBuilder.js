@@ -6,6 +6,7 @@ export default function useDishBuilder() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [yourOrder, setYourOrder] = useState([]);
   const [showNonnaWarning, setShowNonnaWarning] = useState(false);
+  // const [nonnaWarning, setNonnaWarning] = useState(false);        // future use
 
   function toggleFilter(filter) {
     setSelectedFilters(prev =>
@@ -45,7 +46,6 @@ export default function useDishBuilder() {
     return newDish;
   }
 
-  // ⭐ FIXED: totalCost is now consistent everywhere
   const total = yourOrder.reduce((sum, item) => {
     return sum + (item.totalCost || 0);
   }, 0);
@@ -81,14 +81,23 @@ export default function useDishBuilder() {
     );
   }
 
-  function triggerNonnaWarning() {
-    setShowNonnaWarning(true);
+  function addDishAndReset() {
+  const newDish = updateOrder();
+  clearIngredients();
+  clearFilter();
+  return newDish;
+}
 
-    // Auto-clear after 1.2 seconds
-    setTimeout(() => {
-      setShowNonnaWarning(false);
-    }, 1200);
-  }
+  // Function for future use
+
+  // function triggerNonnaWarning() {
+  //   setNonnaWarning(true);
+  //   setShowNonnaWarning(true);
+  //   setTimeout(() => {
+  //     setNonnaWarning(false);
+  //     setShowNonnaWarning(false);
+  //   }, 1200);
+  // }
 
   return {
     selectedFilters,
@@ -98,6 +107,7 @@ export default function useDishBuilder() {
     yourOrder,
     grandTotal,
     showNonnaWarning,
+    // nonnaWarning, // future use
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
@@ -110,7 +120,8 @@ export default function useDishBuilder() {
     clearIngredients,
     removeIngredient,
     removeDish,
+    //  triggerNonnaWarning, // future use
     setShowNonnaWarning,
-    triggerNonnaWarning
+    addDishAndReset
   };
 }

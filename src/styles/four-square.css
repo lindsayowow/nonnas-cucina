@@ -1,4 +1,4 @@
-
+/* Grid Layout */
 .foursquare-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -8,74 +8,29 @@
   max-width: 1200px;
 }
 
-
-.foursquare-grid.animate-sequence {
-  animation: sequenceRepeat 8s linear 4;
-}
-
-@media (min-width: 800px) {
-  .foursquare-grid {
-    grid-template-columns: repeat(4, 1fr);
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
-
+/* Tablet: 2 columns */
 @media (min-width: 600px) {
-  .four-grid {
+  .foursquare-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 900px) {
-  .four-grid {
+/* Desktop: 4 columns */
+@media (min-width: 1100px) {
+  .foursquare-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@keyframes sequenceRepeat {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
+/* Card Styling */
 .square {
   padding: 8px 10px 10px 10px;
   border: 5px solid var(--olive-dark);
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background-color: var(--color-square-bg);
-  opacity: 1;
-  transform: scale(1);
+  background-color: var(--color-card-bg);
   box-sizing: border-box;
-}
-
-.square:hover {
-  background-color: var(--surface-light);
-  box-shadow: 0 0 25px var(--glow-green);
-}
-
-.square.animate {
-  animation: animationOne 2s ease forwards;
-}
-
-@keyframes animationOne {
-  0% {
-    opacity: 0.5;
-    background-color: var(--olive-mid);
-    transform: scale(1.08);
-  }
-
-  100% {
-    opacity: 1;
-    background-color: var(--color-square-bg);
-    transform: scale(1);
-  }
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .icon {
@@ -97,3 +52,89 @@
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
+/* BASE GRID LAYOUT */
+.foursquare-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  margin: 20px auto 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* TABLET 600–1099px, 2 columns, narrower cards, smaller icons + headings */
+@media (min-width: 600px) and (max-width: 1099px) {
+  .foursquare-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px; 
+  }
+
+  .square {
+    padding: 6px 8px 10px 8px;
+    border-width: 4px;
+    border-radius: 6px;
+    width: 90%;            
+    margin: 0 auto;       
+    word-wrap: break-word; 
+  }
+
+  .icon {
+    font-size: 2.8rem; 
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .foursquare-grid.readable-font .square h4 {
+    font-size: 1.15rem;
+    margin-top: 2px;
+    margin-bottom: 4px;
+  }
+
+  .foursquare-grid.readable-font .square p:not(.icon) {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+/* DESKTOP 1100px+, 4 columns */
+@media (min-width: 1100px) {
+  .foursquare-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* CARD STYLING */
+.square {
+  padding: 8px 10px 10px 10px;
+  border: 5px solid var(--olive-dark);
+  border-radius: 8px;
+  text-align: center;
+  background-color: var(--color-card-bg);
+  box-sizing: border-box;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.icon {
+  font-size: 3.4rem;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.foursquare-grid.readable-font .square h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.foursquare-grid.readable-font .square p:not(.icon) {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+

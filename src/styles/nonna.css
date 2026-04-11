@@ -1,4 +1,14 @@
-.nonnaNeutral {
+/* NONNA LAYOUT (desktop/tablet min-height) */
+@media (min-width: 700px) {
+  .card.nonna {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.nonna-image {
   display: block;
   margin: 0 auto;
   border-radius: 12%;
@@ -7,57 +17,30 @@
   object-fit: contain;
 }
 
-/* NEW: Wrapper that forces the bubble to stay centered and narrow */
-.nonna-speech-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none; /* keeps it passive */
-  margin-bottom: 1rem;
+.nonna-image--shake {
+  animation: nonna-shake 1s ease;
 }
 
-/* Speech bubble */
-.nonna-speech-bubble {
-  position: relative;
-  background: #fff;
-  border-radius: 18px;
-  padding: 16px 20px;
+@keyframes nonna-shake {
+  0% {
+    transform: translateX(0);
+  }
 
-  /* The magic lines — these override global card rules */
-  max-width: 220px !important;
-  width: auto !important;
-  flex-shrink: 0;
+  25% {
+    transform: translateX(-3px);
+  }
 
-  min-height: 90px;
+  50% {
+    transform: translateX(3px);
+  }
 
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  color: #333;
+  75% {
+    transform: translateX(-3px);
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 3px solid #f3d1b0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* Tail */
-.nonna-speech-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-
-  border-left: 14px solid transparent;
-  border-right: 14px solid transparent;
-  border-top: 18px solid #fff;
-
-  filter: drop-shadow(0 -2px 0 #f3d1b0);
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .nonna-image-wrapper {
@@ -70,22 +53,50 @@
   overflow: hidden;
 }
 
-/* Pink background when warning is active */
+.nonna-speech-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  margin-bottom: 1rem;
+}
+
+.nonna-speech-bubble {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px 20px;
+  max-width: 220px;
+  min-height: 90px;
+
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #333;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #f3d1b0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nonna-speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 18px solid #fff;
+  filter: drop-shadow(0 -2px 0 #f3d1b0);
+}
+
 .card.nonna.nonna--warning {
   background-color: #ffe4ec;
   transition: background-color 0.5s ease;
-}
-
-@keyframes nonna-shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-3px); }
-  50% { transform: translateX(3px); }
-  75% { transform: translateX(-3px); }
-  100% { transform: translateX(0); }
-}
-
-.nonnaNeutral--shake {
-  animation: nonna-shake 0.6s ease;
 }
 
 .nonna-cart-message {
@@ -97,4 +108,180 @@
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   border-left: 4px solid var(--olive-dark);
+}
+
+.nonna-cart-link {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.nonna-cart-link:hover {
+  text-decoration-thickness: 2px;
+
+  /* desktop/tablet min-height */
+  @media (min-width: 700px) {
+    .card.nonna {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  /* ACCESSIBILITY UTILITIES */
+
+  /* Screen-reader-only text (for aria-live announcements) */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Respect reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .nonna-image--shake {
+      animation: none !important;
+    }
+  }
+
+  /* High-contrast mode support (Windows forced colors) */
+  @media (forced-colors: active) {
+
+    .nonna-speech-bubble,
+    .nonna-cart-message {
+      border: 2px solid ButtonText;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    .nonna-cart-link {
+      color: LinkText;
+    }
+  }
+
+  .nonna-image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .nonna-image--shake {
+    animation: nonna-shake 1s ease;
+  }
+
+  @keyframes nonna-shake {
+    0% {
+      transform: translateX(0);
+    }
+
+    25% {
+      transform: translateX(-3px);
+    }
+
+    50% {
+      transform: translateX(3px);
+    }
+
+    75% {
+      transform: translateX(-3px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .nonna-image-wrapper {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .nonna-speech-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    margin-bottom: 1rem;
+  }
+
+  .nonna-speech-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 18px;
+    padding: 16px 20px;
+    max-width: 220px;
+    min-height: 90px;
+
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #f3d1b0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nonna-speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 18px solid #fff;
+    filter: drop-shadow(0 -2px 0 #f3d1b0);
+  }
+
+  .card.nonna.nonna--warning {
+    background-color: #ffe4ec;
+    transition: background-color 0.5s ease;
+  }
+
+  .nonna-cart-message {
+    margin-top: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--neutral-900);
+    background-color: var(--olive-light);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    border-left: 4px solid var(--olive-dark);
+  }
+
+  .nonna-cart-link {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  /* Accessible focus style */
+  .nonna-cart-link:focus-visible {
+    outline: 3px solid var(--brand-maroon);
+    outline-offset: 3px;
+  }
+
+  .nonna-cart-link:hover {
+    text-decoration-thickness: 2px;
+  }
+
 }

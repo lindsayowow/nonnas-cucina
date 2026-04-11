@@ -1,53 +1,90 @@
-.dish {
-    min-width: 225px;
+/* TABLET AND DESKTOP MIN HEIGHT */
+@media (min-width: 700px) {
+  .card.dish {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.dishTotal {
-    font-weight: bold;
-    text-align: center;
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 2px solid var(--olive-dark);
+.dish {
+  min-width: 225px;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+}
+
+.dish-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .dishEmoji {
-    font-size: 3rem;
+  font-size: 3rem;
+}
+
+.activeIngredientsSelected {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.activeIngredientsSelected li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+  gap: 0.5rem;
+}
+
+.ingredientText {
+  flex: 1;
+  text-align: left;
+  padding-right: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ingredientEmoji {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .dish ul {
   margin-left: 0;
-  padding-left: 1rem; /* optional, for bullet spacing */
+  padding-left: 0.1rem;
   width: 100%;
-  display: block;
+}
+
+@media (min-width: 900px) {
+  .dish ul {
+    padding-left: 0.2rem;
+  }
 }
 
 .dish ul,
 .dish li {
   font-family: var(--readable-font);
   font-size: 1rem;
-  line-height: 1.5;
-  text-align: left;
-  /* width: 100%; */
+  line-height: 1.45;
 }
 
-.ingredientText {
-  text-align: left;
-  flex: 1; 
-}
-
-.activeIngredientsSelected {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.activeIngredientsSelected li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; 
-}
-
-.empty {
-    text-align: center;
+.dishTotal {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--olive-dark);
 }
 
 .dish button {
@@ -56,23 +93,57 @@
 }
 
 .removeIngredientButton {
-  all: unset; 
-  background-color: black;
-  color: white;
-  width: 10px;
-  height: 10px;
-  font-size: 7px;
-  line-height: 10px;
-  text-align: center;
-  border-radius: 2px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 8px;
+  padding: 2px;
+  opacity: 0.55;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-
 .removeIngredientButton:hover {
-  background-color: var(--neutral-700);
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+.card.dish .btn:not(:disabled) {
+  background-color: var(--olive-dark) !important;
+  color: white !important;
+  border: 2px solid var(--olive-dark) !important;
+}
+
+.card.dish .btn:disabled {
+  background-color: var(--olive-light) !important;
+  color: white !important;
+  border: 2px solid var(--olive-light) !important;
+  cursor: not-allowed;
+  opacity: 0.95;
+}
+
+.card.dish .btn:disabled:hover {
+  background-color: var(--olive-light) !important;
+  color: white !important;
+  border-color: var(--olive-light) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* MOBILE STYLING */
+@media (max-width: 699px) {
+  .card.dish {
+    min-height: 0 !important;    
+    height: auto !important;
+    display: block !important;
+  }
+
+  .dish-content {
+    flex: none !important;
+    display: block !important;
+    padding-top: 0.25rem;
+  }
+
+  .empty {
+    margin-top: 0.25rem !important;
+  }
 }
