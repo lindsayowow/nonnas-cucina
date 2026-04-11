@@ -111,3 +111,9 @@
     min-height: 350px;
   }
 }
+
+.btn.OrderButton:disabled {
+  color: white;
+}
+
+

@@ -71,7 +71,7 @@ export default function NonnaReaction() {
       ? "Let’s get started with your order!"
       : (
           <>
-            You have {cartCount} items in your{" "}
+            You have {cartCount} item(s) in your{" "}
             <Link to="/cart" className="nonna-cart-link">
               cart
             </Link>.

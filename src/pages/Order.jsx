@@ -89,7 +89,10 @@ export default function Order() {
           </DishButton>
         </Link>
 
-        <OrderButton sendToKitchen={handleSendToKitchen} />
+        <OrderButton
+          sendToKitchen={handleSendToKitchen}
+          disabled={yourOrder.length === 0}
+        />
       </div>
     </div>
   );
