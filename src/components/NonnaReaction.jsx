@@ -27,40 +27,27 @@ const nonnaImages = {
 };
 
 function getNonnaState({ ingredientCount, selectedIngredients, showNonnaWarning }) {
-    // 1. Warning overrides everything
     if (showNonnaWarning) {
         return nonnaStates.find(s => s.state === "warning");
     }
 
-    // 2. COMPLETE DISH LOGIC — all categories covered
     const requiredCategories = ["protein", "veggie", "noodle", "sauce", "topping"];
-
-    const selectedCategories = new Set(
-        selectedIngredients.map(ing => ing.category)
-    );
-
-    const hasAllCategories = requiredCategories.every(cat =>
-        selectedCategories.has(cat)
-    );
+    const selectedCategories = new Set(selectedIngredients.map(ing => ing.category));
+    const hasAllCategories = requiredCategories.every(cat => selectedCategories.has(cat));
 
     if (hasAllCategories) {
         return nonnaStates.find(s => s.state === "complete");
     }
 
-    // 3. Ingredient-count logic (0–5)
-    const matchByCount = nonnaStates.find(
-        s => s.ingredientCount === ingredientCount
-    );
+    const matchByCount = nonnaStates.find(s => s.ingredientCount === ingredientCount);
     if (matchByCount) {
         return matchByCount;
     }
 
-    // 4. More than 5 ingredients → happy
     if (ingredientCount > 5) {
         return nonnaStates.find(s => s.state === "happy");
     }
 
-    // 5. Fallback
     return nonnaStates.find(s => s.state === "neutral");
 }
 
@@ -73,13 +60,6 @@ export default function NonnaReaction() {
 
     const ingredientCount = selectedIngredients.length;
 
-    // Debug log
-    console.log("DEBUG Nonna:", {
-        selectedIngredients,
-        ingredientCount,
-        yourOrder
-    });
-
     const nonnaState = getNonnaState({
         ingredientCount,
         selectedIngredients,
@@ -89,11 +69,16 @@ export default function NonnaReaction() {
     return (
         <div className={`card nonna ${showNonnaWarning ? "nonna--warning" : ""}`}>
             <h2 className="text-center">Verify Your Selections</h2>
+
             <div className="nonna-speech-wrapper">
-                <div className="nonna-speech-bubble">
+                <div className="nonna-speech-bubble" aria-hidden="true">
                     {nonnaState.message}
                 </div>
+                <span className="sr-only" role="status" aria-live="polite">
+                    {nonnaState.message}
+                </span>
             </div>
+
             <div className="nonna-image-wrapper">
                 <img
                     src={
@@ -105,6 +90,7 @@ export default function NonnaReaction() {
                     className={`nonnaNeutral ${showNonnaWarning ? "nonnaNeutral--shake" : ""}`}
                 />
             </div>
+
             <div className="nonna-cart-message">
                 You now have {yourOrder.length} items in your cart.
             </div>
