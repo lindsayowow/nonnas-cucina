@@ -6,7 +6,7 @@ export default function useDishBuilder() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [yourOrder, setYourOrder] = useState([]);
   const [showNonnaWarning, setShowNonnaWarning] = useState(false);
-  // const [nonnaWarning, setNonnaWarning] = useState(false);        // future use
+  // const [nonnaWarning, setNonnaWarning] = useState(false); // future use
 
   function toggleFilter(filter) {
     setSelectedFilters(prev =>
@@ -82,22 +82,18 @@ export default function useDishBuilder() {
   }
 
   function addDishAndReset() {
-  const newDish = updateOrder();
-  clearIngredients();
-  clearFilter();
-  return newDish;
-}
+    const newDish = updateOrder();
+    clearIngredients();
+    clearFilter();
+    return newDish;
+  }
 
-  // Function for future use
-
-  // function triggerNonnaWarning() {
-  //   setNonnaWarning(true);
-  //   setShowNonnaWarning(true);
-  //   setTimeout(() => {
-  //     setNonnaWarning(false);
-  //     setShowNonnaWarning(false);
-  //   }, 1200);
-  // }
+  function triggerNonnaWarning() {
+    setShowNonnaWarning(true);
+    setTimeout(() => {
+      setShowNonnaWarning(false);
+    }, 1200);
+  }
 
   return {
     selectedFilters,
@@ -120,7 +116,7 @@ export default function useDishBuilder() {
     clearIngredients,
     removeIngredient,
     removeDish,
-    //  triggerNonnaWarning, // future use
+    triggerNonnaWarning,  
     setShowNonnaWarning,
     addDishAndReset
   };

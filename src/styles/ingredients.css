@@ -101,7 +101,6 @@ button.build-action-button:not(:disabled) {
   color: black !important;
 }
 
-
 button.ClearIngredientsButton:disabled,
 button.DishButton:disabled,
 button.build-action-button:disabled {
@@ -120,4 +119,20 @@ button.build-action-button:disabled:hover {
   border-color: var(--olive-light) !important;
   transform: none;
   box-shadow: none;
+}
+
+/* ------------------------------------------------------ */
+/* ⭐ FIX: Override global .btn so selected state shows   */
+/* ------------------------------------------------------ */
+
+button.IngredientButton {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Strong override so .btn does NOT suppress selected styling */
+button.IngredientButton.selected {
+  background-color: black !important;
+  color: var(--color-text-inverse) !important;
+  font-weight: bolder;
+  outline: 2px solid rgba(220, 120, 120, 0.70);
 }
