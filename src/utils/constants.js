@@ -1,18 +1,45 @@
-export const DietaryFilters = ["🌾Gluten-Free", "🥛 Lactose-Free", "🥜 Nut-Free", "🦐 Shellfish Free",
-  "🥚 Egg-Free", "🫘 Soy-Free", "🧂 Low-Sodium", "🩺 Diabetic-Friendly", "❤️ Heart-Healthy",
-  "🫘 Kidney-Friendly", "🪶 Low-FODMAP", "🌱 Vegan", "✡️ Kosher", "☪️ Halal", "👶 Kid-Friendly", "🌶️ Spice Sensitivity",
-  "🫧 Texture-Based"]
+export const DietaryFilters = [
+  "🌾 Gluten-Free",
+  "🥛 Lactose-Free",
+  "🥜 Nut-Free",
+  "🦐 Shellfish-Free",
+  "🥚 Egg-Free",
+  "🫘 Soy-Free",
+  "🧂 Low-Sodium",
+  "🩺 Diabetic-Friendly",
+  "❤️ Heart-Healthy",
+  "🫘 Kidney-Friendly",
+  "🪶 Low-FODMAP",
+  "🌱 Vegan",
+  "✡️ Kosher",
+  "☪️ Halal",
+  "👶 Kid-Friendly",
+  "🌶️ Spice Sensitivity",
+  "🫧 Texture-Based",
+];
 
-export const inversionList = ["🌾Gluten-Free", "🥛 Lactose-Free", "🥜 Nut-Free", "🦐 Shellfish Free",
-  "🥚 Egg-Free", "🫘 Soy-Free"]
+export const inversionList = [
+  "🌾 Gluten-Free",
+  "🥛 Lactose-Free",
+  "🥜 Nut-Free",
+  "🦐 Shellfish-Free",
+  "🥚 Egg-Free",
+  "🫘 Soy-Free",
+];
 
-export const Categories = ["Proteins", "Veggies", "Noodles", "Sauces", "Toppings"];
+export const Categories = [
+  "Proteins",
+  "Veggies",
+  "Noodles",
+  "Sauces",
+  "Toppings",
+];
 
 export const filterMap = {
-  "🌾Gluten-Free": "hasGluten",
+  "🌾 Gluten-Free": "hasGluten",
   "🥛 Lactose-Free": "hasLactose",
   "🥜 Nut-Free": "hasNuts",
-  "🦐 Shellfish Free": "hasShellfish",
+  "🦐 Shellfish-Free": "hasShellfish",
   "🥚 Egg-Free": "hasEgg",
   "🫘 Soy-Free": "hasSoy",
   "🧂 Low-Sodium": "lowSodium",
@@ -25,7 +52,7 @@ export const filterMap = {
   "☪️ Halal": "isHalal",
   "👶 Kid-Friendly": "kidFriendly",
   "🌶️ Spice Sensitivity": "spiceSensitive",
-  "🫧 Texture-Based": "textureFriendly"
+  "🫧 Texture-Based": "textureFriendly",
 };
 
 export const categoryMap = {
@@ -33,5 +60,5 @@ export const categoryMap = {
   Veggies: "veggie",
   Noodles: "noodle",
   Sauces: "sauce",
-  Toppings: "topping"
+  Toppings: "topping",
 };

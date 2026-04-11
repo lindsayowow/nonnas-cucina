@@ -6,29 +6,39 @@ import ClearIngredientsButton from './ClearIngredientsButton.jsx';
 import DishButton from "./DishButton.jsx";
 import { categoryMap, inversionList, filterMap } from '../utils/constants.js';
 
-export default function Ingredients(props) {
+export default function Ingredients({
+  Categories,
+  selectedFilters,
+  selectedIngredients,
+  onToggleIngredient,
+  clearIngredients,
+  resetFilters,
+  updateOrder,
+  yourOrder,
+  triggerNonnaWarning,
+  scrollToRef
+}) {
   const [confirmationMessage, setConfirmationMessage] = useState("");
   const [fadeOut, setFadeOut] = useState(false);
 
   const handleAddToOrder = () => {
-    const newDish = props.updateOrder();
+    const newDish = updateOrder();
 
     if (newDish) {
       setFadeOut(false);
       setConfirmationMessage(
-        `Dish #${newDish.id} has been added to your order. You now have ${props.yourOrder.length} items in your cart.`
+        `Dish #${newDish.id} has been added to your order. You now have ${yourOrder.length + 1} items in your cart.`
       );
 
       setTimeout(() => setFadeOut(true), 2500);
       setTimeout(() => setConfirmationMessage(""), 3500);
     }
 
-    props.clearIngredients();
-    props.resetFilters && props.resetFilters();
+    clearIngredients();
+    resetFilters && resetFilters();
 
-    // ⭐ Scroll to Filters component
-    if (props.scrollToRef?.current) {
-      props.scrollToRef.current.scrollIntoView({
+    if (scrollToRef?.current) {
+      scrollToRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
@@ -39,7 +49,7 @@ export default function Ingredients(props) {
     <div className="card ingredientClass">
       <h2 className="text-center">Choose Your Ingredients</h2>
 
-      {props.Categories.map((Category) => (
+      {Categories.map((Category) => (
         <div key={Category} className="categoryContainer">
           <h3 className="categoryHeader text-center">{Category}</h3>
 
@@ -47,7 +57,7 @@ export default function Ingredients(props) {
             {IngredientsData
               .filter((ingredient) => ingredient.category === categoryMap[Category])
               .map((ingredient) => {
-                const disabled = props.selectedFilters.some((filter) => {
+                const disabled = selectedFilters.some((filter) => {
                   const property = filterMap[filter];
                   const isInverted = inversionList.includes(filter);
                   return isInverted
@@ -55,7 +65,7 @@ export default function Ingredients(props) {
                     : ingredient[property] === false;
                 });
 
-                const isSelected = props.selectedIngredients.some(
+                const isSelected = selectedIngredients.some(
                   (item) => item.name === ingredient.name
                 );
 
@@ -63,10 +73,10 @@ export default function Ingredients(props) {
                   <IngredientButton
                     key={ingredient.name}
                     ingredient={ingredient}
-                    onToggleIngredient={props.onToggleIngredient}
+                    onToggleIngredient={onToggleIngredient}
                     isSelected={isSelected}
                     disabled={disabled}
-                    triggerNonnaWarning={props.triggerNonnaWarning}
+                    triggerNonnaWarning={triggerNonnaWarning}
                   />
                 );
               })}
@@ -78,15 +88,15 @@ export default function Ingredients(props) {
         <DishButton
           className="build-action-button"
           onClick={handleAddToOrder}
-          disabled={props.selectedIngredients.length === 0}
+          disabled={selectedIngredients.length === 0}
         >
           Add to Order
         </DishButton>
 
         <ClearIngredientsButton
           className="btn build-action-button"
-          clearIngredients={props.clearIngredients}
-          selectedIngredients={props.selectedIngredients}
+          clearIngredients={clearIngredients}
+          selectedIngredients={selectedIngredients}
         />
       </div>
 

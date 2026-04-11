@@ -4,66 +4,70 @@ import '../styles/dish.css';
 import DishButton from './DishButton.jsx';
 import RemoveIngredientButton from './RemoveIngredientButton.jsx';
 
-export default function Dish({ selectedIngredients, totalPrice, updateOrder, removeIngredient, yourOrder }) {
+export default function Dish({
+  selectedIngredients,
+  totalPrice,
+  updateOrder,
+  removeIngredient,
+  yourOrder
+}) {
+  const cartCount = yourOrder?.length || 0;
 
-    return (
-        <div className="card dish">
-            <h2 className="text-center">Your Dish</h2>
+  return (
+    <div className="card dish">
+      <h2 className="text-center">Your Dish</h2>
 
-            {selectedIngredients.length === 0 ? (
-                <div className="empty text-center">
-                    <p className="dishEmoji">🍽️</p>
-                    <p>Your dish is empty.</p>
+      <div className="dish-content">
+        {selectedIngredients.length === 0 ? (
+          <div className="empty">
+            <p className="dishEmoji">🍽️</p>
+            <p>Your current dish is empty.</p>
+          </div>
+        ) : (
+          <ul className="activeIngredientsSelected">
+            {selectedIngredients.map((ingredient) => (
+              <li key={ingredient.name}>
+                <span className="ingredientText">
+                  <span className="ingredientEmoji">{ingredient.emoji}</span>
+                  {ingredient.name} –{" "}
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD"
+                  }).format(ingredient.price)}
+                </span>
 
-                    {/* Go to Cart button even when empty */}
-                    <Link to="/cart">
-                        <DishButton>
-                            Go to Cart 🛒 ({yourOrder?.length || 0})
-                        </DishButton>
-                    </Link>
-                </div>
-            ) : (
-                <div>
-                    <ul className="activeIngredientsSelected">
-                        {selectedIngredients.map(ingredient => (
-                            <li key={ingredient.name}>
-                                <RemoveIngredientButton
-                                    onRemove={() => removeIngredient(ingredient)}
-                                />
-                                <span className="ingredientText">
-                                    {ingredient.emoji} {ingredient.name} –{" "}
-                                    {new Intl.NumberFormat("en-US", {
-                                        style: "currency",
-                                        currency: "USD"
-                                    }).format(ingredient.price)}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
+                <RemoveIngredientButton
+                  ingredient={ingredient}
+                  onRemove={removeIngredient}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
 
-                    <p className="dishTotal text-bold text-center">
-                        Order total:{" "}
-                        {new Intl.NumberFormat("en-US", {
-                            style: "currency",
-                            currency: "USD"
-                        }).format(totalPrice)}
-                    </p>
+      {selectedIngredients.length > 0 && (
+        <p className="dishTotal text-bold text-center">
+          Order total:{" "}
+          {new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+          }).format(totalPrice)}
+        </p>
+      )}
 
-                    <DishButton
-                        onClick={updateOrder}
-                        disabled={selectedIngredients.length === 0}
-                    >
-                        Add to Order
-                    </DishButton>
+      <DishButton
+        onClick={updateOrder}
+        disabled={selectedIngredients.length === 0}
+      >
+        Add to Order
+      </DishButton>
 
-                    {/* NEW: Go to Cart button */}
-                    <Link to="/cart">
-                        <DishButton>
-                            Go to Cart 🛒 ({yourOrder?.length || 0})
-                        </DishButton>
-                    </Link>
-                </div>
-            )}
-        </div>
-    );
+      <Link to="/cart">
+        <DishButton>
+          Go to Cart 🛒 ({cartCount})
+        </DishButton>
+      </Link>
+    </div>
+  );
 }
