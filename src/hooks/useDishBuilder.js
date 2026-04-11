@@ -43,6 +43,7 @@ export default function useDishBuilder() {
 
     setYourOrder(prev => [...prev, newDish]);
     setSelectedIngredients([]);
+    setSelectedFilters([]);
     return newDish;
   }
 

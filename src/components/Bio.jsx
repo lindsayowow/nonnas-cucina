@@ -10,7 +10,7 @@ export default function Bio() {
 
         <img
           src={profilePic}
-          alt="Portrait of Lindsay Webb, software development student"
+          alt="Portrait of Lindsay Webb, long brown hair and glasses in a white suit"
           className="proPic"
         />
 
