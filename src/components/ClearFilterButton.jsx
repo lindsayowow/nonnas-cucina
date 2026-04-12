@@ -5,6 +5,7 @@ export default function ClearFilterButton({ clearFilter, selectedFilters }) {
     <div className="clearButtons">
       <button
         className="clearButton"
+        // example of event handler
         onClick={clearFilter}
         disabled={selectedFilters.length === 0}
       >

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function useInView(options) {
   const ref = useRef(null);
+  // example of use of hooks
   const [inView, setInView] = useState(false);
 
   useEffect(() => {

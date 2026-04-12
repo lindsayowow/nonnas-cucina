@@ -18,7 +18,6 @@ export default function BuildADish() {
     toggleFilter,
     toggleIngredient,
     setSelectedCategory,
-    // setSelectedIngredients,
     updateOrder,
     clearFilter,
     clearIngredients,
@@ -54,7 +53,6 @@ export default function BuildADish() {
         <Ingredients
           selectedFilters={selectedFilters}
           selectedIngredients={selectedIngredients}
-          // onSelectedIngredient={setSelectedIngredients}
           selectedCategory={selectedCategory}
           Categories={Categories}
           onSelectedCategory={setSelectedCategory}

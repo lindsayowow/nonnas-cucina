@@ -27,6 +27,7 @@ export default function Form() {
   const email = formData.email.trim();
   const validEmail = /\S+@\S+\.\S+/.test(email);
 
+  // Validation script to submit form
   const isIncomplete =
     formData.name.trim().length < 3 ||
     !validEmail ||

@@ -1,5 +1,6 @@
 /* MOBILE/TABLET, stacked footer, no grid */
 footer {
+  /* flexbox used for layout */
   display: flex;
   flex-direction: column;
   align-items: center;

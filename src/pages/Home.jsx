@@ -17,6 +17,7 @@ export default function Home() {
           <div className="nonna-wrapper">
             <img
               src={NonnaHome}
+              // alt text on image for accessibility
               alt="Nonna is smiling at a countertop with hearts surrounding her head"
               className="logononna"
             />

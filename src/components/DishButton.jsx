@@ -9,9 +9,10 @@ export default function DishButton({
   return (
     <button
       className={`btn ${className}`.trim()}
+      // example of event handler
       onClick={onClick}
       disabled={disabled}
-      aria-disabled={disabled} 
+      aria-disabled={disabled}
     >
       {children}
     </button>

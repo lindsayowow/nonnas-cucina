@@ -77,7 +77,7 @@ export default function NonnaReaction() {
             </Link>.
           </>
         );
-
+// example of conditional rendering
   const imageSrc = showNonnaWarning
     ? NonnaWarning
     : nonnaImages[nonnaState.state] || NonnaNeutral;
@@ -95,6 +95,7 @@ export default function NonnaReaction() {
       <div className="nonna-image-wrapper">
         <img
           src={imageSrc}
+          // alt text on image for accessibility
           alt="Nonna reacting"
           className={`nonna-image ${showNonnaWarning ? "nonna-image--shake" : ""}`}
           loading="eager"

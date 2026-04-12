@@ -13,6 +13,7 @@ export default function FilterButton({
         return (
           <button
             key={filter}
+            // Example of event handler
             onClick={() => onToggleFilter(filter)}
             className={`btn FilterButton ${isActive ? "active" : ""}`}
             aria-pressed={isActive}

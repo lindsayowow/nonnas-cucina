@@ -41,6 +41,7 @@ export default function Order() {
           </div>
         ) : (
           <div>
+            {/* Use of lists */}
             <ul className="activeOrder">
               {yourOrder.map(dish => {
                 const emojis = dish.ingredients.map(ing => ing.emoji).join(" ");

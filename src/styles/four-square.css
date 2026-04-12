@@ -1,5 +1,6 @@
 /* Grid Layout */
 .foursquare-grid {
+  /* grid used for layout */
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-m);

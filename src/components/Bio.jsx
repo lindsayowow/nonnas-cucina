@@ -3,6 +3,7 @@ import "../styles/bio.css";
 
 export default function Bio() {
   return (
+    // use of semantic elements
     <section className="about-section card bio">
       <div className="bio-inner">
 
@@ -10,6 +11,7 @@ export default function Bio() {
 
         <img
           src={profilePic}
+          // alt text for image accessibility
           alt="Portrait of Lindsay Webb, long brown hair and glasses in a white suit"
           className="proPic"
         />

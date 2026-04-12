@@ -21,6 +21,7 @@ export default function IngredientButton({
       className={`btn IngredientButton 
         ${disabled ? "is-disabled" : ""} 
         ${isSelected ? "selected" : ""}`}
+        // Example of user interaction causing update to state - selectedIngredients updates
       onClick={handleClick}
       aria-pressed={isSelected} /*accessibility feature for screen readers*/
       aria-disabled={disabled}

@@ -18,12 +18,14 @@ export default function Dish({
       <h2 className="text-center">Your Dish</h2>
 
       <div className="dish-content">
+        {/* example of conditional rendering */}
         {selectedIngredients.length === 0 ? (
           <div className="empty">
             <p className="dishEmoji">🍽️</p>
             <p>Your current dish is empty.</p>
           </div>
         ) : (
+          // Use of lists
           <ul className="activeIngredientsSelected">
             {selectedIngredients.map((ingredient) => (
               <li key={ingredient.name}>
@@ -35,7 +37,7 @@ export default function Dish({
                     currency: "USD"
                   }).format(ingredient.price)}
                 </span>
-
+                {/* passing props from parent to child */}
                 <RemoveIngredientButton
                   ingredient={ingredient}
                   onRemove={removeIngredient}

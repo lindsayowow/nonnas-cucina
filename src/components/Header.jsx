@@ -9,16 +9,19 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
+    // Use of semantic elements
     <header className="header">
       <NavLink to="/" onClick={() => setOpen(false)}>
         <img
           src={nonnasLogo}
+          // alt text for accesibility
           alt="Nonna's Kitchen logo showing a drawing of a white-haired grandmother cooking in a kitchen"
           className="logo"
         />
       </NavLink>
 
       <div className="nonna-font middle">
+        {/* Use of semantic elements */}
         <NavLink to="/" onClick={() => setOpen(false)}>
           <h1 className="title">Nonna's Cucina</h1>
         </NavLink>

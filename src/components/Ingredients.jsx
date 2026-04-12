@@ -18,6 +18,8 @@ export default function Ingredients({
   triggerNonnaWarning,
   scrollToRef
 }) {
+
+  // Example of hooks
   const [confirmationMessage, setConfirmationMessage] = useState("");
   const [fadeOut, setFadeOut] = useState(false);
 
@@ -92,7 +94,7 @@ export default function Ingredients({
         >
           Add to Order
         </DishButton>
-
+        {/* Parent passing props to child */}
         <ClearIngredientsButton
           className="btn build-action-button"
           clearIngredients={clearIngredients}

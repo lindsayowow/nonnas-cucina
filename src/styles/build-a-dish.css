@@ -1,4 +1,5 @@
 .build-container {
+  /* Grid used for layout */
   display: grid;
   grid-template-columns: 1fr 3.8fr 1fr;
   gap: 16px;
@@ -77,6 +78,7 @@ h3 {
   display: none;
 }
 
+/* Media query breakpoint */
 @media (max-width: 600px) {
 
   .build-container {

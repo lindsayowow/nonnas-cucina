@@ -9,6 +9,7 @@ import '../styles/footer.css';
 
 export default function Footer() {
   return (
+    // use of semantic elements
     <footer>
       <Link to="/about#contact">Contact Us</Link>
 

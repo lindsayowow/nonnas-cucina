@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function useDishBuilder() {
+  // Example of use of hooks
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedIngredients, setSelectedIngredients] = useState([]);

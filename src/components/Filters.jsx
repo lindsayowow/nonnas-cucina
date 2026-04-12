@@ -7,7 +7,7 @@ export default function Filters(props) {
   return (
     <div className="card filterClass">
       <h2 className="text-center">Dietary Filters</h2>
-
+      {/* Parent passing props to child */}
       <FilterButton
         DietaryFilters={props.DietaryFilters}
         selectedFilters={props.selectedFilters}
