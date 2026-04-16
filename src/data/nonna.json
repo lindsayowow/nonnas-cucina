@@ -48,12 +48,6 @@
         "message": "Bellissima! This dish looks delicious! You have everything!"
     },
     {
-        "state": "special-dish",
-        "emoji": "👵🤌💖",
-        "image": "/assets/nonna-special.png",
-        "message": "Special dish message will come from the recipe definition."
-    },
-    {
         "state": "warning",
         "emoji": "👵😱",
         "image": "/assets/nonna-warning.png",

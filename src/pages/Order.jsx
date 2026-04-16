@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/order.css';
 
-import OrderButton from '../components/OrderButton';
-import RemoveDishButton from '../components/RemoveDishButton';
-import DishButton from '../components/DishButton';
+import OrderButton from '../components/buttons/OrderButton.jsx';
+import RemoveDishButton from '../components/buttons/RemoveDishButton.jsx';
+import DishButton from '../components/buttons/DishButton.jsx';
 
 import { useDishBuilderContext } from "../context/DishBuilderContext";
 

@@ -1,4 +1,4 @@
-/* TABLET AND DESKTOP MIN HEIGHT */
+/* tablet + desktop min-height */
 @media (min-width: 700px) {
   .card.dish {
     min-height: 70vh;
@@ -7,30 +7,35 @@
   }
 }
 
+/* dish container */
 .dish {
   min-width: 225px;
   padding-left: 0.35rem;
   padding-right: 0.35rem;
 }
 
+/* dish content layout */
 .dish-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: center;
   padding-top: 0.5rem;
 }
 
+/* empty state */
 .empty {
   text-align: center;
   margin-top: 1rem;
 }
 
+/* dish emoji */
 .dishEmoji {
   font-size: 3rem;
 }
 
+/* selected ingredients list */
 .activeIngredientsSelected {
   list-style-type: none;
   padding-left: 0;
@@ -46,6 +51,7 @@
   gap: 0.5rem;
 }
 
+/* ingredient text + emoji */
 .ingredientText {
   flex: 1;
   text-align: left;
@@ -60,6 +66,7 @@
   line-height: 1;
 }
 
+/* ingredient list spacing */
 .dish ul {
   margin-left: 0;
   padding-left: 0.1rem;
@@ -72,6 +79,7 @@
   }
 }
 
+/* ingredient list typography */
 .dish ul,
 .dish li {
   font-family: var(--readable-font);
@@ -79,6 +87,7 @@
   line-height: 1.45;
 }
 
+/* dish total section */
 .dishTotal {
   font-weight: bold;
   text-align: center;
@@ -87,11 +96,13 @@
   border-top: 2px solid var(--olive-dark);
 }
 
+/* dish action button */
 .dish button {
   display: block;
   margin: 0.75rem auto 0 auto;
 }
 
+/* remove ingredient button */
 .removeIngredientButton {
   background: none;
   border: none;
@@ -107,6 +118,7 @@
   opacity: 0.9;
 }
 
+/* dish button states */
 .card.dish .btn:not(:disabled) {
   background-color: var(--olive-dark) !important;
   color: white !important;
@@ -129,10 +141,10 @@
   box-shadow: none !important;
 }
 
-/* MOBILE STYLING */
+/* mobile styling */
 @media (max-width: 699px) {
   .card.dish {
-    min-height: 0 !important;    
+    min-height: 0 !important;
     height: auto !important;
     display: block !important;
   }

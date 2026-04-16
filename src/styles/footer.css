@@ -1,6 +1,5 @@
-/* MOBILE/TABLET, stacked footer, no grid */
+/* mobile/tablet footer layout */
 footer {
-  /* flexbox used for layout */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,13 +16,14 @@ footer {
   text-align: center;
 }
 
-/* Contact link */
+/* contact link */
 footer > a {
   color: var(--color-text-inverse);
   font-size: 1.25rem;
   text-decoration: none;
 }
 
+/* tagline block */
 .tagline {
   display: flex;
   flex-direction: column;
@@ -50,6 +50,7 @@ footer > a {
   font-weight: 500;
 }
 
+/* attribution block */
 .attributes {
   font-size: smaller;
 }
@@ -59,11 +60,12 @@ footer > a {
   margin: 0.15rem 0;
 }
 
+/* footer link color */
 footer a {
   color: var(--color-text-inverse);
 }
 
-/* MOBILE + TABLET <= 900px, Improved spacing + centering */
+/* mobile + tablet adjustments */
 @media (max-width: 900px) {
   footer {
     padding: 1.25rem 0.75rem;
@@ -91,7 +93,7 @@ footer a {
   }
 }
 
-/* DESKTOP >= 901px, 3-COLUMN GRID */
+/* desktop 3‑column grid */
 @media (min-width: 901px) {
   footer {
     display: grid;

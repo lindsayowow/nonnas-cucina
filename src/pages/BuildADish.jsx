@@ -12,7 +12,6 @@ import { useDishBuilderContext } from "../context/DishBuilderContext";
 export default function BuildADish() {
   const {
     selectedFilters,
-    selectedCategory,
     selectedIngredients,
     totalPrice,
     toggleFilter,
@@ -24,7 +23,7 @@ export default function BuildADish() {
     removeIngredient,
     yourOrder,
     triggerNonnaWarning,
-    addDishAAndReset
+    addDishAndReset
   } = useDishBuilderContext();
 
   const filtersRef = useRef(null);
@@ -53,7 +52,6 @@ export default function BuildADish() {
         <Ingredients
           selectedFilters={selectedFilters}
           selectedIngredients={selectedIngredients}
-          selectedCategory={selectedCategory}
           Categories={Categories}
           onSelectedCategory={setSelectedCategory}
           onToggleIngredient={toggleIngredient}
@@ -75,7 +73,7 @@ export default function BuildADish() {
             updateOrder={updateOrder}
             removeIngredient={removeIngredient}
             yourOrder={yourOrder}
-            addDishAAndReset={addDishAAndReset}
+            addDishAAndReset={addDishAndReset}
           />
         </div>
 

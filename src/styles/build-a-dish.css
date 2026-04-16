@@ -1,10 +1,11 @@
+/*   BUILD‑A‑DISH: GRID PAGE LAYOUT (DESKTOP) */
 .build-container {
-  /* Grid used for layout */
   display: grid;
   grid-template-columns: 1fr 3.8fr 1fr;
   gap: 16px;
 }
 
+/*   COLUMN SECTIONS  */
 .section-0,
 .section-1,
 .section-2 {
@@ -14,12 +15,14 @@
   padding-top: 1.25rem;
 }
 
+/* Side columns (left + right) */
 .section-0,
 .section-2 {
   padding-inline: 0.75rem;
   background-color: var(--olive-mid);
 }
 
+/* Center column */
 .section-1 {
   min-width: 0;
   padding-inline: 0.75rem;
@@ -35,6 +38,7 @@ h3 {
   text-align: center;
 }
 
+/*   BUTTONS  */
 .build-container button {
   font-size: 1rem;
   padding: 0.3rem 0.6rem;
@@ -50,6 +54,7 @@ h3 {
   line-height: 1;
 }
 
+/*   CARD SPACING  */
 .build-container .card {
   padding-top: 1.1rem;
 }
@@ -58,6 +63,7 @@ h3 {
   padding: 12px 8px !important;
 }
 
+/*   STICKY ELEMENTS (DESKTOP)  */
 .dish-container,
 .nonna-container {
   position: sticky;
@@ -70,6 +76,7 @@ h3 {
   margin-bottom: 0.75rem;
 }
 
+/*   RESPONSIVE VISIBILITY HELPERS  */
 .desktop-only {
   display: block;
 }
@@ -78,13 +85,16 @@ h3 {
   display: none;
 }
 
-/* Media query breakpoint */
+/*   MOBILE LAYOUT (≤ 600px)
+  */
 @media (max-width: 600px) {
 
+  /* Switch to vertical flow */
   .build-container {
     display: block;
   }
 
+  /* Visibility toggles */
   .desktop-only {
     display: none !important;
   }
@@ -93,6 +103,7 @@ h3 {
     display: block !important;
   }
 
+  /* Remove sticky behavior */
   .dish-container,
   .nonna-container {
     position: static !important;
@@ -100,34 +111,22 @@ h3 {
     z-index: auto !important;
   }
 
+  /* Allow natural height */
   .section-1,
   .section-2 {
     height: auto;
     min-height: 0;
   }
 
+  /* Mobile Nonna container (supports slide animation) */
   .mobile-nonna {
     margin-top: 1rem;
     transition: transform 0.4s ease;
   }
 
-  /* SLIDE-UP ANIMATION WHEN WARNING TRIGGERS, left code in for future use */
-  /* .mobile-nonna--warning {
+  /* Slide‑up animation (disabled but preserved for future use)
+  .mobile-nonna--warning {
     animation: nonnaSlideUp 1s ease forwards;
-  } */
-
-  /* @keyframes nonnaSlideUp {
-    0% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(-40px);
-    }
-    80% {
-      transform: translateY(-40px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  } */
-} 
+  }
+  */
+}

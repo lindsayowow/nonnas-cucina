@@ -1,3 +1,4 @@
+// filter button labels
 export const DietaryFilters = [
   "🌾 Gluten-Free",
   "🥛 Lactose-Free",
@@ -18,6 +19,7 @@ export const DietaryFilters = [
   "🫧 Texture-Based",
 ];
 
+// used to properly trigger filters - add or remove ingredient boolean
 export const inversionList = [
   "🌾 Gluten-Free",
   "🥛 Lactose-Free",
@@ -27,6 +29,7 @@ export const inversionList = [
   "🫘 Soy-Free",
 ];
 
+// Ingredient category groupings
 export const Categories = [
   "Proteins",
   "Veggies",
@@ -35,6 +38,7 @@ export const Categories = [
   "Toppings",
 ];
 
+// Map from button labels to booleans in json objects
 export const filterMap = {
   "🌾 Gluten-Free": "hasGluten",
   "🥛 Lactose-Free": "hasLactose",
@@ -55,6 +59,7 @@ export const filterMap = {
   "🫧 Texture-Based": "textureFriendly",
 };
 
+// map from ingredient categories to json object formatting
 export const categoryMap = {
   Proteins: "protein",
   Veggies: "veggie",

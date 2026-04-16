@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/dish.css';
-import DishButton from './DishButton.jsx';
-import RemoveIngredientButton from './RemoveIngredientButton.jsx';
+import DishButton from './buttons/DishButton.jsx';
+import RemoveIngredientButton from './buttons/RemoveIngredientButton.jsx';
 
 export default function Dish({
   selectedIngredients,
