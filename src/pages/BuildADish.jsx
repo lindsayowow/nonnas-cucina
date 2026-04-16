@@ -12,7 +12,6 @@ import { useDishBuilderContext } from "../context/DishBuilderContext";
 export default function BuildADish() {
   const {
     selectedFilters,
-    selectedCategory,
     selectedIngredients,
     totalPrice,
     toggleFilter,

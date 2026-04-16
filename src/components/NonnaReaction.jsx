@@ -23,7 +23,7 @@ const nonnaImages = {
   almostThere: NonnaAlmostThere,
   happy: NonnaHappy,
   complete: NonnaComplete,
-  "special-dish": NonnaSpecial,
+  // "special-dish": NonnaSpecial,  -- future use
   warning: NonnaWarning
 };
 
