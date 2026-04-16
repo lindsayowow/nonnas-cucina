@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/filters.css';
-import FilterButton from './FilterButton.jsx';
-import ClearFilterButton from './ClearFilterButton.jsx';
+import FilterButton from './buttons/FilterButton.jsx';
+import ClearFilterButton from './buttons/ClearFilterButton.jsx';
 
 export default function Filters(props) {
   return (

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/ingredients.css';
-import IngredientButton from './IngredientButton.jsx';
 import IngredientsData from '../data/ingredients.json';
-import ClearIngredientsButton from './ClearIngredientsButton.jsx';
-import DishButton from "./DishButton.jsx";
+import IngredientButton from './buttons/IngredientButton.jsx';
+import ClearIngredientsButton from './buttons/ClearIngredientsButton.jsx';
+import DishButton from "./buttons/DishButton.jsx";
 import { categoryMap, inversionList, filterMap } from '../utils/constants.js';
 
 export default function Ingredients({
