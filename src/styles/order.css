@@ -1,3 +1,4 @@
+/* order page layout */
 .order-page {
   display: flex;
   justify-content: center;
@@ -8,6 +9,7 @@
   box-sizing: border-box;
 }
 
+/* order card */
 .order {
   width: 70vw;
   height: 70vh;
@@ -25,6 +27,7 @@
   font-size: 1.5rem;
 }
 
+/* empty state */
 .emptyOrder {
   text-align: center;
 }
@@ -33,6 +36,7 @@
   font-size: 3rem;
 }
 
+/* active order list */
 .activeOrder {
   list-style-type: none;
   padding-left: 0;
@@ -43,11 +47,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 0.75rem; 
+  margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+/* dish info block */
 .dishInfo {
   flex: 1;
   display: flex;
@@ -62,6 +67,7 @@
   font-size: 1.15rem;
 }
 
+/* remove dish button */
 .removeDishButton {
   all: unset;
   cursor: pointer;
@@ -104,6 +110,7 @@
   margin: 0.75rem auto 0 auto;
 }
 
+/* mobile layout */
 @media (max-width: 600px) {
   .order {
     width: 90vw;
@@ -115,5 +122,3 @@
 .btn.OrderButton:disabled {
   color: white;
 }
-
-

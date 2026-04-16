@@ -8,9 +8,13 @@
   padding: 6px 0;
 }
 
+button.IngredientButton {
+  transition: all 0.2s ease-in-out;
+}
+
 button.IngredientButton.selected {
-  background-color: black;
-  color: var(--color-text-inverse);
+  background-color: black !important;
+  color: var(--color-text-inverse) !important;
   font-weight: bolder;
   outline: 2px solid rgba(220, 120, 120, 0.70);
 }
@@ -26,6 +30,7 @@ button.IngredientButton.is-disabled .emoji {
   opacity: 0.5;
 }
 
+/* ingredient action row */
 .ingredient-actions {
   display: flex;
   justify-content: center;
@@ -33,7 +38,7 @@ button.IngredientButton.is-disabled .emoji {
   margin-top: 1rem;
 }
 
-/* overrides .btn */
+/* build action button */
 button.build-action-button {
   background-color: var(--color-button-hover);
   border: 2px solid var(--color-button-hover);
@@ -42,7 +47,7 @@ button.build-action-button {
   color: var(--color-button-text);
 }
 
-/* Override .btn:hover */
+/* build action hover */
 button.build-action-button:hover {
   background-color: var(--color-button-hover);
   border-color: var(--color-button-hover);
@@ -50,7 +55,7 @@ button.build-action-button:hover {
   box-shadow: none;
 }
 
-/* Disabled state — strong override needed */
+/* build action disabled */
 button.build-action-button:disabled {
   background-color: var(--olive-light);
   border: 2px solid var(--neutral-900);
@@ -70,6 +75,7 @@ button.build-action-button:disabled:hover {
   transform: none;
 }
 
+/* confirmation message */
 .confirmation-message {
   margin-top: 1rem;
   padding: 0.75rem;
@@ -87,6 +93,7 @@ button.build-action-button:disabled:hover {
   opacity: 0;
 }
 
+/* ingredient button grid */
 .ingredientButtons {
   display: flex;
   flex-wrap: wrap;
@@ -95,12 +102,14 @@ button.build-action-button:disabled:hover {
   margin-top: 0.75rem;
 }
 
+/* enabled button text color */
 button.ClearIngredientsButton:not(:disabled),
 button.DishButton:not(:disabled),
 button.build-action-button:not(:disabled) {
   color: black !important;
 }
 
+/* disabled button shared state */
 button.ClearIngredientsButton:disabled,
 button.DishButton:disabled,
 button.build-action-button:disabled {
@@ -119,20 +128,4 @@ button.build-action-button:disabled:hover {
   border-color: var(--olive-light) !important;
   transform: none;
   box-shadow: none;
-}
-
-/* ------------------------------------------------------ */
-/* ⭐ FIX: Override global .btn so selected state shows   */
-/* ------------------------------------------------------ */
-
-button.IngredientButton {
-  transition: all 0.2s ease-in-out;
-}
-
-/* Strong override so .btn does NOT suppress selected styling */
-button.IngredientButton.selected {
-  background-color: black !important;
-  color: var(--color-text-inverse) !important;
-  font-weight: bolder;
-  outline: 2px solid rgba(220, 120, 120, 0.70);
 }

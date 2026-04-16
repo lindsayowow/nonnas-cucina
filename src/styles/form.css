@@ -1,6 +1,4 @@
-/********************************************
- * FORM LAYOUT
- ********************************************/
+/* form layout */
 .form-card {
   width: 100%;
 }
@@ -18,9 +16,6 @@
   margin-bottom: 0.5rem;
 }
 
-/********************************************
- * LABELS
- ********************************************/
 label {
   width: 90%;
   margin: 0 auto;
@@ -29,9 +24,7 @@ label {
   font-weight: 600;
 }
 
-/********************************************
- * INPUTS + TEXTAREA
- ********************************************/
+/* inputs + textarea */
 .form-container input,
 .form-container textarea {
   width: 90%;
@@ -46,9 +39,7 @@ textarea {
   resize: vertical;
 }
 
-/********************************************
- * SUBMIT BUTTON
- ********************************************/
+/* submit button */
 button.btn {
   width: fit-content;
   align-self: center;
@@ -63,9 +54,7 @@ button.btn:disabled {
   transform: none;
 }
 
-/********************************************
- * MESSAGES
- ********************************************/
+/* messages */
 .inputError {
   font-size: 0.9rem;
   color: var(--brand-maroon-dark);

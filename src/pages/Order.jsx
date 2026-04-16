@@ -4,7 +4,7 @@ import '../styles/order.css';
 
 import OrderButton from '../components/buttons/OrderButton.jsx';
 import RemoveDishButton from '../components/buttons/RemoveDishButton.jsx';
-import DishButton from '../components/buttons/OrderButton.jsx';
+import DishButton from '../components/buttons/DishButton.jsx';
 
 import { useDishBuilderContext } from "../context/DishBuilderContext";
 

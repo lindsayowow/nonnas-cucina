@@ -1,4 +1,4 @@
-/* ACCESSIBILITY: Reduced Motion */
+/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .nonna-wrapper::after,
   .logononna {
@@ -8,7 +8,6 @@
   }
 }
 
-/* HERO LAYOUT */
 .hero {
   margin: 0 auto;
   text-align: center;
@@ -46,7 +45,6 @@
   flex: 0 0 auto;
 }
 
-/* NONNA IMAGE + HEARTS */
 .logononna {
   height: 200px;
   width: auto;
@@ -163,25 +161,24 @@ button:hover {
   text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
   transform-origin: center;
   animation: reveal 5.2s ease-out forwards;
-  -webkit-user-select: none; /* Safari, iOS Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* Old IE/Edge */
-  user-select: none;         /* Standard */
+  user-select: none;
   pointer-events: none;
   margin: 0.8rem 0;
 }
 
+/* mangia positions */
 .mangia.left.top { transform: rotate(-14deg); animation-delay: 0.2s; }
 .mangia.left.bottom { transform: rotate(10deg); animation-delay: 0.9s; }
 .mangia.right.top { transform: rotate(14deg); animation-delay: 1.6s; }
 .mangia.right.bottom { transform: rotate(-10deg); animation-delay: 2.3s; }
 
+/* reveal animation */
 @keyframes reveal {
   0% { opacity: 0; clip-path: inset(0 100% 0 0); }
   100% { opacity: 0.9; clip-path: inset(0 0 0 0); }
 }
 
-/* MOBILE + TABLET */
+/* mobile + tablet */
 @media (max-width: 900px) {
   .mangia,
   .hero-left,

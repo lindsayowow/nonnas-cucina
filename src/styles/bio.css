@@ -1,25 +1,24 @@
+
+/* BIO CONTAINER                          */
 .bio {
   margin: 2rem 0;
   width: 100%;
 }
 
-.bio-inner {
-.bio {
-  margin: 2rem 0;
-  width: 100%;
-}
-
+/* Inner wrapper to match form width */
 .bio-inner {
   width: 90%;
   margin: 0 auto;
   text-align: center;
 }
 
+/* BIO HEADER                             */
 .bio h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
+/* PROFILE IMAGE                          */
 .proPic {
   display: block;
   margin: 0 auto 1.25rem auto;
@@ -29,31 +28,10 @@
   height: auto;
 }
 
+/* BUTTON ROW                             */
 .bioButtons {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
-}
-
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bio h2 {
-  font-size: 2rem;
-}
-
-.proPic {
-  display: block;
-  margin: 0 auto;
-  border-radius: 12%;
-}
-
-.bioButtons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
 }

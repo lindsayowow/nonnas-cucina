@@ -1,13 +1,14 @@
-/* NONNA LAYOUT (desktop/tablet min-height) */
+/* nonna layout (desktop/tablet) */
 @media (min-width: 700px) {
   .card.nonna {
-    min-height: 70vh; /* 70% of viewport height */
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
   }
 }
 
+/* nonna image */
 .nonna-image {
   display: block;
   margin: 0 auto;
@@ -21,6 +22,7 @@
   animation: nonna-shake 1s ease;
 }
 
+/* shake animation */
 @keyframes nonna-shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-3px); }
@@ -29,6 +31,7 @@
   100% { transform: translateX(0); }
 }
 
+/* image wrapper */
 .nonna-image-wrapper {
   width: 180px;
   height: 180px;
@@ -39,6 +42,7 @@
   overflow: hidden;
 }
 
+/* speech bubble wrapper */
 .nonna-speech-wrapper {
   width: 100%;
   display: flex;
@@ -47,6 +51,7 @@
   margin-bottom: 1rem;
 }
 
+/* speech bubble */
 .nonna-speech-bubble {
   position: relative;
   background: #fff;
@@ -68,6 +73,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
+/* speech bubble tail */
 .nonna-speech-bubble::after {
   content: "";
   position: absolute;
@@ -80,11 +86,13 @@
   filter: drop-shadow(0 -2px 0 #f3d1b0);
 }
 
+/* warning background */
 .card.nonna.nonna--warning {
   background-color: #ffe4ec;
   transition: background-color 0.5s ease;
 }
 
+/* cart message */
 .nonna-cart-message {
   margin-top: 0.75rem;
   text-align: center;
@@ -97,12 +105,11 @@
 }
 
 .nonna-cart-link {
-  color: inherit;            
+  color: inherit;
   text-decoration: underline;
-  font-weight: 600;           
+  font-weight: 600;
 }
 
 .nonna-cart-link:hover {
-  text-decoration-thickness: 2px; 
+  text-decoration-thickness: 2px;
 }
-
