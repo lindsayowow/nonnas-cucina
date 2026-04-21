@@ -100,8 +100,12 @@
   color: var(--neutral-900);
   background-color: var(--olive-light);
   padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  border-left: 4px solid var(--olive-dark);
+
+  /* UPDATED: full border instead of left-only */
+  border: 4px solid var(--olive-dark);
+
+  /* NEW: rounded corners */
+  border-radius: 6px;
 }
 
 .nonna-cart-link {
