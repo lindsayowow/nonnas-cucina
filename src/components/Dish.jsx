@@ -21,16 +21,22 @@ export default function Dish({
         {/* example of conditional rendering */}
         {selectedIngredients.length === 0 ? (
           <div className="empty">
-            <p className="dishEmoji">🍽️</p>
+            <p className="dishEmoji" aria-hidden="true">🍽️</p>
             <p>Your current dish is empty.</p>
           </div>
         ) : (
           // Use of lists
-          <ul className="activeIngredientsSelected">
+          <ul
+            className="activeIngredientsSelected"
+            role="region"
+            aria-label="Selected ingredients"
+          >
             {selectedIngredients.map((ingredient) => (
               <li key={ingredient.name}>
                 <span className="ingredientText">
-                  <span className="ingredientEmoji">{ingredient.emoji}</span>
+                  <span className="ingredientEmoji" aria-hidden="true">
+                    {ingredient.emoji}
+                  </span>
                   {ingredient.name} –{" "}
                   {new Intl.NumberFormat("en-US", {
                     style: "currency",

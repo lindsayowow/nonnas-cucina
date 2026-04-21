@@ -8,6 +8,7 @@ export default function DishButton({
 }) {
   return (
     <button
+      type="button"
       className={`btn ${className}`.trim()}
       // example of event handler
       onClick={onClick}

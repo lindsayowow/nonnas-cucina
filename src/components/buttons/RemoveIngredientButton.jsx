@@ -8,7 +8,7 @@ export default function RemoveIngredientButton({ ingredient, onRemove }) {
       onClick={() => onRemove(ingredient)}
       aria-label={`Remove ${ingredient.name}`}
     >
-      🗑️
+      <span aria-hidden="true">🗑️</span>
     </button>
   );
 }
