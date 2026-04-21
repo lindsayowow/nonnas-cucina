@@ -10,7 +10,7 @@ export default function RemoveDishButton({ onRemoveDish = () => { } }) {
       title="Remove dish"
       type="button"
     >
-      🗑️
+      <span aria-hidden="true">🗑️</span>
     </button>
   );
 }
