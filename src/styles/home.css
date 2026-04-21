@@ -80,6 +80,7 @@
   z-index: 5;
 }
 
+/* decorative hearts — visually meaningful but not read by screen readers */
 .nonna-wrapper::after {
   content: "❤       ❤       ❤";
   position: absolute;
@@ -126,10 +127,11 @@ h2 {
   margin-bottom: 8px;
 }
 
+/* improved contrast for accessibility */
 button {
   background-color: var(--color-button-bg);
   border: 5px solid var(--olive-dark);
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse); /* accessible contrast */
   font-weight: bold;
   padding: 15px 15px;
   font-size: 16px;
@@ -155,8 +157,8 @@ button:hover {
   text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
   transform-origin: center;
   animation: reveal 5.2s ease-out forwards;
-  -webkit-user-select: none; /* Safari, iOS Safari */
-  user-select: none; 
+  -webkit-user-select: none;
+  user-select: none;
   pointer-events: none;
   margin: 0.8rem 0;
 }

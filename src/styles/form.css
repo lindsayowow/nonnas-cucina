@@ -47,7 +47,7 @@ button.btn {
 
 button.btn:disabled {
   background-color: var(--sage-dark);
-  color: var(--color-text-primary);
+  color: white; /* updated for better disabled contrast */
   border: none;
   cursor: not-allowed;
   box-shadow: none;

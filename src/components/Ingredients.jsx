@@ -39,20 +39,33 @@ export default function Ingredients({
     clearIngredients();
     resetFilters && resetFilters();
 
-    if (scrollToRef?.current) {
-      scrollToRef.current.scrollIntoView({
+    // allow React to finish re-rendering before scrolling
+    setTimeout(() => {
+      scrollToRef?.current?.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
-    }
+    }, 0);
   };
 
   return (
-    <div className="card ingredientClass">
-      <h2 className="text-center">Choose Your Ingredients</h2>
+    // region landmark for screen readers
+    <div
+      className="card ingredientClass"
+      role="region"
+      aria-labelledby="ingredients-title"
+    >
+      <h2 id="ingredients-title" className="text-center">
+        Choose Your Ingredients
+      </h2>
 
       {Categories.map((Category) => (
-        <div key={Category} className="categoryContainer">
+        <div
+          key={Category}
+          className="categoryContainer"
+          role="region"
+          aria-label={`${Category} ingredients`}
+        >
           <h3 className="categoryHeader text-center">{Category}</h3>
 
           <div className="ingredientButtons">
@@ -94,6 +107,7 @@ export default function Ingredients({
         >
           Add to Order
         </DishButton>
+
         {/* Parent passing props to child */}
         <ClearIngredientsButton
           className="btn build-action-button"

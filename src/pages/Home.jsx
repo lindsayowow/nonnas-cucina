@@ -6,11 +6,13 @@ import FourSquare from '../components/FourSquare';
 
 export default function Home() {
   return (
-    <div className="hero">
+    // main landmark for screen readers
+    <main className="hero" aria-labelledby="home-title">
       <div className="hero-row">
         <div className="hero-column hero-left">
-          <p className="mangia left top">Mangia</p>
-          <p className="mangia left bottom">Mangia</p>
+          {/* decorative text hidden from screen readers */}
+          <p className="mangia left top" aria-hidden="true">Mangia</p>
+          <p className="mangia left bottom" aria-hidden="true">Mangia</p>
         </div>
 
         <div className="hero-column hero-center">
@@ -25,19 +27,26 @@ export default function Home() {
         </div>
 
         <div className="hero-column hero-right">
-          <p className="mangia right top">Mangia</p>
-          <p className="mangia right bottom">Mangia</p>
+          {/* decorative text hidden from screen readers */}
+          <p className="mangia right top" aria-hidden="true">Mangia</p>
+          <p className="mangia right bottom" aria-hidden="true">Mangia</p>
         </div>
       </div>
 
-      <h1 className="nonna-font">Benvenuti a Nonna's Cucina!</h1>
+      {/* h1 used as accessible page title */}
+      <h1 id="home-title" className="nonna-font">Benvenuti a Nonna's Cucina!</h1>
+
       <h2>Build safe, delicious dishes that meet you and your family's dietary needs</h2>
 
-      <Link to="/buildadish" className="buildbutton">
+      <Link
+        to="/buildadish"
+        className="buildbutton"
+        aria-label="Start building your dish" // accessible name
+      >
         <button className="btn">Start Building Your Dish</button>
       </Link>
 
       <FourSquare />
-    </div>
+    </main>
   );
 }

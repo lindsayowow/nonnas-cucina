@@ -9,9 +9,14 @@ import '../styles/footer.css';
 
 export default function Footer() {
   return (
-    // use of semantic elements
-    <footer>
-      <Link to="/about#contact">Contact Us</Link>
+    // semantic footer landmark
+    <footer aria-label="Site footer">
+      <Link
+        to="/about#contact"
+        aria-label="Contact Nonna's Cucina" // accessibility: clearer link purpose
+      >
+        Contact Us
+      </Link>
 
       <div className="tagline">
         <p className="tagline-safety">
@@ -33,15 +38,15 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i>Header logo and Nonna reactions designed by felicities / Freepik</i>
+          <span>Header logo and Nonna reactions designed by felicities / Freepik</span>
         </a>
-        <br />
+
         <a
           href="http://www.vecteezy.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i>Home image designed by Muhammed Adnan / Vecteezy</i>
+          <span>Home image designed by Muhammed Adnan / Vecteezy</span>
         </a>
       </div>
     </footer>

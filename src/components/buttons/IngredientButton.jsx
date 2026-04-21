@@ -26,7 +26,7 @@ export default function IngredientButton({
       aria-pressed={isSelected} /*accessibility feature for screen readers*/
       aria-disabled={disabled}
     >
-      <span className="emoji">{ingredient.emoji}</span> {ingredient.name}
+      <span className="emoji" aria-hidden="true">{ingredient.emoji}</span> {ingredient.name}
     </button>
   );
 }

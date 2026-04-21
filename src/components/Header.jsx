@@ -9,7 +9,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    // Use of semantic elements
+    // semantic header
     <header className="header">
       <NavLink to="/" onClick={() => setOpen(false)}>
         <img
@@ -21,7 +21,7 @@ export default function Header() {
       </NavLink>
 
       <div className="nonna-font middle">
-        {/* Use of semantic elements */}
+        {/* semantic title */}
         <NavLink to="/" onClick={() => setOpen(false)}>
           <h1 className="title">Nonna's Cucina</h1>
         </NavLink>
@@ -30,17 +30,28 @@ export default function Header() {
       <button
         className="hamburger"
         aria-label="Toggle menu"
+        aria-expanded={open}              // accessibility: menu state
+        aria-controls="primary-navigation" // accessibility: links the button to the nav
         onClick={() => setOpen(!open)}
       >
         ☰
       </button>
 
-      <nav className={`nav-links ${open ? "open" : ""}`}>
+      <nav
+        id="primary-navigation"            // needed for aria-controls
+        aria-label="Main navigation"       // accessibility: landmark label
+        className={`nav-links ${open ? "open" : ""}`}
+      >
         <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
         <NavLink to="/buildadish" onClick={() => setOpen(false)}>Build a Dish</NavLink>
         <NavLink to="/about" onClick={() => setOpen(false)}>About</NavLink>
-        <NavLink to="/cart" onClick={() => setOpen(false)}>
-          🛒 ({yourOrder.length})
+
+        <NavLink
+          to="/cart"
+          onClick={() => setOpen(false)}
+          aria-label={`Cart with ${yourOrder.length} items`} // accessible label
+        >
+          <span aria-hidden="true">🛒</span> ({yourOrder.length})
         </NavLink>
       </nav>
     </header>

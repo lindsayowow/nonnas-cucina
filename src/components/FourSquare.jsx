@@ -6,9 +6,17 @@ export default function FourSquare() {
   return (
     <div className="foursquare-grid readable-font">
       {squareData.map((item, index) => (
-        <div key={index} className="square">
-          <p className="icon">{item.icon}</p>
-          <h4>{item.title}</h4>
+        // region landmark for screen readers
+        <div
+          key={index}
+          className="square"
+          role="region"
+          aria-labelledby={`square-title-${index}`}
+        >
+          {/* decorative icon hidden from screen readers */}
+          <p className="icon" aria-hidden="true">{item.icon}</p>
+
+          <h4 id={`square-title-${index}`}>{item.title}</h4>
           <p>{item.text}</p>
         </div>
       ))}

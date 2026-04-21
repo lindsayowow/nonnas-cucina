@@ -4,16 +4,20 @@ import "../styles/bio.css";
 export default function Bio() {
   return (
     // use of semantic elements
-    <section className="about-section card bio">
+    <section
+      className="about-section card bio"
+      aria-labelledby="bio-title"
+    >
       <div className="bio-inner">
 
-        <h2 className="text-center">About the Developer</h2>
+        <h2 id="bio-title" className="text-center">About the Developer</h2>
 
         <img
           src={profilePic}
           // alt text for image accessibility
           alt="Portrait of Lindsay Webb, long brown hair and glasses in a white suit"
           className="proPic"
+          aria-hidden="true"
         />
 
         <p className="text-readable">

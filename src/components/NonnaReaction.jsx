@@ -73,11 +73,12 @@ export default function NonnaReaction() {
           <>
             You have {cartCount} item(s) in your{" "}
             <Link to="/cart" className="nonna-cart-link">
-              cart
+              cart 
             </Link>.
           </>
         );
-// example of conditional rendering
+
+  // example of conditional rendering
   const imageSrc = showNonnaWarning
     ? NonnaWarning
     : nonnaImages[nonnaState.state] || NonnaNeutral;
@@ -87,7 +88,11 @@ export default function NonnaReaction() {
       <h2 className="text-center">Verify Your Selections</h2>
 
       <div className="nonna-speech-wrapper">
-        <div className="nonna-speech-bubble">
+        <div
+          className="nonna-speech-bubble"
+          role="region"
+          aria-label="Nonna message"
+        >
           {nonnaState.message}
         </div>
       </div>

@@ -94,15 +94,25 @@
   text-align: center;
 }
 
+/* UPDATED FOR COLOR-BLIND ACCESSIBILITY + FULL BORDER + ROUNDED CORNERS + PINK BRAND COLOR */
 .kitchen-confirmation {
   margin-top: 1rem;
   padding: 0.75rem;
-  background-color: var(--olive-mid);
+
+  /* warm cream background for high contrast */
+  background-color: #FFFBEA;
+
+  /* high-contrast text */
   color: var(--neutral-900);
-  border-left: 4px solid var(--olive-dark);
+
+  /* NEW: full border using Nonna’s pink outline color */
+  border: 4px solid #f3d1b0;
+
+  /* rounded corners */
+  border-radius: 6px;
+
   font-weight: 600;
   text-align: center;
-  border-radius: 4px;
 }
 
 .order button {
