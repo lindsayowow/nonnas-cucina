@@ -1,4 +1,4 @@
-/* grid layout */
+/* grid layout, mobile */ 
 .foursquare-grid {
   display: grid;
   grid-template-columns: 1fr;
